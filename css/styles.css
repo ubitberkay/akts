@@ -156,14 +156,14 @@ h4 {
 }
 
 .logo-area img {
-    height: 48px;
-    width: auto;
+    width: 138.35px;
+    height: 52.64px;
 }
 
 .header-title {
     color: var(--text-white);
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 35px;
     margin: 0;
 }
 
@@ -268,8 +268,10 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 6px 6px 6px 0;
+    margin: 6px;
     flex-shrink: 0;
+    position: relative;
+    z-index: 10;
 }
 
 .search-box .btn-search:hover {
@@ -308,8 +310,8 @@ h4 {
 
 .content-card-wrapper {
     background-color: var(--bg-white);
-    padding: 32px;
-    border-radius: 12px;
+    padding: 24px;
+    border-radius: 16px;
     box-shadow: var(--shadow-big);
     height: 100%;
 }
@@ -372,26 +374,34 @@ h4 {
     border-radius: 0;
     box-shadow: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .content-card h2 {
     color: var(--text-default);
-    margin-bottom: 16px;
+    margin-bottom: 0;
 }
 
 .content-card p {
     color: var(--text-light);
     font-size: 14px;
     line-height: 1.6;
-    margin-bottom: 16px;
+    margin-bottom: 0;
 }
 
 /* AKTS Table */
+/* AKTS Table */
 .akts-table {
     width: 100%;
-    border-collapse: collapse;
-    margin: 24px 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0;
     font-size: 14px;
+    border: 1px solid var(--bg-gray-300);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .akts-table thead th {
@@ -400,22 +410,40 @@ h4 {
     text-align: left;
     font-weight: 600;
     color: var(--text-default);
-    border: 1px solid var(--bg-gray-300);
+    border-right: 1px solid var(--bg-gray-300);
+    border-bottom: 1px solid var(--bg-gray-300);
+}
+
+.akts-table thead th:last-child {
+    border-right: none;
 }
 
 .akts-table tbody td {
     padding: 10px 16px;
-    border: 1px solid var(--bg-gray-300);
+    border-right: 1px solid var(--bg-gray-300);
+    border-bottom: 1px solid var(--bg-gray-300);
     color: var(--text-light);
 }
 
+.akts-table tbody td:last-child {
+    border-right: none;
+}
+
+.akts-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
 .akts-table tbody tr {
-    background-color: #fff;
+    background-color: var(--bg-white);
+}
+
+.akts-table tbody tr:nth-of-type(even) {
+    background-color: #F3F4F6;
 }
 
 /* Program Description */
 .program-description {
-    margin: 24px 0;
+    margin: 0;
 }
 
 .program-description p {
@@ -428,7 +456,7 @@ h4 {
 
 /* Tabs Section */
 .program-tabs {
-    margin-top: 24px;
+    margin-top: 0;
 }
 
 .program-tabs .nav-link {
@@ -436,8 +464,8 @@ h4 {
     font-size: 14px;
     font-weight: 500;
     border: none;
-    padding: 12px 16px;
-    margin-right: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     border-bottom: 2px solid transparent;
     margin-bottom: -2px;
 }
@@ -509,12 +537,13 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #374151;
+    background-color: #343A40;
     /* Koyu Gri / Antrasit */
-    padding: 16px 24px;
+    padding: 24px;
     border-radius: 12px;
     color: #fff;
     min-height: 56px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-content p {
@@ -525,22 +554,16 @@ h4 {
 }
 
 .footer-icon {
-    width: 32px;
-    height: 32px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--bg-gray-400);
-    border-radius: 50%;
-    color: var(--text-light);
-    font-size: 14px;
+    color: #fff;
+    font-size: 24px;
     text-decoration: none;
     transition: all 0.3s ease;
-}
-
-.footer-icon:hover {
-    background-color: var(--bg-gray-300);
-    color: var(--text-default);
+    border: none;
+    background: transparent;
+    line-height: 1;
 }
 
 /* ===================================
@@ -713,7 +736,8 @@ h4 {
 
     .program-tabs .nav-link {
         font-size: 13px;
-        padding: 10px 16px;
+        padding-top: 8px;
+        padding-bottom: 8px;
         white-space: nowrap;
         border: none;
         border-bottom: 2px solid transparent;
@@ -776,15 +800,19 @@ h4 {
     margin-top: 24px;
 }
 
+.no-result-img {
+    width: 48px;
+    height: 48px;
+}
+
 .no-result-icon {
-    font-size: 48px;
-    color: var(--text-light);
     margin-bottom: 16px;
-    line-height: 1;
 }
 
 .no-result-text {
-    font-size: 14px;
-    color: var(--text-light);
+    font-size: 20px;
+    font-weight: 600;
+    color: #6C757D;
+    line-height: 25px;
     margin: 0;
 }
