@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bahçeşehir Üniversitesi AKTS Bilgi Paketi ve Ders Kataloğu - Ders Detayı">
+    <title>Ders Detayı | Bahçeşehir Üniversitesi</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ===================================
+       Hero Wrapper (Header + Hero)
+       =================================== -->
+    <div class="container">
+        <div class="hero-wrapper">
+            <!-- Header Section -->
+            <header class="main-header">
+                <div class="header-content">
+                    <!-- Logo -->
+                    <div class="logo-area">
+                        <img src="./assets/bau-logo-white.svg" alt="Bahçeşehir Üniversitesi Logo" class="header-logo">
+                    </div>
+
+                    <!-- Title -->
+                    <h1 class="header-title">Bilgi Paketi / Ders Kataloğu</h1>
+
+                    <!-- Language Button -->
+                    <a href="#" class="lang-btn">
+                        <i class="bi bi-globe"></i>
+                        ENGLISH
+                    </a>
+                </div>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h2 class="hero-title">Ders Adı veya Kodu ile Arama</h2>
+                    <div class="search-box">
+                        <div class="input-group">
+                            <span class="input-group-text search-icon">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="" aria-label="Ders ara">
+                            <button class="btn btn-search" type="button" id="searchButton">
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ===================================
+       Main Content Area
+       =================================== -->
+    <main class="main-content">
+        <div class="container">
+            <div class="main-wrapper">
+                <div class="row g-0">
+                    <!-- Sidebar -->
+                    <div class="col-lg-3 sidebar-column">
+                        <div class="sidebar-accordion">
+                            <div class="accordion" id="sidebarAccordion">
+                                <!-- Accordion Item 1 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                            Accordion Item #1
+                                        </button>
+                                    </h2>
+                                    <div id="collapse1" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">
+                                            Alt menü içeriği burada yer alacak.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Other accordion items can be added here -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                            Accordion Item #2
+                                        </button>
+                                    </h2>
+                                    <div id="collapse2" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">
+                                            Alt menü içeriği burada yer alacak.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                            Değişim Öğrencileri için Pratik Bilgiler
+                                        </button>
+                                    </h2>
+                                    <div id="collapse3" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">
+                                            Pratik bilgiler ve rehberlik.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="col-lg-9 content-column">
+                        <div class="content-card-wrapper">
+
+                            <!-- Course Detail Header -->
+                            <div class="course-detail-header mb-4">
+                                <h2>Ders Tanıtım Bilgileri</h2>
+                            </div>
+
+                            <!-- Course Title Block -->
+                            <div class="section-block mb-4">
+                                <table
+                                    class="table table-bordered course-info-table table-striped-even text-center mb-0"
+                                    style="border-radius: 8px; overflow: hidden; border-collapse: separate; border-spacing: 0; width: 100%; border: 1px solid #dee2e6;">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" class="text-white text-start ps-3 py-2"
+                                                style="background-color: #0A58CA;">HUKUK</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="py-3">Lisans</td>
+                                            <td class="py-3">TYYÇ: 6. Düzey</td>
+                                            <td class="py-3">QF-EHEA: 1. Düzey</td>
+                                            <td class="py-3">EQF-LLL: 6. Düzey</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Course Basic Info Table -->
+                            <div class="table-responsive mb-4">
+                                <table class="table akts-table course-info-table table-striped-even">
+                                    <thead>
+                                        <tr>
+                                            <th>Ders Kodu</th>
+                                            <th>Ders Adı</th>
+                                            <th>Dili</th>
+                                            <th>Ön Koşul</th>
+                                            <th>Teorik</th>
+                                            <th>Pratik</th>
+                                            <th>Kredi</th>
+                                            <th>AKTS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="#" style="text-decoration: none;">HST302</a></td>
+                                            <td>İletişim Becerileri ve Akademik Raporlama I</td>
+                                            <td>English</td>
+                                            <td>-</td>
+                                            <td>3</td>
+                                            <td>2</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Temel Bilgiler Section -->
+                            <div class="section-block mb-4">
+                                <table class="table table-bordered detail-table table-striped-even mb-0"
+                                    style="border-radius: 8px; overflow: hidden; border-collapse: separate; border-spacing: 0; border: 1px solid #dee2e6;">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2" class="table-header-title ps-3 text-dark border-0"
+                                                style="border-bottom: 1px solid #dee2e6 !important;">
+                                                Temel Bilgiler</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th style="width: 30%;">Öğretim Dili</th>
+                                            <td>Türkçe</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Dersin Türü</th>
+                                            <td>Must Course</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Dersin Seviyesi</th>
+                                            <td>Lisans</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Dersin Veriliş Şekli</th>
+                                            <td>Yüz yüze</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Dersin Koordinatörü</th>
+                                            <td>Dr. Öğr. Üyesi MEHMET SİNAN ALTUNÇ</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Dersi Veren(ler)</th>
+                                            <td>
+                                                Dr. Öğr. Üyesi SALİH OKTAR<br>
+                                                Dr. Öğr. Üyesi GÜNER HANDE ULUTÜRK<br>
+                                                Dr. Öğr. Üyesi MEHMET SİNAN ALTUNÇ
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Opsiyonel Program Bileşenleri</th>
+                                            <td>Yok</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Dersin Amacı</th>
+                                            <td>
+                                                Ceza muhakemesinin yürüyüşü hakkında bilgi verilmesi amaçlanmaktadır. Bu
+                                                bakımdan ilk derece muhakemesi ve kanunyolu muhakemesinin özellikleri
+                                                ele alınmaktadır. Ayrıca araştırma ve koruma tedbirleri ile duruşmanın
+                                                safhaları incelenmektedir. Böylelikle öğrencilerin ceza muhakemesi
+                                                işlemlerini baştan sona görmesi amaçlanmaktadır.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- AKTS / İş Yükü Tablosu -->
+                            <div class="section-block mb-4">
+                                <div class="table-responsive">
+                                    <table class="table akts-table workload-table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="4" class="table-header-title ps-3 text-primary"
+                                                    style="background-color: #f2f4f6;">AKTS / İş
+                                                    Yükü Tablosu</th>
+                                            </tr>
+                                            <tr>
+                                                <th style="background-color: #f2f4f6;">Aktiviteler</th>
+                                                <th style="background-color: #f2f4f6;">Aktivite Sayısı</th>
+                                                <th style="background-color: #f2f4f6;">Süre (Saat)</th>
+                                                <th style="background-color: #f2f4f6;">İş Yükü (Saat)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Ders Saati</td>
+                                                <td>12</td>
+                                                <td>4</td>
+                                                <td>48</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sınıf Dışı Ders Çalışması</td>
+                                                <td>13</td>
+                                                <td>3</td>
+                                                <td>39</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ara Sınavlar</td>
+                                                <td>2</td>
+                                                <td>4</td>
+                                                <td>8</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sınıf Dışı Ders Çalışması</td>
+                                                <td>1</td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                            </tr>
+                                            <tr class="table-primary fw-bold">
+                                                <td colspan="3">Toplam</td>
+                                                <td>64</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ders Saati</td>
+                                                <td>12</td>
+                                                <td>4</td>
+                                                <td>48</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sınıf Dışı Ders Çalışması</td>
+                                                <td>13</td>
+                                                <td>3</td>
+                                                <td>39</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ara Sınavlar</td>
+                                                <td>2</td>
+                                                <td>4</td>
+                                                <td>8</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sınıf Dışı Ders Çalışması</td>
+                                                <td>1</td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                            </tr>
+                                            <tr class="table-primary fw-bold">
+                                                <td colspan="3">Toplam</td>
+                                                <td>48</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Öğrenme Kazanımları -->
+                            <div class="section-block mb-4">
+                                <div class="card detail-card">
+                                    <div class="card-header">
+                                        <h3 class="section-title mb-0">Öğrenme Kazanımları</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Bu dersi başarıyla tamamlayabilen öğrenciler;</p>
+                                        <ol class="learning-outcomes-list">
+                                            <li>Ceza muhakemesinin şartlarını tanımlar.</li>
+                                            <li>Soruşturma evresi hakkında bilgi sahibidir.</li>
+                                            <li>Araştırma ve koruma tedbirlerini tanımlar.</li>
+                                            <li>Kovuşturma evresindeki işlemleri analiz eder.</li>
+                                            <li>Delil çeşitlerini bilir ve bunların hukuka uygunluğu konusunda
+                                                değerlendirme yapar.</li>
+                                            <li>Kanunyolları hakkında bilgi sahibidir.</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dersin İçeriği -->
+                            <div class="section-block mb-4">
+                                <div class="card detail-card">
+                                    <div class="card-header">
+                                        <h3 class="section-title mb-0">Dersin İçeriği</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Bu derste ceza muhakemesinin yürüyüşü ele alınmaktadır. Bu anlamda soruşturma
+                                            ve kovuşturma evreleri incelemekte, araştırma ve koruma tedbirleri
+                                            çalışılmaktadır. Ceza muhakemesinde delillerin çeşitleri ve elde edilme
+                                            yöntemleri hakkında değerlendirme yapılmaktadır. Son olarak da kanunyolları
+                                            muhakemesi hakkında bilgi verilmektedir.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Program ve Öğrenme Kazanımları İlişkisi -->
+                            <!-- Program ve Öğrenme Kazanımları İlişkisi - Legend Table -->
+                            <div class="section-block mb-3">
+                                <div class="table-responsive"
+                                    style="border-radius: 8px; overflow: hidden; border: 1px solid #dee2e6;">
+                                    <table class="table contribution-table table-striped mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th class="table-header-title ps-3 text-primary border-0"
+                                                    style="border-bottom: 1px solid #dee2e6;">Program ve Öğrenme
+                                                    Kazanımları İlişkisi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th class="p-0 border-0">
+                                                    <div class="d-flex w-100 contribution-legend-row">
+                                                        <span class="legend-item flex-fill text-center border-0">Etkisi
+                                                            Yok</span>
+                                                        <span
+                                                            class="legend-item level-1 flex-fill text-center border-0 border-start">1
+                                                            En Düşük</span>
+                                                        <span
+                                                            class="legend-item level-2 flex-fill text-center border-0 border-start">2
+                                                            Düşük</span>
+                                                        <span
+                                                            class="legend-item level-3 flex-fill text-center border-0 border-start">3
+                                                            Orta</span>
+                                                        <span
+                                                            class="legend-item level-4 flex-fill text-center border-0 border-start">4
+                                                            Yüksek</span>
+                                                        <span
+                                                            class="legend-item level-5 flex-fill text-center border-0 border-start">5
+                                                            En Yüksek</span>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Program ve Öğrenme Kazanımları İlişkisi - Data Table -->
+                            <div class="section-block mb-5">
+                                <div class="table-responsive"
+                                    style="border-radius: 8px; overflow: hidden; border: 1px solid #dee2e6;">
+                                    <table class="table contribution-table mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center"
+                                                    style="width: 50px; background-color: #f8f9fa; border-bottom: 1px solid #dee2e6; color: #212529;">
+                                                    #</th>
+                                                <th
+                                                    style="background-color: #f8f9fa; border-bottom: 1px solid #dee2e6; color: #212529;">
+                                                    Dersin Program Kazanımlarına Etkisi</th>
+                                                <th class="text-center"
+                                                    style="width: 80px; background-color: #f8f9fa; border-bottom: 1px solid #dee2e6; color: #212529;">
+                                                    Katkı Payı</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">1</td>
+                                                <td>Çeşitli hukuk disiplinlerine ilişkin kavram ve kurumları ve bu
+                                                    kavram ve kurumlar arasındaki ilişkileri sıralar.</td>
+                                                <td class="text-center contribution-level level-2">2</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">2</td>
+                                                <td>Hukuk metodolojisi ile yorum yöntemlerinin bilgisine sahip olur.
+                                                </td>
+                                                <td class="text-center contribution-level level-3">3</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">3</td>
+                                                <td>Modern hukuk kazanımlarını tarihsel bilgi birikimi ile yorumlar.
+                                                </td>
+                                                <td class="text-center contribution-level level-1">1</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">4</td>
+                                                <td>Hukuk kurallarına temel teşkil eden felsefi düşünce akımları
+                                                    hakkında bilgi sahibidir.</td>
+                                                <td class="text-center contribution-level level-2">2</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">5</td>
+                                                <td>Yasal düzenlemelerden, yargı organlarının kararlarından ve bunlarla
+                                                    ilgili bilimsel değerlendirmelerden haberdardır.</td>
+                                                <td class="text-center contribution-level level-4">4</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">6</td>
+                                                <td>Hukuki uyuşmazlıkları mevzuat metinleri, yargı organlarının
+                                                    kararları ve doktrindeki görüşleri değerlendirerek çözüme
+                                                    kavuşturur.</td>
+                                                <td class="text-center contribution-level level-5">5</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">7</td>
+                                                <td>En az bir yabancı dili bilim dili olarak kullanır.</td>
+                                                <td class="text-center"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">8</td>
+                                                <td>Çeşitli hukuk disiplinlerine ilişkin kavram ve kurumları ve bu
+                                                    kavram ve kurumlar arasındaki ilişkileri sıralar.</td>
+                                                <td class="text-center contribution-level level-3">3</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">9</td>
+                                                <td>Hukuk metodolojisi ile yorum yöntemlerinin bilgisine sahip olur.
+                                                </td>
+                                                <td class="text-center contribution-level level-3">3</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">10</td>
+                                                <td>Modern hukuk kazanımlarını tarihsel bilgi birikimi ile yorumlar.
+                                                </td>
+                                                <td class="text-center contribution-level level-1">1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===================================
+       Footer Section
+       =================================== -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2026 • Bahçeşehir Üniversitesi</p>
+                <a href="#" class="footer-icon back-to-top" title="Yukarı Çık">
+                    <i class="bi bi-arrow-up-circle"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

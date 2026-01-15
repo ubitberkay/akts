@@ -800,6 +800,153 @@ h4 {
     margin-top: 24px;
 }
 
+/* ===================================
+   Course Detail Page Styles
+   =================================== */
+
+.course-title-block {
+    border: 1px solid var(--bg-gray-300);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.course-program-header {
+    background-color: #0d6efd;
+    /* Bootstrap Primary Blue like */
+    color: white;
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.course-meta-info {
+    padding: 16px;
+    background-color: var(--bg-white);
+}
+
+.course-meta-info strong {
+    font-weight: 600;
+}
+
+/* Section Titles (Removed outer titles, using .table-header-title now) */
+.section-title {
+    color: #4a90e2;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+/* Table Header Title */
+.table-header-title {
+    background-color: #f2f4f6 !important;
+    /* Light silvery-blue */
+    color: #4a90e2 !important;
+    /* Blue text */
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 16px !important;
+    text-align: left;
+    border-bottom: 1px solid var(--bg-gray-300);
+}
+
+/* Detail Tables */
+.detail-table th {
+    background-color: #f8f9fa;
+    width: 25%;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.detail-table td {
+    vertical-align: middle;
+}
+
+/* Detail Cards (Learning Outcomes, etc.) */
+.detail-card {
+    border: 1px solid var(--bg-gray-300);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.detail-card .card-header {
+    border-bottom: 1px solid var(--bg-gray-300);
+    padding: 12px 16px;
+}
+
+.detail-card .card-body {
+    padding: 16px;
+}
+
+.learning-outcomes-list {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.learning-outcomes-list li {
+    margin-bottom: 4px;
+}
+
+
+.legend-item {
+    padding: 8px 12px;
+    font-size: 13px;
+    background-color: var(--bg-white);
+    font-weight: 500;
+}
+
+/* Legend Colors */
+.legend-item.level-1 {
+    background-color: #DDF0FF;
+}
+
+.legend-item.level-2 {
+    background-color: #D6F8EE;
+}
+
+.legend-item.level-3 {
+    background-color: #FFF5CF;
+}
+
+.legend-item.level-4 {
+    background-color: #F3E6FF;
+}
+
+.legend-item.level-5 {
+    background-color: #FFE0E1;
+}
+
+/* Table Cell Colors for Contribution */
+.contribution-level.level-1 {
+    background-color: #DDF0FF;
+}
+
+.contribution-level.level-2 {
+    background-color: #D6F8EE;
+}
+
+.contribution-level.level-3 {
+    background-color: #FFF5CF;
+}
+
+.contribution-level.level-4 {
+    background-color: #F3E6FF;
+}
+
+.contribution-level.level-5 {
+    background-color: #FFE0E1;
+}
+
+.contribution-table th {
+    background-color: #f8f9fa;
+    vertical-align: middle;
+    font-weight: 600;
+}
+
+.contribution-table td {
+    vertical-align: middle;
+}
+
 .no-result-img {
     width: 48px;
     height: 48px;
@@ -815,4 +962,16 @@ h4 {
     color: #6C757D;
     line-height: 25px;
     margin: 0;
+}
+
+
+/* Custom Table Striping - Light First Row, Stripe Second Row */
+.table-striped-even>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: transparent;
+    box-shadow: none;
+}
+
+.table-striped-even>tbody>tr:nth-of-type(even)>* {
+    --bs-table-accent-bg: var(--bs-table-striped-bg);
+    color: var(--bs-table-striped-color);
 }
