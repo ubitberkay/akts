@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bahçeşehir Üniversitesi AKTS Bilgi Paketi ve Ders Kataloğu - Öğretim Programı">
+    <title>Öğretim Programı | Bahçeşehir Üniversitesi</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <style>
+        .dashed-info-box {
+            border: 1px dashed #949BA8;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+            background-color: transparent;
+        }
+
+        .dashed-info-box ul {
+            margin: 0;
+            padding-left: 1.2rem;
+            list-style-type: disc;
+        }
+
+        .dashed-info-box li {
+            color: var(--text-default);
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .dashed-info-box li:last-child {
+            margin-bottom: 0;
+        }
+
+        .semester-title {
+            color: var(--text-blue);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .course-table th {
+            font-size: 14px;
+            font-weight: 600;
+            background-color: #f8f9fa;
+        }
+
+        .course-table td {
+            font-size: 14px;
+            vertical-align: middle;
+            color: #000 !important;
+        }
+
+        .section-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 0;
+        }
+
+        .btn-section-select {
+            background-color: var(--bg-blue-600);
+            color: white;
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            border: none;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-section-select:hover {
+            background-color: #1D4ED8;
+            color: white;
+        }
+
+        .course-code-link {
+            color: var(--text-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .course-code-link:hover {
+            text-decoration: underline;
+        }
+
+        .table-header-hukuk {
+            background-color: #0A58CA !important;
+            color: white !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================================
+       Hero Wrapper (Header + Hero)
+       =================================== -->
+    <div class="container">
+        <div class="hero-wrapper">
+            <!-- Header Section -->
+            <header class="main-header">
+                <div class="header-content">
+                    <!-- Logo -->
+                    <div class="logo-area">
+                        <img src="./assets/bau-logo-white.svg" alt="Bahçeşehir Üniversitesi Logo" class="header-logo">
+                    </div>
+
+                    <!-- Title -->
+                    <h1 class="header-title">Bilgi Paketi / Ders Kataloğu</h1>
+
+                    <!-- Language Button -->
+                    <a href="#" class="lang-btn">
+                        <i class="bi bi-globe"></i>
+                        ENGLISH
+                    </a>
+                </div>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h2 class="hero-title">Ders Adı veya Kodu ile Arama</h2>
+                    <div class="search-box">
+                        <div class="input-group">
+                            <span class="input-group-text search-icon">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="" aria-label="Ders ara">
+                            <button class="btn btn-search" type="button" id="searchButton">
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ===================================
+       Main Content Area
+       =================================== -->
+    <main class="main-content">
+        <div class="container">
+            <div class="main-wrapper">
+                <div class="row g-0">
+                    <!-- Sidebar -->
+                    <div class="col-lg-3 sidebar-column">
+                        <div class="sidebar-accordion">
+                            <div class="accordion" id="sidebarAccordion">
+                                <!-- Accordion Item 1 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                            Accordion Item #1
+                                        </button>
+                                    </h2>
+                                    <div id="collapse1" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">
+                                            Alt menü içeriği burada yer alacak.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Accordion Item 2 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                            Accordion Item #2
+                                        </button>
+                                    </h2>
+                                    <div id="collapse2" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">
+                                            Alt menü içeriği burada yer alacak.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Accordion Item 3 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                            Accordion Item #3
+                                        </button>
+                                    </h2>
+                                    <div id="collapse3" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">
+                                            Alt menü içeriği burada yer alacak.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Değişim Öğrencileri -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                            Değişim Öğrencileri için Pratik Bilgiler ve Üniversiteye Dair Bilgiler
+                                        </button>
+                                    </h2>
+                                    <div id="collapse4" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">
+                                            Değişim programları hakkında bilgiler.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Accordion Item 5 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse5">
+                                            Accordion Item #1
+                                        </button>
+                                    </h2>
+                                    <div id="collapse5" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">
+                                            Alt menü içeriği burada yer alacak.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Accordion Item 6 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse6">
+                                            Accordion Item #2
+                                        </button>
+                                    </h2>
+                                    <div id="collapse6" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">
+                                            Alt menü içeriği burada yer alacak.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Accordion Item 7 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse7">
+                                            Accordion Item #3
+                                        </button>
+                                    </h2>
+                                    <div id="collapse7" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">
+                                            Alt menü içeriği burada yer alacak.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Değişim Öğrencileri Pratik Bilgiler -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse8">
+                                            Değişim Öğrencileri için Pratik Bilgiler
+                                        </button>
+                                    </h2>
+                                    <div id="collapse8" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">
+                                            Pratik bilgiler ve rehberlik.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="col-lg-9 content-column">
+                        <div class="content-card-wrapper">
+
+                            <!-- Page Title -->
+                            <h2 class="mb-4">Öğretim Programı</h2>
+
+                            <!-- HUKUK Table Header -->
+                            <div class="section-block mb-4">
+                                <table class="table table-bordered mb-0"
+                                    style="border-radius: 8px; overflow: hidden; border-collapse: separate; border-spacing: 0; width: 100%; border: 1px solid #dee2e6;">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" class="table-header-hukuk text-start ps-3 py-2">HUKUK</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-white">
+                                            <td class="py-3 ps-3">Lisans</td>
+                                            <td class="py-3">TYYÇ: 6. Düzey</td>
+                                            <td class="py-3">QF-EHEA: 1. Düzey</td>
+                                            <td class="py-3">EQF-LLL: 6. Düzey</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Info Box -->
+                            <div class="dashed-info-box">
+                                <ul>
+                                    <li>TR işaretli dersler Türkçe olarak işlenmektedir.</li>
+                                    <li>EN işaretli dersler İngilizce olarak işlenmektedir.</li>
+                                    <li>TR-EN işaretli derslerin hem İngilizce hem de Türkçe sectionları bulunmaktadır.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- 1. YARIYIL -->
+                            <h3 class="semester-title">1. YARIYIL</h3>
+                            <div class="table-responsive mb-4">
+                                <table class="table akts-table course-table table-bordered table-striped-even">
+                                    <thead>
+                                        <tr>
+                                            <th>Ders Kodu</th>
+                                            <th>Ders Adı</th>
+                                            <th>Dili</th>
+                                            <th>Ön Koşul</th>
+                                            <th>Teorik</th>
+                                            <th>Pratik</th>
+                                            <th>Kredi</th>
+                                            <th>AKTS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="#" class="course-code-link">ENG1003</a></td>
+                                            <td>Özel Amaçlı İngilizce I</td>
+                                            <td>English</td>
+                                            <td>-</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#" class="course-code-link">HST302</a></td>
+                                            <td>İletişim Becerileri ve Akademik Raporlama I</td>
+                                            <td>English</td>
+                                            <td>-</td>
+                                            <td>3</td>
+                                            <td>2</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#" class="course-code-link">LAW1011</a></td>
+                                            <td>Atatürk İlkeleri ve İnkılap Tarihi I</td>
+                                            <td>English</td>
+                                            <td>-</td>
+                                            <td>2</td>
+                                            <td>0</td>
+                                            <td>5</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#" class="course-code-link">LAW1145</a></td>
+                                            <td>Anayasa Hukukunun Genel İlkeleri</td>
+                                            <td>Turkish</td>
+                                            <td>-</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#" class="course-code-link">GED0350</a></td>
+                                            <td>Medeni Hukuk I</td>
+                                            <td>Turkish</td>
+                                            <td>-</td>
+                                            <td>2</td>
+                                            <td>4</td>
+                                            <td>2</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#" class="course-code-link">TLL7865</a></td>
+                                            <td>Roma Hukuku</td>
+                                            <td>Turkish</td>
+                                            <td>-</td>
+                                            <td>4</td>
+                                            <td>6</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- 2. YARIYIL -->
+                            <h3 class="semester-title">2. YARIYIL</h3>
+                            <div class="table-responsive mb-4">
+                                <table class="table akts-table course-table table-bordered table-striped-even">
+                                    <thead>
+                                        <tr>
+                                            <th>Ders Kodu</th>
+                                            <th>Ders Adı</th>
+                                            <th>Dili</th>
+                                            <th>Ön Koşul</th>
+                                            <th>Teorik</th>
+                                            <th>Pratik</th>
+                                            <th>Kredi</th>
+                                            <th>AKTS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="#" class="course-code-link">ENG1003</a></td>
+                                            <td>Özel Amaçlı İngilizce I</td>
+                                            <td>English</td>
+                                            <td>-</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#" class="course-code-link">HST302</a></td>
+                                            <td>İletişim Becerileri ve Akademik Raporlama I</td>
+                                            <td>English</td>
+                                            <td>-</td>
+                                            <td>3</td>
+                                            <td>2</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#" class="course-code-link">LAW1011</a></td>
+                                            <td>Atatürk İlkeleri ve İnkılap Tarihi I</td>
+                                            <td>English</td>
+                                            <td>-</td>
+                                            <td>2</td>
+                                            <td>0</td>
+                                            <td>5</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#" class="course-code-link">LAW1145</a></td>
+                                            <td>Anayasa Hukukunun Genel İlkeleri</td>
+                                            <td>Turkish</td>
+                                            <td>-</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#" class="course-code-link">GED0350</a></td>
+                                            <td>Medeni Hukuk I</td>
+                                            <td>Turkish</td>
+                                            <td>-</td>
+                                            <td>2</td>
+                                            <td>4</td>
+                                            <td>2</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#" class="course-code-link">TLL7865</a></td>
+                                            <td>Roma Hukuku</td>
+                                            <td>Turkish</td>
+                                            <td>-</td>
+                                            <td>4</td>
+                                            <td>6</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- 3. YARIYIL -->
+                            <h3 class="semester-title">3. YARIYIL</h3>
+                            <div class="table-responsive mb-4">
+                                <table class="table akts-table course-table table-bordered table-striped-even">
+                                    <thead>
+                                        <tr>
+                                            <th>Ders Kodu</th>
+                                            <th>Ders Adı</th>
+                                            <th>Dili</th>
+                                            <th>Ön Koşul</th>
+                                            <th>Teorik</th>
+                                            <th>Pratik</th>
+                                            <th>Kredi</th>
+                                            <th>AKTS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="#" class="course-code-link">ENG1003</a></td>
+                                            <td>Özel Amaçlı İngilizce I</td>
+                                            <td>English</td>
+                                            <td>-</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#" class="course-code-link">HST302</a></td>
+                                            <td>İletişim Becerileri ve Akademik Raporlama I</td>
+                                            <td>English</td>
+                                            <td>-</td>
+                                            <td>3</td>
+                                            <td>2</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#" class="course-code-link">LAW1011</a></td>
+                                            <td>Atatürk İlkeleri ve İnkılap Tarihi I</td>
+                                            <td>English</td>
+                                            <td>-</td>
+                                            <td>2</td>
+                                            <td>0</td>
+                                            <td>5</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#" class="course-code-link">LAW1145</a></td>
+                                            <td>Anayasa Hukukunun Genel İlkeleri</td>
+                                            <td>Turkish</td>
+                                            <td>-</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <!-- Buttons Row -->
+                                        <tr>
+
+                                            <td></td>
+                                            <td colspan="1" class="py-2">
+                                                <div class="section-buttons">
+                                                    <a href="#" class="btn-section-select" data-bs-toggle="modal"
+                                                        data-bs-target="#courseSelectionModal"
+                                                        onclick="updateModalTitle('Bölüm Seçmeli')">Bölüm Seçmeli</a>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>3</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+
+                                            <td></td>
+                                            <td colspan="1" class="py-2">
+                                                <div class="section-buttons">
+                                                    <a href="#" class="btn-section-select" data-bs-toggle="modal"
+                                                        data-bs-target="#courseSelectionModal"
+                                                        onclick="updateModalTitle('Bölüm Dışı Seçmeli')">Bölüm Dışı
+                                                        Seçmeli</a>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>2</td>
+                                            <td>6</td>
+                                        </tr>
+                                        <tr>
+
+                                            <td></td>
+                                            <td colspan="1" class="py-2">
+                                                <div class="section-buttons">
+                                                    <a href="#" class="btn-section-select" data-bs-toggle="modal"
+                                                        data-bs-target="#courseSelectionModal"
+                                                        onclick="updateModalTitle('Genel Bölüm Seçmeli')">Genel Bölüm
+                                                        Seçmeli</a>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <!-- Total Row -->
+                                        <tr style="background-color: #f8f9fa;">
+                                            <td colspan="1" class="fw-bold ps-3">Toplam</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="fw-bold">18</td>
+                                            <td class="fw-bold">32</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===================================
+       Footer Section
+       =================================== -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2026 • Bahçeşehir Üniversitesi</p>
+                <a href="#" class="footer-icon back-to-top" title="Yukarı Çık">
+                    <i class="bi bi-arrow-up-circle"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Course Selection Modal -->
+    <div class="modal fade" id="courseSelectionModal" tabindex="-1" aria-labelledby="courseSelectionModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="courseSelectionModalLabel">Hukuk : 4.Yarıyıl - Bölüm Seçmeli
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered course-table table-striped-even mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Ders Kodu</th>
+                                    <th>Ders Adı</th>
+                                    <th>Dili</th>
+                                    <th>Ön Koşul</th>
+                                    <th>Teorik</th>
+                                    <th>Pratik</th>
+                                    <th>Kredi</th>
+                                    <th>AKTS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#" class="course-code-link">ENG1003</a></td>
+                                    <td>Özel Amaçlı İngilizce I</td>
+                                    <td>English</td>
+                                    <td>-</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="course-code-link">HST302</a></td>
+                                    <td>İletişim Becerileri ve Akademik Raporlama I</td>
+                                    <td>English</td>
+                                    <td>-</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="course-code-link">LAW1011</a></td>
+                                    <td>Atatürk İlkeleri ve İnkılap Tarihi I</td>
+                                    <td>English</td>
+                                    <td>-</td>
+                                    <td>2</td>
+                                    <td>0</td>
+                                    <td>5</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="course-code-link">LAW1145</a></td>
+                                    <td>Anayasa Hukukunun Genel İlkeleri</td>
+                                    <td>Turkish</td>
+                                    <td>-</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="course-code-link">GED0350</a></td>
+                                    <td>Medeni Hukuk I</td>
+                                    <td>Turkish</td>
+                                    <td>-</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="course-code-link">TLL7865</a></td>
+                                    <td>Roma Hukuku</td>
+                                    <td>Turkish</td>
+                                    <td>-</td>
+                                    <td>4</td>
+                                    <td>6</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="course-code-link">HST302</a></td>
+                                    <td>İletişim Becerileri ve Akademik Raporlama I</td>
+                                    <td>English</td>
+                                    <td>-</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="course-code-link">TLL7865</a></td>
+                                    <td>Roma Hukuku</td>
+                                    <td>Turkish</td>
+                                    <td>-</td>
+                                    <td>4</td>
+                                    <td>6</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="course-code-link">LAW1011</a></td>
+                                    <td>Atatürk İlkeleri ve İnkılap Tarihi I</td>
+                                    <td>English</td>
+                                    <td>-</td>
+                                    <td>2</td>
+                                    <td>0</td>
+                                    <td>5</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="course-code-link">LAW1145</a></td>
+                                    <td>Anayasa Hukukunun Genel İlkeleri</td>
+                                    <td>Turkish</td>
+                                    <td>-</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="course-code-link">GED0350</a></td>
+                                    <td>Medeni Hukuk I</td>
+                                    <td>Turkish</td>
+                                    <td>-</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="course-code-link">ENG1003</a></td>
+                                    <td>Özel Amaçlı İngilizce I</td>
+                                    <td>English</td>
+                                    <td>-</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer border-0" style="background-color: #f2f4f6;">
+                    <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal"
+                        style="background-color: #0d6efd; border-radius: 20px;">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script to update modal title -->
+    <script>
+        function updateModalTitle(type) {
+            document.getElementById('courseSelectionModalLabel').innerText = 'Hukuk : 4.Yarıyıl - ' + type;
+        }
+    </script>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
