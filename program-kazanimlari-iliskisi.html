@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bahçeşehir Üniversitesi AKTS Bilgi Paketi - Program Kazanımları İlişkisi">
+    <title>Program Kazanımları İlişkisi | Bahçeşehir Üniversitesi</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+    rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <style>
+        /* Matrix Table Styling */
+        .matrix-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            background: #fff;
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+            /* Slightly smaller for compact fit */
+            table-layout: fixed;
+            /* Crucial for strict width control */
+        }
+
+        .matrix-table th,
+        .matrix-table td {
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid #e0e0e0;
+            padding: 4px;
+            /* Reduced padding */
+            height: 40px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        /* Top corners - adjust border radius visually via container */
+
+        /* Specialized Column Widths - Percentage Based */
+
+        /* Col 1 & 16: Side Text Headers */
+        .matrix-table th:first-child,
+        .matrix-table td:first-child,
+        .matrix-table th:last-child,
+        .matrix-table td:last-child {
+            /* Width controlled by colgroup */
+            text-align: left;
+            padding: 8px 12px;
+            font-weight: 600;
+            color: #333;
+            white-space: normal;
+            line-height: 1.3;
+        }
+
+        /* Side Number Headers */
+        .side-num-pink,
+        .side-num-blue {
+            /* Width controlled by colgroup */
+            font-weight: bold;
+            color: #555;
+            text-align: center;
+        }
+
+        /* Matrix Cells (Cols 3-14) */
+        .matrix-table th:not(:first-child):not(:last-child):not(.col-num-side),
+        .matrix-table td:not(:first-child):not(:last-child):not(.col-num-side):not(.category-title-left):not(.category-title-right):not(.category-spacer) {
+            /* Width controlled by colgroup */
+            padding: 4px;
+            height: 38px;
+            /* Fixed height for squares */
+            /* Remove aspect-ratio to avoid flexbox issues if any */
+        }
+
+        /* Header Colors */
+        .header-pink {
+            background-color: #ffe5e5 !important;
+            color: #333;
+            vertical-align: middle !important;
+            padding: 12px !important;
+            position: relative;
+        }
+
+        .header-blue {
+            background-color: #dcf2fd !important;
+            color: #333;
+            vertical-align: middle !important;
+            padding: 12px !important;
+            position: relative;
+        }
+
+        /* Side Header Colors */
+        .side-header-pink {
+            background-color: #ffe5e5 !important;
+        }
+
+        .side-header-blue {
+            background-color: #dcf2fd !important;
+        }
+
+        .side-num-pink {
+            background-color: #fff0f0 !important;
+            /* Slightly lighter pink for numbers */
+        }
+
+        .side-num-blue {
+            background-color: #eaf8ff !important;
+            /* Slightly lighter blue for numbers */
+        }
+
+        /* Category Row Styles */
+        .category-row td {
+            background-color: #f8f9fa;
+            /* Slightly off-white for distinction? No, white in image */
+            background-color: #fff;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            font-weight: bold;
+            color: #000;
+            padding: 4px 12px;
+            /* Thinner row */
+            font-size: 11px;
+        }
+
+        /* Interactive Cells */
+        .bg-cell-soft-red {
+            background-color: #ffe5e5;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .bg-cell-soft-blue {
+            background-color: #dcf2fd;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .interactive-cell:hover {
+            opacity: 0.8;
+            outline: 2px solid #aaa;
+        }
+
+        /* Tooltip Styling */
+        #customTooltip {
+            display: none;
+            position: absolute;
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            font-size: 13px;
+            max-width: 300px;
+            z-index: 1000;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        #customTooltip strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #000;
+        }
+
+        #customTooltip p {
+            margin: 0 0 10px 0;
+            color: #555;
+        }
+
+        /* Arrow for tooltip */
+        #customTooltip::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: -6px;
+            /* Left side arrow */
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            transform: rotate(45deg);
+            border-left: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Tabs Styling */
+        .custom-tabs {
+            display: flex;
+            gap: 32px;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 24px;
+        }
+
+        .custom-tab {
+            padding: 12px 4px;
+            font-weight: 600;
+            color: #666;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -1px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .custom-tab.active {
+            color: #0A58CA;
+            border-bottom-color: #0A58CA;
+        }
+
+        /* Tooltip Styling */
+        #customTooltip {
+            display: none;
+            position: absolute;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            width: 320px;
+            z-index: 1050;
+            font-size: 14px;
+            pointer-events: none;
+        }
+
+        #customTooltip strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #111;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        #customTooltip p {
+            margin: 0 0 16px 0;
+            line-height: 1.5;
+            color: #555;
+            font-size: 13px;
+        }
+
+        #customTooltip p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Hover effect for interactive cells */
+        .interactive-cell {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .interactive-cell:hover {
+            transform: scale(1.15);
+            /* Pop */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 15;
+            position: relative;
+            border: 1px solid #aaa;
+            background-color: #fff;
+            /* Highlight */
+        }
+
+        /* Ensure specific colors override hover bg if needed, or let hover be white */
+        .interactive-cell.bg-soft-red:hover {
+            background-color: #ffe0e0;
+        }
+
+        .interactive-cell.bg-soft-blue:hover {
+            background-color: #d0ebff;
+        }
+
+        .table-header-program {
+            background-color: #0A58CA !important;
+            color: white !important;
+        }
+
+        /* Custom icons for the header arrows */
+        .header-arrow-icon {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* Rotate arrow for right side */
+        .arrow-right {
+            transform: rotate(0deg);
+        }
+
+        /* As is */
+        .arrow-left {
+            transform: rotate(0deg);
+        }
+
+        /* Check SVG later */
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================================
+       Hero Wrapper (Header + Hero)
+       =================================== -->
+    <div class="container">
+        <div class="hero-wrapper">
+            <!-- Header Section -->
+            <header class="main-header">
+                <div class="header-content">
+                    <!-- Logo -->
+                    <div class="logo-area">
+                        <img src="./assets/bau-logo-white.svg" alt="Bahçeşehir Üniversitesi Logo" class="header-logo">
+                    </div>
+
+                    <!-- Title -->
+                    <h1 class="header-title">Bilgi Paketi / Ders Kataloğu</h1>
+
+                    <!-- Language Button -->
+                    <a href="#" class="lang-btn">
+                        <i class="bi bi-globe"></i>
+                        ENGLISH
+                    </a>
+                </div>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h2 class="hero-title">Ders Adı veya Kodu ile Arama</h2>
+                    <div class="search-box">
+                        <div class="input-group">
+                            <span class="input-group-text search-icon">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="" aria-label="Ders ara">
+                            <button class="btn btn-search" type="button" id="searchButton">
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ===================================
+       Main Content Area
+       =================================== -->
+    <main class="main-content">
+        <div class="container">
+            <div class="main-wrapper">
+                <div class="row g-0">
+                    <!-- Sidebar -->
+                    <div class="col-lg-3 sidebar-column">
+                        <div class="sidebar-accordion">
+                            <div class="accordion" id="sidebarAccordion">
+                                <!-- Reusing sidebar items -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapse1">
+                                            Accordion Item #1
+                                        </button>
+                                    </h2>
+                                    <div id="collapse1" class="accordion-collapse collapse show"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">Alt menü içeriği.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                            Accordion Item #2
+                                        </button>
+                                    </h2>
+                                    <div id="collapse2" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">Alt menü içeriği.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                            Accordion Item #3
+                                        </button>
+                                    </h2>
+                                    <div id="collapse3" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">Alt menü içeriği.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                            Değişim Öğrencileri için Pratik Bilgiler
+                                        </button>
+                                    </h2>
+                                    <div id="collapse4" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">Bilgiler.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse5">
+                                            Accordion Item #1
+                                        </button>
+                                    </h2>
+                                    <div id="collapse5" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">Alt menü içeriği.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse6">
+                                            Accordion Item #2
+                                        </button>
+                                    </h2>
+                                    <div id="collapse6" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">Alt menü içeriği.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse7">
+                                            Accordion Item #3
+                                        </button>
+                                    </h2>
+                                    <div id="collapse7" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">Alt menü içeriği.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse8">
+                                            Değişim Öğrencileri için Pratik Bilgiler
+                                        </button>
+                                    </h2>
+                                    <div id="collapse8" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">Bilgiler.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="col-lg-9 content-column">
+                        <div class="content-card-wrapper">
+
+                            <!-- Page Title -->
+                            <h2 class="mb-4">TYYÇ - Program Kazanımları İlişkisi</h2>
+
+                            <!-- Program Info Block -->
+                            <div class="main-header-block mb-4">
+                                <table class="table table-bordered mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" class="table-header-program text-start ps-3 py-2">ÇOCUK
+                                                GELİŞİMİ (TÜRKÇE)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-white">
+                                            <td class="py-3 ps-3">Lisans</td>
+                                            <td class="py-3">TYYÇ: 6. Düzey</td>
+                                            <td class="py-3">QF-EHEA: 1. Düzey</td>
+                                            <td class="py-3">EQF-LLL: 6. Düzey</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Description -->
+                            <h4 class="fw-bold mb-3">72 - Sağlık</h4>
+                            <p class="mb-4 text-secondary">
+                                "Türkiye Yükseköğretim Yeterlilikler Çerçevesi" dikkate alınarak, ülkede sağlık alanında
+                                hizmet üreten tüm birimlerin bir bütün olarak ele alınması ile bu alanda farklı
+                                seviyelerde görev alacak kişilerin eğitim hedeflerinin bilgi-beceri ve yetkinlikler
+                                düzeyinde saptanması gerçekleştirilmiştir.
+                            </p>
+
+                            <!-- Tabs -->
+                            <div class="custom-tabs">
+                                <a class="custom-tab active">Akademik Ağırlıklı</a>
+                                <a class="custom-tab">Mesleki Ağırlıklı</a>
+                            </div>
+
+                            <!-- Missing Course Table -->
+                            <div class="table-responsive mb-4">
+                                <table class="table table-bordered align-middle" style="font-size: 14px;">
+                                    <thead class="table-light">
+                                        <tr style="background-color: #f8f9fa;">
+                                            <th style="background-color: #eee;">Ders Kodu</th>
+                                            <th style="background-color: #eee;">Ders Adı</th>
+                                            <th style="background-color: #eee;">Dili</th>
+                                            <th style="background-color: #eee;">Ön Koşul</th>
+                                            <th style="background-color: #eee;">Teorik</th>
+                                            <th style="background-color: #eee;">Pratik</th>
+                                            <th style="background-color: #eee;">Kredi</th>
+                                            <th style="background-color: #eee;">AKTS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="#" style="text-decoration: none; color: #0d6efd;">HST302</a>
+                                            </td>
+                                            <td>İletişim Becerileri ve Akademik Raporlama I</td>
+                                            <td>English</td>
+                                            <td>-</td>
+                                            <td>3</td>
+                                            <td>2</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Missing Temel Bilgiler Section -->
+                            <div class="card mb-4" style="border: 1px solid #dee2e6; border-radius: 4px;">
+                                <div class="card-header"
+                                    style="background-color: #f8f9fa; border-bottom: 1px solid #dee2e6; font-weight: bold; color: #0A58CA; padding: 10px 16px;">
+                                    Temel Bilgiler
+                                </div>
+                                <div class="card-body p-0">
+                                    <table class="table table-striped mb-0" style="font-size: 14px;">
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 25%; font-weight: 500;">
+                                                    Öğretim Dili</td>
+                                                <td>Türkçe</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-weight: 500;">Dersin Türü
+                                                </td>
+                                                <td>Must Course</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-weight: 500;">Dersin Seviyesi
+                                                </td>
+                                                <td>Lisans</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-weight: 500;">Dersin Veriliş
+                                                    Şekli</td>
+                                                <td>Yüz yüze</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-weight: 500;">Dersin
+                                                    Koordinatörü</td>
+                                                <td>Dr. Öğr. Üyesi MEHMET SİNAN ALTUNÇ</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-weight: 500;">Dersi
+                                                    Veren(ler)</td>
+                                                <td>
+                                                    Dr. Öğr. Üyesi SALİH OKTAR<br>
+                                                    Dr. Öğr. Üyesi GÜNER HANDE ULUTÜRK<br>
+                                                    Dr. Öğr. Üyesi MEHMET SİNAN ALTUNÇ
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-weight: 500;">Opsiyonel
+                                                    Program Bileşenleri</td>
+                                                <td>Yok</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-weight: 500;">Dersin Amacı
+                                                </td>
+                                                <td style="line-height: 1.6;">
+                                                    Ceza muhakemesinin yürüyüşü hakkında bilgi verilmesi
+                                                    amaçlanmaktadır. Bu bakımdan ilk derece muhakemesi ve kanunyolu
+                                                    muhakemesinin özellikleri ele alınmaktadır. Ayrıca araştırma ve
+                                                    koruma tedbirleri ile duruşmanın safhaları incelenmektedir.
+                                                    Böylelikle öğrencilerin ceza muhakemesi işlemlerini baştan sona
+                                                    görmesi amaçlanmaktadır.
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Matrix Table -->
+                            <div class="matrix-container">
+                                <table class="matrix-table">
+                                    <colgroup>
+                                        <!-- Left Side -->
+                                        <col style="width: 19.5%;"> <!-- Text Header -->
+                                        <col style="width: 3%;"> <!-- Number Header -->
+
+                                        <!-- Data Columns (1-12) -->
+                                        <col style="width: 4.5%;">
+                                        <col style="width: 4.5%;">
+                                        <col style="width: 4.5%;">
+                                        <col style="width: 4.5%;">
+                                        <col style="width: 4.5%;">
+                                        <col style="width: 4.5%;">
+                                        <col style="width: 4.5%;">
+                                        <col style="width: 4.5%;">
+                                        <col style="width: 4.5%;">
+                                        <col style="width: 4.5%;">
+                                        <col style="width: 4.5%;">
+                                        <col style="width: 4.5%;">
+
+                                        <!-- Right Side -->
+                                        <col style="width: 3%;"> <!-- Number Header -->
+                                        <col style="width: 19.5%;"> <!-- Text Header -->
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <!-- Top Left Header (Pink) -->
+                                            <th colspan="2" rowspan="2" class="header-pink"
+                                                style="border-right: 1px solid #ccc;">
+                                                <!-- Arrow Icon Bottom Left -->
+                                                <div style="position: absolute; bottom: 12px; left: 12px;">
+                                                    <!-- Corner Down Right Arrow -->
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="#222" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <polyline points="15 10 20 15 15 20"></polyline>
+                                                        <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                                                    </svg>
+                                                </div>
+                                                <div style="text-align: left; padding-left: 36px;">
+                                                    <!-- Indent for arrow -->
+                                                    <div
+                                                        style="font-size: 11px; font-weight: 600; color:#555; line-height: 1.2;">
+                                                        TYYÇ Temel Alan<br>Tanımlayıcıları</div>
+                                                    <div style="font-size: 13px; font-weight: bold; margin-top: 4px;">72
+                                                        - Sağlık</div>
+                                                </div>
+                                            </th>
+
+                                            <!-- Middle Header (Program Kazanımları) -->
+                                            <th colspan="12"
+                                                style="background: white; border-bottom: 0px; font-weight: bold; padding: 10px; text-align: left; padding-left: 15px;">
+                                                Program Kazanımları</th>
+
+                                            <!-- Right Header (Blue) -->
+                                            <th colspan="2" rowspan="2" class="header-blue"
+                                                style="border-left: 1px solid #ccc;">
+                                                <div style="text-align: right; padding-right: 36px;">
+                                                    <!-- Indent for arrow -->
+                                                    <div style="font-size: 13px; font-weight: bold;">TYYÇ
+                                                        5<br>(Önlisans) Düzey</div>
+                                                    <div
+                                                        style="font-size: 12px; font-weight: 600; color:#555; margin-top: 2px;">
+                                                        Tanımlayıcıları</div>
+                                                </div>
+                                                <!-- Arrow Icon Top Right -->
+                                                <div style="position: absolute; top: 12px; right: 12px;">
+                                                    <!-- Corner Down Left Arrow -->
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="#222" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <polyline points="9 10 4 15 9 20"></polyline>
+                                                        <path d="M20 4v7a4 4 0 0 1-4 4H4"></path>
+                                                    </svg>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                        <tr style="height: 30px;">
+                                            <!-- Numbers 1-12 -->
+                                            <th>1</th>
+                                            <th>2</th>
+                                            <th>3</th>
+                                            <th>4</th>
+                                            <th>5</th>
+                                            <th>6</th>
+                                            <th>7</th>
+                                            <th>8</th>
+                                            <th>9</th>
+                                            <th>10</th>
+                                            <th>11</th>
+                                            <th>12</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- 1 - BİLGİ SECTION -->
+                                        <tr class="category-row">
+                                            <td colspan="2" class="category-title-left">1 - Bilgi</td>
+                                            <td colspan="12" class="category-spacer"></td>
+                                            <td colspan="2" class="category-title-right">1 - Bilgi</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="side-header-pink" rowspan="3">Kuramsal - Olgusal</td>
+                                            <td class="side-num-pink">1</td>
+                                            <!-- Matrix Cols -->
+                                            <td class="bg-cell-soft-red interactive-cell" data-pk="Temel bilgi."
+                                                data-ta="Olgusal Hakimiyet.">1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <!-- Right Cols -->
+                                            <td class="side-num-blue">1</td>
+                                            <td class="side-header-blue" rowspan="3">Kuramsal - Olgusal</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="side-num-pink">2</td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell" data-pk="Eleştirel düşünme."
+                                                data-ta="Problem çözme.">2</td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="side-num-blue">2</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="side-num-pink">3</td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell" data-pk="Liderlik."
+                                                data-ta="Yönetim.">3</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="side-num-blue">3</td>
+                                        </tr>
+
+                                        <!-- 2 - BECERİLER SECTION -->
+                                        <tr class="category-row">
+                                            <td colspan="2" class="category-title-left">2 - Beceriler</td>
+                                            <td colspan="12" class="category-spacer"></td>
+                                            <td colspan="2" class="category-title-right">2 - Beceriler</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="side-header-pink" rowspan="2">Bilişsel - Uygulamalı</td>
+                                            <td class="side-num-pink">1</td>
+                                            <td class="bg-cell-soft-red interactive-cell" data-pk="Problem çözme."
+                                                data-ta="Analiz.">1</td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="side-num-blue">1</td>
+                                            <td class="side-header-blue" rowspan="2">Bilişsel - Uygulamalı</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="side-num-pink">2</td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell" data-pk="Teknoloji kullanımı."
+                                                data-ta="Dijital yetkinlik.">2</td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td class="side-num-blue">2</td>
+                                        </tr>
+
+                                        <!-- 3 - YETKİNLİKLER SECTION -->
+                                        <tr class="category-row">
+                                            <td colspan="2" class="category-title-left">3 - Yetkinlikler</td>
+                                            <td colspan="12" class="category-spacer"></td>
+                                            <td colspan="2" class="category-title-right">3 - Yetkinlikler</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="side-header-pink" rowspan="6">İletişim ve Sosyal Yetkinlik</td>
+                                            <td class="side-num-pink">1</td>
+                                            <td class="bg-cell-soft-red interactive-cell" data-pk="Etik değerler."
+                                                data-ta="Mesleki etik.">1</td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="side-num-blue">1</td>
+                                            <td class="side-header-blue" rowspan="6">İletişim ve Sosyal Yetkinlik</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="side-num-pink">2</td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell" data-pk="Sosyal sorumluluk."
+                                                data-ta="Toplum hizmeti.">2</td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td class="side-num-blue">2</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="side-num-pink">3</td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell" data-pk="İletişim."
+                                                data-ta="Global iletişim.">3</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="side-num-blue">3</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="side-num-pink">4</td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell" data-pk="Takım çalışması."
+                                                data-ta="Organizasyon.">4</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td class="side-num-blue">4</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="side-num-pink">5</td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td class="bg-cell-soft-red interactive-cell" data-pk="Öğrenme."
+                                                data-ta="Sürekli gelişim.">5</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td class="side-num-blue">5</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="side-num-pink">6</td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell" data-pk="Yabancı dil."
+                                                data-ta="Dil yetkinliği.">6</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="side-num-blue">6</td>
+                                        </tr>
+
+                                        <!-- Öğrenme Yetkinliği -->
+                                        <tr>
+                                            <td class="side-header-pink" rowspan="3">Öğrenme Yetkinliği</td>
+                                            <td class="side-num-pink">1</td>
+                                            <td class="bg-cell-soft-red interactive-cell" data-pk="Bilgi analizi."
+                                                data-ta="Analitik düşünme.">1</td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="side-num-blue">1</td>
+                                            <td class="side-header-blue" rowspan="3">Öğrenme Yetkinliği</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="side-num-pink">2</td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell" data-pk="Öğrenmeyi öğrenme."
+                                                data-ta="Metabilişsel.">2</td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td class="side-num-blue">2</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="side-num-pink">3</td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell" data-pk="Bağımsız çalışma."
+                                                data-ta="Öz yönetim.">3</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="side-num-blue">3</td>
+                                        </tr>
+
+                                        <!-- Bağımsız Çalışabilme ... (3 Rows) -->
+                                        <tr>
+                                            <td class="side-header-pink" rowspan="3">Bağımsız
+                                                Çalışabilme<br>ve<br>Sorumluluk Alabilme Yetkinliği</td>
+                                            <td class="side-num-pink">1</td>
+                                            <!-- Row 1 -->
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell" data-pk="Proje."
+                                                data-ta="Sorumluluk.">1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="side-num-blue">1</td>
+                                            <td class="side-header-blue" rowspan="3">Bağımsız
+                                                Çalışabilme<br>ve<br>Sorumluluk Alabilme Yetkinliği</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="side-num-pink">2</td>
+                                            <!-- Row 2 -->
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell" data-pk="Karar verme."
+                                                data-ta="İnisiyatif.">2</td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="side-num-blue">2</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="side-num-pink">3</td>
+                                            <!-- Row 3 -->
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell" data-pk="Gelişim."
+                                                data-ta="Kariyer.">3</td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td class="side-num-blue">3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===================================
+       Footer Section
+       =================================== -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2026 • Bahçeşehir Üniversitesi</p>
+                <a href="#" class="footer-icon back-to-top" title="Yukarı Çık">
+                    <i class="bi bi-arrow-up-circle"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Custom Tooltip Element -->
+    <div id="customTooltip">
+        <strong>Program Kazanımı: <span id="tooltipPK" style="font-weight: normal;"></span></strong>
+        <p></p>
+        <strong>Temel Alan: <span id="tooltipTA" style="font-weight: normal;"></span></strong>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Tooltip Script -->
+    <script>
+        const tooltip = document.getElementById('customTooltip');
+        const tooltipPK = document.getElementById('tooltipPK');
+        const tooltipTA = document.getElementById('tooltipTA');
+        const cells = document.querySelectorAll('.interactive-cell');
+
+        cells.forEach(cell => {
+            // Only add event listeners if the cell has data (the ones with numbers also generally have data, or we treat empty colored ones as 'potentially' having it but we only filled some for demo)
+            // The user req says "sayı barındıran her hücrenin üstüne gelince açılacak".
+
+            // So we strictly check if innerText is not empty.
+            if (cell.innerText.trim() !== "") {
+                cell.addEventListener('mouseenter', (e) => {
+                    const pkData = cell.getAttribute('data-pk');
+                    const taData = cell.getAttribute('data-ta');
+
+                    if (pkData && taData) {
+                        tooltipPK.textContent = pkData;
+                        tooltipTA.textContent = taData;
+                        tooltip.style.display = 'block';
+                        positionTooltip(e, tooltip);
+                    }
+                });
+
+                cell.addEventListener('mousemove', (e) => {
+                    positionTooltip(e, tooltip);
+                });
+
+                cell.addEventListener('mouseleave', () => {
+                    tooltip.style.display = 'none';
+                });
+            }
+        });
+
+        function positionTooltip(event, tooltipEl) {
+            const xOffset = 20;
+            const yOffset = 20;
+
+            // Basic positioning
+            let left = event.pageX + xOffset;
+            let top = event.pageY + yOffset;
+
+            // Viewport boundary detection could be added here if needed
+            // But simple offset usually works for this context
+
+            tooltipEl.style.left = left + 'px';
+            tooltipEl.style.top = top + 'px';
+        }
+    </script>
+</body>
+
+</html>
