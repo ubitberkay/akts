@@ -808,3 +808,559 @@ h4 {
     text-align: left;
     border-bottom: 1px solid var(--bg-gray-300);
 }
+
+/* ===================================
+   Course Program Detail Page Styles
+   =================================== */
+.program-header-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.program-header-table th.program-header-title {
+    background-color: var(--bg-brand);
+    color: white;
+    padding: 12px 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: left;
+    border: none;
+}
+
+.program-header-table td {
+    padding: 12px;
+    vertical-align: top;
+    border-right: 1px solid #dee2e6;
+    background-color: white;
+}
+
+.program-header-table td:last-child {
+    border-right: none;
+}
+
+.program-header-table th {
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.program-header-table th:last-child {
+    border-right: none;
+}
+
+/* Summary Table */
+.summary-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.summary-table td {
+    padding: 12px 16px;
+    vertical-align: top;
+    border-right: 1px solid #dee2e6;
+}
+
+.summary-table td:last-child {
+    border-right: none;
+}
+
+.summary-table .blue-cell {
+    background-color: #e3f2fd;
+}
+
+.summary-table .green-cell {
+    background-color: #e8f5e9;
+}
+
+.summary-table .yellow-cell {
+    background-color: #fff9c4;
+}
+
+.summary-table .red-cell {
+    background-color: #ffebee;
+}
+
+.summary-value {
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 4px;
+    display: block;
+}
+
+.semester-title {
+    color: var(--text-brand);
+    font-weight: 600;
+    margin: 24px 0 12px 0;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* Course Tables */
+.semester-block {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.semester-header {
+    background-color: #f2f2f2;
+    /* Zebra Dark Color */
+    color: var(--text-brand);
+    padding: 12px 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Course Tables */
+.course-table {
+    width: 100%;
+    margin-bottom: 0;
+    /* Remove bottom margin as it's inside block */
+    font-size: 13px;
+    table-layout: fixed;
+    /* Enforce column widths */
+}
+
+.course-table th {
+    background-color: #f8f9fa;
+    padding: 10px 12px;
+    font-weight: 700;
+    border-bottom: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    color: #212529;
+    vertical-align: middle;
+}
+
+/* Specific Column Widths */
+.col-code {
+    width: 10%;
+}
+
+.col-name {
+    width: 30%;
+}
+
+.col-lang {
+    width: 10%;
+}
+
+.col-theo {
+    width: 6%;
+}
+
+.col-prac {
+    width: 6%;
+}
+
+.col-local {
+    width: 8%;
+}
+
+.col-ects {
+    width: 6%;
+}
+
+.col-cat {
+    width: 24%;
+}
+
+.course-table th:last-child {
+    border-right: none;
+}
+
+.course-table th:last-child {
+    border-right: none;
+}
+
+.course-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    /* background-color: white; Removed to allow striping */
+    vertical-align: middle;
+}
+
+/* Zebra Striping */
+.course-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.course-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+    /* Light Gray */
+}
+
+.course-table td:last-child {
+    border-right: none;
+}
+
+.course-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Category Colors */
+.cat-mesleki {
+    background-color: #e0f2f1 !important;
+}
+
+.cat-yetkinlik {
+    background-color: #fffde7 !important;
+}
+
+.cat-temel {
+    background-color: #e3f2fd !important;
+}
+
+.cat-uygulama {
+    background-color: #ffebee !important;
+}
+
+.text-brand {
+    color: var(--text-brand);
+    font-weight: 600;
+}
+
+
+/* ===================================
+   Relationship Matrix Page Styles
+   =================================== */
+
+/* Info Table */
+.matrix-info-table {
+    margin-bottom: 32px !important;
+}
+
+.matrix-description {
+    margin-bottom: 24px;
+}
+
+.matrix-description h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-brand);
+    margin-bottom: 16px;
+}
+
+.matrix-description p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+
+
+/* REF: program-kazanimlari-iliskisi.html Matrix Styles */
+.matrix-container {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    background: #fff;
+    margin-bottom: 24px;
+}
+
+.matrix-table {
+    width: 100%;
+    min-width: 1800px;
+    /* Increased to ensure side text is readable */
+    border-collapse: collapse;
+    font-size: 11px;
+    table-layout: fixed;
+}
+
+.matrix-table th,
+.matrix-table td {
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #e0e0e0;
+    padding: 6px;
+    height: 40px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* Specific Columns */
+.matrix-table th:first-child,
+.matrix-table td:first-child,
+.matrix-table th:last-child,
+.matrix-table td:last-child {
+    text-align: left;
+    padding: 10px 14px;
+    font-weight: 600;
+    color: #333;
+    white-space: normal;
+    /* Ensure text wraps normally */
+    line-height: 1.4;
+    overflow-wrap: normal;
+    word-wrap: normal;
+}
+
+/* Header Colors */
+.header-pink {
+    background-color: #ffe5e5 !important;
+    color: #333;
+    vertical-align: middle !important;
+    padding: 12px !important;
+    position: relative;
+    font-size: 13px;
+}
+
+.header-blue {
+    background-color: #dcf2fd !important;
+    color: #333;
+    vertical-align: middle !important;
+    padding: 12px !important;
+    position: relative;
+    font-size: 13px;
+}
+
+.side-header-pink {
+    background-color: #ffe5e5 !important;
+    font-size: 11px;
+}
+
+.side-header-blue {
+    background-color: #dcf2fd !important;
+    font-size: 11px;
+}
+
+/* Category Row */
+.category-row td {
+    background-color: #fff;
+    /* Clean white */
+    border-top: 1px solid #ccc;
+    /* Distinct border */
+    border-bottom: 1px solid #ccc;
+    font-weight: 800;
+    /* Bolder */
+    color: #000;
+    padding: 8px 12px;
+    font-size: 12px;
+    text-align: left;
+}
+
+.category-row td:last-child {
+    text-align: left;
+}
+
+/* Data Cells */
+.matrix-cell {
+    padding: 0 !important;
+    position: relative;
+    height: 50px;
+}
+
+/* Stripes */
+.stripe {
+    width: 30%;
+    height: 70%;
+    min-height: 30px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.stripe.pink {
+    background-color: #ffebee;
+    border-left: 3px solid #ef5350;
+}
+
+.stripe.blue {
+    background-color: #e3f2fd;
+    border-left: 3px solid #42a5f5;
+}
+
+/* Tooltip Adjustments */
+.tooltip-inner {
+    max-width: 300px;
+    text-align: left;
+}
+
+.tooltip-trigger {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+/* ===================================
+   NEW Relationship Matrix Styles (Screenshot Match)
+   =================================== */
+
+/* Program Info Table (Red Header) */
+.program-info-table {
+    font-size: 13px;
+    border: 1px solid #ddd;
+    margin-bottom: 0;
+}
+
+.program-info-header {
+    background-color: #9c3335 !important;
+    /* Dark brownish-red */
+    color: white;
+    font-weight: 700;
+    padding: 10px !important;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.program-info-subheaders th {
+    background-color: #f8f9fa;
+    font-weight: 700;
+    font-size: 12px;
+    vertical-align: middle;
+    padding: 10px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* Matrix Table Container */
+.matrix-container-new {
+    overflow-x: hidden;
+    /* Hide scrollbar since it should fit */
+    background: white;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+/* New Matrix Table */
+.matrix-table-new {
+    width: 100%;
+    min-width: auto;
+    /* Remove fixed width to fit screen */
+    border-collapse: collapse;
+    font-size: 11px;
+    /* Slightly smaller to fit */
+    table-layout: fixed;
+}
+
+.matrix-table-new th,
+.matrix-table-new td {
+    border: 1px solid #ccc;
+    /* Slightly darker border */
+    text-align: center;
+    vertical-align: middle;
+    padding: 4px;
+    /* Reduced padding */
+    overflow-wrap: break-word;
+    /* Ensure text wraps */
+}
+
+/* Header Cells */
+.matrix-corner-pink {
+    background-color: #ffe5e5 !important;
+    vertical-align: middle;
+    padding: 0 !important;
+    position: relative;
+    height: 80px;
+}
+
+.matrix-corner-blue {
+    background-color: #e3f2fd !important;
+    vertical-align: middle;
+    padding: 0 !important;
+    position: relative;
+    height: 80px;
+}
+
+.matrix-top-header {
+    background-color: white;
+    font-weight: 700;
+    text-align: left;
+    padding-left: 10px !important;
+    font-size: 12px;
+    border-bottom: none !important;
+}
+
+.matrix-numbers-row th {
+    background-color: white;
+    font-weight: 700;
+    font-size: 10px;
+    height: 25px;
+    /* Compact height */
+}
+
+/* Category Row */
+.matrix-category-row td {
+    background-color: white;
+    text-align: left;
+    padding: 8px !important;
+    vertical-align: top;
+    border-top: 2px solid #ccc;
+}
+
+/* Side Cells (Content) */
+.matrix-side-cell {
+    text-align: left !important;
+    padding: 8px !important;
+    font-size: 11px;
+    line-height: 1.3;
+    color: #333;
+    font-weight: 500;
+    vertical-align: top;
+}
+
+.matrix-side-cell.pink-bg {
+    background-color: #ffe5e5;
+}
+
+.matrix-side-cell.blue-bg {
+    background-color: #e3f2fd;
+}
+
+/* Data Cells & Bars */
+.matrix-data-cell {
+    padding: 0 !important;
+    height: 100%;
+    background-color: white;
+    /* Default white */
+    vertical-align: top;
+}
+
+.bar {
+    width: 50%;
+    /* Slightly wider bar for visibility */
+    height: 100%;
+    /* Full height of cell */
+    margin: 0 auto;
+    display: block;
+    min-height: 50px;
+    /* Ensure visibility */
+}
+
+.bar.pink {
+    background-color: #ffcdd2;
+    /* Darker pink for bar */
+    border-left: 1px solid #ef5350;
+    border-right: 1px solid #ef5350;
+    opacity: 0.6;
+}
+
+.bar.blue {
+    background-color: #bbdefb;
+    /* Darker blue for bar */
+    border-left: 1px solid #42a5f5;
+    border-right: 1px solid #42a5f5;
+    opacity: 0.6;
+}
