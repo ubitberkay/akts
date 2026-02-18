@@ -215,11 +215,12 @@
                             </h3>
 
                             <!-- Program Info Table (Red Header) -->
-                            <div class="table-responsive mb-5">
-                                <table class="table table-bordered text-center align-middle program-info-table">
+                            <div class="table-responsive mb-5"
+                                style="border-radius: 12px; overflow: hidden; border: 1px solid #ddd;">
+                                <table class="table table-bordered text-center align-middle program-info-table mb-0">
                                     <thead>
                                         <tr>
-                                            <th colspan="5" class="program-info-header text-start ps-3">
+                                            <th colspan="5" class="program-info-header text-white text-start ps-3">
                                                 BİLGİSAYAR PROGRAMCILIĞI ÖNLİSANS PROGRAMI
                                             </th>
                                         </tr>
@@ -264,7 +265,9 @@
                             </p>
 
                             <!-- Matrix Table Container -->
-                            <div class="matrix-container-new">
+                            <!-- Matrix Table Container -->
+                            <div class="matrix-container-new"
+                                style="border-radius: 12px; overflow: hidden; border: 1px solid #ccc;">
                                 <table class="matrix-table-new">
                                     <colgroup>
                                         <!-- Left Header -->
@@ -292,10 +295,14 @@
                                         <tr>
                                             <th rowspan="2" class="matrix-corner-pink">
                                                 <div class="d-flex justify-content-between h-100 p-2 position-relative">
-                                                    <div
-                                                        style="align-self: flex-end; position: absolute; bottom: 10px; left: 10px;">
-                                                        <i class="bi bi-arrow-return-right"
-                                                            style="font-size: 20px; transform: rotate(90deg);"></i>
+                                                    <!-- Arrow Icon Bottom Left -->
+                                                    <div style="position: absolute; bottom: 12px; left: 12px;">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                            stroke="#222" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <polyline points="15 10 20 15 15 20"></polyline>
+                                                            <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                                                        </svg>
                                                     </div>
                                                     <div class="text-start ps-5 pt-2"
                                                         style="font-weight: 700; color: #333; font-size: 12px;">
@@ -303,7 +310,7 @@
                                                     </div>
                                                 </div>
                                             </th>
-                                            <th colspan="14" class="matrix-top-header">
+                                            <th colspan="14" class="matrix-top-header text-center">
                                                 Program Öğrenme Çıktıları (PÖÇ)
                                             </th>
                                             <th rowspan="2" class="matrix-corner-blue">
@@ -312,10 +319,14 @@
                                                         style="font-weight: 700; color: #333; font-size: 12px;">
                                                         Tyç 5 Düzey<br>(Önlisans)<br>Yeterlilik Tür<br>Tanımlayıcıları
                                                     </div>
-                                                    <div
-                                                        style="align-self: flex-start; position: absolute; top: 10px; right: 10px;">
-                                                        <i class="bi bi-arrow-return-left"
-                                                            style="font-size: 20px; transform: rotate(-90deg);"></i>
+                                                    <!-- Arrow Icon Top Right -->
+                                                    <div style="position: absolute; top: 12px; right: 12px;">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                            stroke="#222" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <polyline points="9 10 4 15 9 20"></polyline>
+                                                            <path d="M20 4v7a4 4 0 0 1-4 4H4"></path>
+                                                        </svg>
                                                     </div>
                                                 </div>
                                             </th>
@@ -353,46 +364,71 @@
                                                     ve/veya olgusal bilgi olarak tanımlanmıştır.)</span>
                                             </td>
                                         </tr>
-                                        <!-- 1 - Bilgi Content -->
+                                        <!-- BİLGI Row 1 -->
                                         <tr>
                                             <td class="matrix-side-cell pink-bg">
                                                 Bir iş veya öğrenme alanının sınırlarının farkında olarak, bu alana
                                                 özgü, kapsamlı/kuramsal ve olgusal bilgilere sahip olma
                                             </td>
-                                            <!-- Data Cells -->
-                                            <td class="matrix-data-cell">
-                                                <div class="bar pink"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-pink"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar pink"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-pink"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar pink"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-pink"></td>
                                             <td class="matrix-data-cell"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar pink"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-pink"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar pink"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-pink"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar pink"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-pink"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar pink"></div>
-                                            </td>
-
+                                            <td class="matrix-data-cell td-pink"></td>
                                             <td class="matrix-side-cell blue-bg">
                                                 Bir iş alanında mesleğini yapabilecek ileri düzeyde kuramsal ve olgusal
                                                 kapsamlı bilgilere sahip olup bu bilgileri kullanır.
                                             </td>
+                                        </tr>
+                                        <!-- BİLGI Row 2 -->
+                                        <tr>
+                                            <td class="matrix-side-cell pink-bg">Kavramsal farkındalık ve eleştirel
+                                                düşünme.</td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-pink"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-pink"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-pink"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-pink"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-pink"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-side-cell blue-bg">Eleştirel yaklaşımla değerlendirme
+                                                yetkisine sahip olma.</td>
+                                        </tr>
+                                        <!-- BİLGI Row 3 -->
+                                        <tr>
+                                            <td class="matrix-side-cell pink-bg">Yöntem ve teknik bilgisi.</td>
+                                            <td class="matrix-data-cell td-blue"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-pink"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-blue"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-pink"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-blue"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-pink"></td>
+                                            <td class="matrix-data-cell td-pink"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-blue"></td>
+                                            <td class="matrix-side-cell blue-bg">Farklı yöntemleri kullanarak analiz
+                                                etme ve çözümleme.</td>
                                         </tr>
 
                                         <!-- 2 - Beceriler Category -->
@@ -409,48 +445,52 @@
                                                     uygulama becerileri olarak tanımlanmıştır.)</span>
                                             </td>
                                         </tr>
-                                        <!-- 2 - Beceriler Content -->
+                                        <!-- BECERİLER Row 1 -->
                                         <tr>
                                             <td class="matrix-side-cell pink-bg">
                                                 Sınırları belirlenmiş soyut ve somut sorunlara yaratıcı çözümler
                                                 geliştirmede gerekli, kapsamlı, bilişsel ve uygulamalı becerilere sahip
                                                 olma
                                             </td>
-                                            <!-- Data Cells -->
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar blue"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-blue"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar blue"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-blue"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar blue"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-blue"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar blue"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-blue"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar blue"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-blue"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar blue"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-blue"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar blue"></div>
-                                            </td>
-
+                                            <td class="matrix-data-cell td-blue"></td>
                                             <td class="matrix-side-cell blue-bg">
                                                 Bir iş alanında mesleğine özgü ileri öncesi düzeyde kapsamlı bilişsel ve
                                                 uygulama becerilerine sahip olup bunları yakın iş alanlarında da
                                                 kullanır.
                                             </td>
+                                        </tr>
+                                        <!-- BECERİLER Row 2 -->
+                                        <tr>
+                                            <td class="matrix-side-cell pink-bg">Teknoloji ve Bilgi okuryazarlığı.</td>
+                                            <td class="matrix-data-cell td-pink"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-blue"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-pink"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-blue"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-pink"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-blue"></td>
+                                            <td class="matrix-data-cell td-blue"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-pink"></td>
+                                            <td class="matrix-side-cell blue-bg">Bilgi ve iletişim teknolojilerini etkin
+                                                kullanabilme.</td>
                                         </tr>
 
                                         <!-- 3 - Yetkinlikler Category -->
@@ -467,84 +507,71 @@
                                                     Çalışabilme", "Sorumluluk Alabilme", "Öğrenme" Yetkinlikleri)</span>
                                             </td>
                                         </tr>
-                                        <!-- 3 - Yetkinlikler Content -->
+                                        <!-- YETKİNLİKLER Row 1 -->
                                         <tr>
                                             <td class="matrix-side-cell pink-bg">
                                                 Öngörülemeyen değişikliklerin olduğu ortamlarda sorumluluk alma, plan
                                                 yapma ve etik kurallara uygun davranma.
                                             </td>
-                                            <!-- Data Cells -->
-                                            <td class="matrix-data-cell">
-                                                <div class="bar pink"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-pink"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar pink"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-pink"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar pink"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-pink"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar pink"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-pink"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar pink"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-pink"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar pink"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-pink"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar pink"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-pink"></td>
                                             <td class="matrix-data-cell"></td>
-
                                             <td class="matrix-side-cell blue-bg">
                                                 Bireysel ya da ekip üyesi olarak mesleğini icra eder ve mesleğine
                                                 ilişkin beklenmeyen durumları algılar, gözetir ve yönetir.
                                             </td>
                                         </tr>
-
-                                        <!-- Additional Content Row (Last one in screenshot) -->
+                                        <!-- YETKİNLİKLER Row 2 -->
+                                        <tr>
+                                            <td class="matrix-side-cell pink-bg">Öğrenmeyi öğrenme yetkinliği.</td>
+                                            <td class="matrix-data-cell td-blue"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-blue"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-blue"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-blue"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-blue"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-blue"></td>
+                                            <td class="matrix-data-cell"></td>
+                                            <td class="matrix-data-cell td-blue"></td>
+                                            <td class="matrix-data-cell td-blue"></td>
+                                            <td class="matrix-side-cell blue-bg">Yaşam boyu öğrenme bilincine sahip
+                                                olma.</td>
+                                        </tr>
+                                        <!-- YETKİNLİKLER Row 3 -->
                                         <tr>
                                             <td class="matrix-side-cell pink-bg">
                                                 Bir iş veya öğrenme alanındaki bilgi, beceri, tutum ve davranışlar ile
                                                 toplumsal ve etik meseleler ve sorumluluklar ilişkisinin farkında olma
                                             </td>
-                                            <!-- Data Cells (Assumed pattern for now as screenshot cuts off data) -->
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar blue"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-blue"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar blue"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-blue"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar blue"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-blue"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar blue"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-blue"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar blue"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-blue"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar blue"></div>
-                                            </td>
+                                            <td class="matrix-data-cell td-blue"></td>
                                             <td class="matrix-data-cell"></td>
-                                            <td class="matrix-data-cell">
-                                                <div class="bar blue"></div>
-                                            </td>
-
+                                            <td class="matrix-data-cell td-blue"></td>
                                             <td class="matrix-side-cell blue-bg">
                                                 Alana özgü bilişim teknolojilerini en az Avrupa Bilgisayar Kullanma
                                                 Lisansı Temel Düzeyinde kullanır.

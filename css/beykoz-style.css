@@ -1217,7 +1217,7 @@ h4 {
 }
 
 .program-info-header {
-    background-color: #9c3335 !important;
+    background-color: var(--bg-brand) !important;
     /* Dark brownish-red */
     color: white;
     font-weight: 700;
@@ -1334,33 +1334,18 @@ h4 {
     padding: 0 !important;
     height: 100%;
     background-color: white;
-    /* Default white */
-    vertical-align: top;
+    vertical-align: middle;
+    /* Center vertically if needed, or top */
 }
 
-.bar {
-    width: 50%;
-    /* Slightly wider bar for visibility */
-    height: 100%;
-    /* Full height of cell */
-    margin: 0 auto;
-    display: block;
-    min-height: 50px;
-    /* Ensure visibility */
+/* Filled Cells (Applied directly to TD) */
+.td-pink {
+    background-color: #ffcdd2 !important;
+    opacity: 0.8;
+    /* Slightly more visible */
 }
 
-.bar.pink {
-    background-color: #ffcdd2;
-    /* Darker pink for bar */
-    border-left: 1px solid #ef5350;
-    border-right: 1px solid #ef5350;
-    opacity: 0.6;
-}
-
-.bar.blue {
-    background-color: #bbdefb;
-    /* Darker blue for bar */
-    border-left: 1px solid #42a5f5;
-    border-right: 1px solid #42a5f5;
-    opacity: 0.6;
+.td-blue {
+    background-color: #bbdefb !important;
+    opacity: 0.8;
 }
