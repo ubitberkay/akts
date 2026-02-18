@@ -1,0 +1,810 @@
+/* ===================================
+   Beykoz AKTS Bilgi Paketi - Style Guide
+   =================================== */
+
+/* Google Fonts - Figtree */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap');
+
+/* CSS Custom Properties (Variables) */
+:root {
+    /* Backgrounds */
+    --bg-white: #FFFFFF;
+    --bg-gray-200: #E5E7EB;
+    --bg-gray-300: #CBD0D6;
+    --bg-gray-400: #949BA8;
+    --bg-gray-800: #1F2937;
+    --bg-brand: #8A343C;
+    /* Beykoz Red */
+
+    /* Text Colors */
+    --text-default: #000000;
+    --text-light: #4B5563;
+    --text-brand: #8A343C;
+    /* Beykoz Red */
+    --text-white: #FFFFFF;
+
+    /* Shadows */
+    --shadow-big: 0 4px 24px rgba(0, 0, 0, 0.08);
+
+    /* Font */
+    --font-family: 'Figtree', sans-serif;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--text-default);
+    background-color: var(--bg-gray-200);
+}
+
+/* Typography */
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.body-regular {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.body-medium {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.body-semibold {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.small-regular {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.small-medium {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.small-semibold {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* ===================================
+   Hero Wrapper
+   =================================== */
+.hero-wrapper {
+    margin-top: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-big);
+    position: relative;
+    background: linear-gradient(135deg, var(--bg-gray-800) 0%, #374151 100%);
+}
+
+.hero-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../assets/hero-bg.jpg') center center / cover no-repeat;
+    /* Ensure path is correct or use generic */
+    opacity: 0.4;
+    z-index: 0;
+}
+
+/* ===================================
+   Header Styles
+   =================================== */
+.main-header {
+    background-color: transparent;
+    padding: 0;
+    position: relative;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px;
+    background: transparent;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+/* Adjusted for potential placeholder text logo if image missing */
+.logo-area img {
+    height: 52.64px;
+}
+
+.header-title {
+    color: var(--text-white);
+    font-size: 20px;
+    font-weight: 500;
+    /* Fixed typo from original css which had 35px weight?? */
+    margin: 0;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 20px;
+    color: var(--text-white);
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
+}
+
+.lang-btn i {
+    font-size: 14px;
+}
+
+/* ===================================
+   Hero Section
+   =================================== */
+.hero-section {
+    position: relative;
+    background: transparent;
+    padding: 24px;
+    min-height: 280px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    color: var(--text-white);
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.search-box {
+    width: 500px;
+}
+
+.search-box .input-group {
+    background-color: var(--bg-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-box .search-icon {
+    background-color: var(--bg-white);
+    border: none;
+    padding: 12px 12px 12px 16px;
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+.search-box .form-control {
+    background-color: var(--bg-white);
+    border: none;
+    border-radius: 0;
+    padding: 12px 16px 12px 8px;
+    font-size: 14px;
+    height: 48px;
+    color: var(--text-default);
+}
+
+.search-box .form-control::placeholder {
+    color: var(--text-light);
+}
+
+.search-box .form-control:focus {
+    box-shadow: none;
+    outline: none;
+    background-color: var(--bg-white);
+}
+
+.search-box .btn-search {
+    background-color: var(--bg-brand);
+    /* Beykoz Red */
+    border: none;
+    border-radius: 12px !important;
+    padding: 0;
+    color: var(--text-white);
+    height: 36px;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 6px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+}
+
+.search-box .btn-search:hover {
+    background-color: #6d2930;
+    /* Darker Beykoz Red */
+}
+
+/* ===================================
+   Main Content Area
+   =================================== */
+.main-content {
+    padding: 24px 0;
+}
+
+/* Main Wrapper - Container */
+.main-wrapper {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+}
+
+/* Sidebar Column */
+.sidebar-column {
+    background-color: transparent;
+    padding-bottom: 24px;
+    padding-left: 0;
+}
+
+/* Content Column */
+.content-column {
+    background-color: transparent;
+    padding: 0 0 0 24px;
+    border-left: none;
+    border-radius: 0;
+}
+
+.content-card-wrapper {
+    background-color: var(--bg-white);
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-big);
+    height: 100%;
+}
+
+/* Sidebar Accordion */
+.sidebar-accordion {
+    background-color: var(--bg-gray-300);
+    border-radius: 12px;
+    box-shadow: none;
+    overflow: visible;
+    padding: 16px;
+    height: fit-content;
+}
+
+.sidebar-accordion .accordion-item {
+    border: none;
+    border-bottom: 1px solid var(--bg-gray-300);
+    background-color: transparent;
+}
+
+.sidebar-accordion .accordion-item:last-child {
+    border-bottom: none;
+}
+
+.sidebar-accordion .accordion-button {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-default);
+    background-color: transparent;
+    padding: 14px 0;
+    box-shadow: none;
+}
+
+.sidebar-accordion .accordion-button:not(.collapsed) {
+    color: var(--text-brand);
+}
+
+
+.sidebar-accordion .accordion-button:focus {
+    box-shadow: none;
+    /* Remove focus ring */
+    border-color: transparent;
+}
+
+.sidebar-accordion .accordion-button::after {
+    background-size: 12px;
+    width: 12px;
+    height: 12px;
+}
+
+.sidebar-accordion .accordion-body {
+    padding: 8px 0 16px;
+    font-size: 14px;
+    color: var(--text-light);
+    background-color: transparent;
+}
+
+/* Content Card */
+.content-card {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.content-card h2 {
+    color: var(--text-default);
+    margin-bottom: 0;
+}
+
+.content-card p {
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* AKTS Table */
+.akts-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0;
+    font-size: 14px;
+    border: 1px solid var(--bg-gray-300);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.akts-table thead th {
+    background-color: var(--bg-gray-200);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-default);
+    border-right: 1px solid var(--bg-gray-300);
+    border-bottom: 1px solid var(--bg-gray-300);
+}
+
+.akts-table thead th:last-child {
+    border-right: none;
+}
+
+.akts-table tbody td {
+    padding: 10px 16px;
+    border-right: 1px solid var(--bg-gray-300);
+    border-bottom: 1px solid var(--bg-gray-300);
+    color: var(--text-light);
+}
+
+.akts-table tbody td:last-child {
+    border-right: none;
+}
+
+.akts-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.akts-table tbody tr {
+    background-color: var(--bg-white);
+}
+
+.akts-table tbody tr:nth-of-type(even) {
+    background-color: #F3F4F6;
+}
+
+/* Program Description */
+.program-description {
+    margin: 0;
+}
+
+.program-description p {
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-light);
+    text-align: justify;
+}
+
+/* Tabs Section */
+.program-tabs {
+    margin-top: 0;
+}
+
+.program-tabs .nav-link {
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+}
+
+.program-tabs .nav-link:hover {
+    border-color: transparent;
+    color: var(--text-default);
+}
+
+.program-tabs .nav-link.active {
+    color: var(--text-brand);
+    /* Beykoz Red */
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom: 2px solid var(--text-brand);
+    /* Beykoz Red */
+}
+
+.program-tabs .tab-content {
+    padding: 16px 0;
+}
+
+.tab-content h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.tab-content .subtitle {
+    color: var(--text-light);
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+.tab-content ol,
+.tab-content ul {
+    padding-left: 20px;
+    margin-bottom: 16px;
+}
+
+.tab-content li {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.tab-content a {
+    color: var(--text-brand);
+    /* Beykoz Red */
+    text-decoration: none;
+    font-size: 14px;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+.tab-content a:hover {
+    text-decoration: underline;
+}
+
+/* ===================================
+   Footer Styles
+   =================================== */
+.main-footer {
+    background-color: transparent;
+    padding: 24px 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #343A40;
+    padding: 24px;
+    border-radius: 12px;
+    color: #fff;
+    min-height: 56px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.footer-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    background: transparent;
+    line-height: 1;
+}
+
+/* ===================================
+   Responsive Changes (matching styles.css)
+   =================================== */
+@media (max-width: 991px) {
+    .sidebar-accordion {
+        margin-bottom: 24px;
+    }
+
+    .header-content {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .header-title {
+        order: 3;
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        position: relative;
+    }
+
+    .header-title {
+        display: none;
+    }
+
+    .header-content {
+        padding: 12px 16px;
+    }
+
+    .logo-area img {
+        height: 32px;
+    }
+
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+
+    .hero-section {
+        padding: 80px 16px 30px 16px;
+        min-height: auto;
+    }
+
+    .hero-title {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .search-box {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 16px;
+    }
+
+    .search-box .form-control {
+        height: 40px;
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .search-box .btn-search {
+        height: 40px;
+        padding: 8px 16px;
+    }
+
+    .sidebar-accordion {
+        background-color: var(--bg-gray-300);
+        border-radius: 8px;
+        box-shadow: none;
+    }
+
+    .sidebar-accordion .accordion-item {
+        background-color: var(--bg-gray-300);
+        border-bottom: 1px solid var(--bg-gray-300);
+    }
+
+    .sidebar-accordion .accordion-button {
+        background-color: var(--bg-gray-300);
+        color: var(--text-default);
+        font-size: 13px;
+        padding: 14px 16px;
+    }
+
+    .sidebar-accordion .accordion-button:not(.collapsed) {
+        background-color: var(--bg-gray-300);
+        color: var(--text-default);
+    }
+
+    .sidebar-accordion .accordion-button::after {
+        filter: none;
+    }
+
+    .sidebar-accordion .accordion-body {
+        background-color: var(--bg-gray-300);
+        color: var(--text-light);
+    }
+
+    .content-column {
+        padding: 0;
+        margin-top: 24px;
+    }
+
+    .content-card-wrapper {
+        padding: 24px 16px;
+        height: auto;
+    }
+
+    .content-card {
+        padding: 0;
+    }
+
+    .content-card h2 {
+        font-size: 18px;
+    }
+
+    .content-card p {
+        font-size: 12px;
+    }
+
+    .akts-table {
+        font-size: 11px;
+        display: block;
+        overflow-x: auto;
+    }
+
+    .akts-table thead th,
+    .akts-table tbody td {
+        padding: 8px 10px;
+        white-space: nowrap;
+    }
+
+    .program-tabs h3 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .program-tabs .nav-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+        box-shadow: inset 0 -2px 0 0 var(--bg-gray-200);
+    }
+
+    .program-tabs .nav-link {
+        font-size: 13px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        white-space: nowrap;
+        border: none;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -2px;
+        color: var(--text-light);
+        font-weight: 600;
+    }
+
+    .program-tabs .nav-link.active {
+        background-color: transparent;
+        color: var(--bg-brand);
+        border-bottom: none;
+        box-shadow: inset 0 -2px 0 0 var(--bg-brand);
+    }
+
+    .main-footer {
+        padding: 16px 0;
+    }
+
+    .footer-content p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    h2 {
+        font-size: 18px;
+    }
+
+    .program-description p {
+        font-size: 12px;
+    }
+
+    .tab-content h4 {
+        font-size: 14px;
+    }
+
+    .tab-content li,
+    .tab-content a {
+        font-size: 12px;
+    }
+}
+
+/* Course Detail & Other Styles from styles.css adapted */
+.course-title-block {
+    border: 1px solid var(--bg-gray-300);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.course-program-header {
+    background-color: var(--bg-brand);
+    color: white;
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.course-meta-info {
+    padding: 16px;
+    background-color: var(--bg-white);
+}
+
+.section-title {
+    color: var(--text-brand);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.table-header-title {
+    background-color: #f2f4f6 !important;
+    color: var(--text-brand) !important;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 16px !important;
+    text-align: left;
+    border-bottom: 1px solid var(--bg-gray-300);
+}

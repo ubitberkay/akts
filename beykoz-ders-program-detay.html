@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Beykoz Üniversitesi Ders Program Detayı - Akademik programlar ve ders içerikleri.">
+    <title>Ders Program Detayı | Beykoz Üniversitesi</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link href="css/beykoz-style.css" rel="stylesheet">
+    <style>
+        /* Page Specific Styles */
+        .program-header-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .program-header-table th.program-header-title {
+            background-color: var(--bg-brand);
+            color: white;
+            padding: 12px 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-align: left;
+            border: none;
+        }
+
+        .program-header-table td {
+            padding: 12px;
+            vertical-align: top;
+            border-right: 1px solid #dee2e6;
+            background-color: white;
+        }
+
+        .program-header-table td:last-child {
+            border-right: none;
+        }
+
+        .program-header-table th {
+            padding: 12px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            border-right: 1px solid #dee2e6;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+
+        .program-header-table th:last-child {
+            border-right: none;
+        }
+
+        /* Summary Table */
+        .summary-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .summary-table td {
+            padding: 12px 16px;
+            vertical-align: top;
+            border-right: 1px solid #dee2e6;
+        }
+
+        .summary-table td:last-child {
+            border-right: none;
+        }
+
+        .summary-table .blue-cell {
+            background-color: #e3f2fd;
+        }
+
+        .summary-table .green-cell {
+            background-color: #e8f5e9;
+        }
+
+        .summary-table .yellow-cell {
+            background-color: #fff9c4;
+        }
+
+        .summary-table .red-cell {
+            background-color: #ffebee;
+        }
+
+        .summary-value {
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .semester-title {
+            color: var(--text-brand);
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        /* Course Tables */
+        .semester-block {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .semester-header {
+            background-color: #f2f2f2;
+            /* Zebra Dark Color */
+            color: var(--text-brand);
+            padding: 12px 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        /* Course Tables */
+        .course-table {
+            width: 100%;
+            margin-bottom: 0;
+            /* Remove bottom margin as it's inside block */
+            font-size: 13px;
+            table-layout: fixed;
+            /* Enforce column widths */
+        }
+
+        .course-table th {
+            background-color: #f8f9fa;
+            padding: 10px 12px;
+            font-weight: 700;
+            border-bottom: 1px solid #dee2e6;
+            border-right: 1px solid #dee2e6;
+            color: #212529;
+            vertical-align: middle;
+        }
+
+        /* Specific Column Widths */
+        .col-code {
+            width: 10%;
+        }
+
+        .col-name {
+            width: 30%;
+        }
+
+        .col-lang {
+            width: 10%;
+        }
+
+        .col-theo {
+            width: 6%;
+        }
+
+        .col-prac {
+            width: 6%;
+        }
+
+        .col-local {
+            width: 8%;
+        }
+
+        .col-ects {
+            width: 6%;
+        }
+
+        .col-cat {
+            width: 24%;
+        }
+
+        .course-table th:last-child {
+            border-right: none;
+        }
+
+        .course-table th:last-child {
+            border-right: none;
+        }
+
+        .course-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #dee2e6;
+            border-right: 1px solid #dee2e6;
+            /* background-color: white; Removed to allow striping */
+            vertical-align: middle;
+        }
+
+        /* Zebra Striping */
+        .course-table tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .course-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+            /* Light Gray */
+        }
+
+        .course-table td:last-child {
+            border-right: none;
+        }
+
+        .course-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Category Colors */
+        .cat-mesleki {
+            background-color: #e0f2f1 !important;
+        }
+
+        .cat-yetkinlik {
+            background-color: #fffde7 !important;
+        }
+
+        .cat-temel {
+            background-color: #e3f2fd !important;
+        }
+
+        .cat-uygulama {
+            background-color: #ffebee !important;
+        }
+
+        .text-brand {
+            color: var(--text-brand);
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================================
+       Hero Wrapper (Header + Hero)
+       =================================== -->
+    <div class="container">
+        <div class="hero-wrapper">
+            <!-- Header Section -->
+            <header class="main-header">
+                <div class="header-content">
+                    <!-- Logo -->
+                    <div class="logo-area">
+                        <img src="./assets/beykoz.png" alt="Beykoz Üniversitesi Logo" class="header-logo">
+                    </div>
+
+                    <!-- Title -->
+                    <h1 class="header-title">Bilgi Paketi / Ders Kataloğu</h1>
+
+                    <!-- Language Button -->
+                    <a href="#" class="lang-btn">
+                        <i class="bi bi-globe"></i>
+                        ENGLISH
+                    </a>
+                </div>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h2 class="hero-title">Ders Adı veya Kodu ile Arama</h2>
+                    <div class="search-box">
+                        <div class="input-group">
+                            <span class="input-group-text search-icon">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="" aria-label="Ders ara">
+                            <button class="btn btn-search" type="button" id="searchButton">
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ===================================
+       Main Content Area
+       =================================== -->
+    <main class="main-content">
+        <div class="container">
+            <div class="main-wrapper">
+                <div class="row g-0">
+                    <!-- Sidebar -->
+                    <div class="col-lg-3 sidebar-column">
+                        <div class="sidebar-accordion">
+                            <div class="accordion" id="sidebarAccordion">
+                                <!-- Accordion Items (Same as branding page) -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                            Accordion Item #1
+                                        </button>
+                                    </h2>
+                                    <div id="collapse1" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">Alt menü içeriği.</div>
+                                    </div>
+                                </div>
+                                <!-- ... Other items ... -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                            Accordion Item #2
+                                        </button>
+                                    </h2>
+                                    <div id="collapse2" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">Alt menü içeriği.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="col-lg-9 content-column">
+                        <div class="content-card-wrapper">
+                            <div class="content-card">
+
+                                <h2 class="mb-4">Course Program Information</h2>
+
+                                <!-- Program Info Table -->
+                                <table class="program-header-table">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="5" class="program-header-title">COMPUTER PROGRAMMING ASSOCIATE
+                                                DEGREE PROGRAM</th>
+                                        </tr>
+                                        <tr>
+                                            <th>Kazanılan Yeterlilik</th>
+                                            <th>Program Süresi (Yıl)</th>
+                                            <th>Toplam AKTS Kredisi</th>
+                                            <th>Öğretim Şekli</th>
+                                            <th>Yeterliliğin Düzeyi ve Öğrenme Alanı</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Önlisans Derecesi</td>
+                                            <td>2</td>
+                                            <td>120</td>
+                                            <td>Örgün</td>
+                                            <td>
+                                                - TYÇ Yeterlilik Türü: Önlisans<br>
+                                                - TYÇ, TYYÇ, EQF-LLL, ISCED (2011): 5. Düzey<br>
+                                                - QF-EHEA: Kısa Düzey<br>
+                                                - Yönelim: Önlisans (Mesleki) - Sınıflandırma (ISCED 2013):<br>
+                                                Temel Öğrenme Alanı: 48<br>
+                                                - Kategori: Ana Yeterlilik
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <h3 class="mb-3">Ders Programı</h3>
+
+                                <!-- Summary Boxes -->
+                                <table class="summary-table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="blue-cell">
+                                                <span>Temel Alan</span>
+                                                <span class="summary-value">% 10.00</span>
+                                            </td>
+                                            <td class="green-cell">
+                                                <span>Mesleki Alan</span>
+                                                <span class="summary-value">% 40.00</span>
+                                            </td>
+                                            <td class="yellow-cell">
+                                                <span>Yetkinlik Geliştirme</span>
+                                                <span class="summary-value">% 21.67</span>
+                                            </td>
+                                            <td class="red-cell">
+                                                <span>İşyerinde Uygulama Eğitimi</span>
+                                                <span class="summary-value">% 28.33</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <!-- 1. YARIYIL -->
+                                <div class="semester-block">
+                                    <div class="semester-header">1.YARIYIL</div>
+                                    <div class="table-responsive">
+                                        <table class="course-table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="col-code">Ders Kodu</th>
+                                                    <th class="col-name">Ders Adı</th>
+                                                    <th class="col-lang">Dili</th>
+                                                    <th class="col-theo">Teorik</th>
+                                                    <th class="col-prac">Pratik</th>
+                                                    <th class="col-local">Yerel Kredi</th>
+                                                    <th class="col-ects">AKTS</th>
+                                                    <th class="col-cat">Kategori</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-brand">ENG1003</td>
+                                                    <td>Özel Amaçlı İngilizce I</td>
+                                                    <td>English</td>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td class="cat-mesleki">Mesleki Alan</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-brand">HST302</td>
+                                                    <td>İletişim Becerileri ve Akademik Raporlama I</td>
+                                                    <td>English</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td>2</td>
+                                                    <td>4</td>
+                                                    <td class="cat-yetkinlik">Yetkinlik Geliştirme (Üniversite Seçmeli)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-brand">LAW1011</td>
+                                                    <td>Atatürk İlkeleri ve İnkılap Tarihi I</td>
+                                                    <td>English</td>
+                                                    <td>2</td>
+                                                    <td>2</td>
+                                                    <td>0</td>
+                                                    <td>5</td>
+                                                    <td class="cat-temel">Temel Alan</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-brand">LAW1145</td>
+                                                    <td>Anayasa Hukukunun Genel İlkeleri</td>
+                                                    <td>Turkish</td>
+                                                    <td>1</td>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <td>1</td>
+                                                    <td class="cat-yetkinlik">Yetkinlik Geliştirme (Üniversite Seçmeli)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-brand">CED0350</td>
+                                                    <td>Medeni Hukuk I</td>
+                                                    <td>Turkish</td>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <td>4</td>
+                                                    <td>2</td>
+                                                    <td class="cat-uygulama">İşyerinde Uygulama Eğitimi</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-brand">TLL7865</td>
+                                                    <td>Roma Hukuku</td>
+                                                    <td>Turkish</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>6</td>
+                                                    <td>3</td>
+                                                    <td class="cat-mesleki">Mesleki Alan</td>
+                                                </tr>
+                                                <!-- Total Row -->
+                                                <tr style="font-weight: 700;">
+                                                    <td colspan="5">Toplam Kredi</td>
+                                                    <td>28</td>
+                                                    <td>40</td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- 2. YARIYIL -->
+                                <div class="semester-block">
+                                    <div class="semester-header">2.YARIYIL</div>
+                                    <div class="table-responsive">
+                                        <table class="course-table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="col-code">Ders Kodu</th>
+                                                    <th class="col-name">Ders Adı</th>
+                                                    <th class="col-lang">Dili</th>
+                                                    <th class="col-theo">Teorik</th>
+                                                    <th class="col-prac">Pratik</th>
+                                                    <th class="col-local">Yerel Kredi</th>
+                                                    <th class="col-ects">AKTS</th>
+                                                    <th class="col-cat">Kategori</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-brand">ENG1003</td>
+                                                    <td>Özel Amaçlı İngilizce I</td>
+                                                    <td>English</td>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td class="cat-mesleki">Mesleki Alan</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-brand">HST302</td>
+                                                    <td>İletişim Becerileri ve Akademik Raporlama I</td>
+                                                    <td>English</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td>2</td>
+                                                    <td>4</td>
+                                                    <td class="cat-yetkinlik">Yetkinlik Geliştirme</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-brand">LAW1011</td>
+                                                    <td>Atatürk İlkeleri ve İnkılap Tarihi I</td>
+                                                    <td>English</td>
+                                                    <td>2</td>
+                                                    <td>2</td>
+                                                    <td>0</td>
+                                                    <td>5</td>
+                                                    <td class="cat-temel">Temel Alan</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-brand">LAW1145</td>
+                                                    <td>Anayasa Hukukunun Genel İlkeleri</td>
+                                                    <td>Turkish</td>
+                                                    <td>1</td>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <td>1</td>
+                                                    <td class="cat-yetkinlik">Yetkinlik Geliştirme</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-brand">CED0350</td>
+                                                    <td>Medeni Hukuk I</td>
+                                                    <td>Turkish</td>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <td>4</td>
+                                                    <td>2</td>
+                                                    <td class="cat-uygulama">İşyerinde Uygulama Eğitimi</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-brand">TLL7865</td>
+                                                    <td>Roma Hukuku</td>
+                                                    <td>Turkish</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>6</td>
+                                                    <td>3</td>
+                                                    <td class="cat-mesleki">Mesleki Alan</td>
+                                                </tr>
+                                                <!-- Total Row -->
+                                                <tr style="font-weight: 700;">
+                                                    <td colspan="5">Toplam Kredi</td>
+                                                    <td>24</td>
+                                                    <td>36</td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- Grand Total -->
+                                <div class="semester-block" style="margin-top: 24px;">
+                                    <div class="table-responsive">
+                                        <table class="course-table mb-0">
+                                            <tbody>
+                                                <tr style="font-weight: 700; background-color: #f2f2f2;">
+                                                    <td style="width: 62%;">Programın Toplam Yerel ve AKTS Kredileri
+                                                    </td>
+                                                    <td style="width: 8%;">171</td>
+                                                    <td style="width: 6%;">120</td>
+                                                    <td style="width: 24%;"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===================================
+       Footer Section
+       =================================== -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2026 • Beykoz Üniversitesi</p>
+                <a href="#" class="footer-icon back-to-top" title="Yukarı Çık">
+                    <i class="bi bi-arrow-up-circle"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
