@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Beykoz Üniversitesi AKTS Bilgi Paketi ve Ders Kataloğu - Ders Genel Bilgileri">
+    <title>Ders Genel Bilgileri | Beykoz Üniversitesi</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link href="css/beykoz-style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ===================================
+       Hero Wrapper (Header + Hero)
+       =================================== -->
+    <div class="container">
+        <div class="hero-wrapper">
+            <!-- Header Section -->
+            <header class="main-header">
+                <div class="header-content">
+                    <!-- Logo -->
+                    <div class="logo-area">
+                        <img src="./assets/beykoz.png" alt="Beykoz Üniversitesi Logo" class="header-logo">
+                    </div>
+
+                    <!-- Title -->
+                    <h1 class="header-title">Bilgi Paketi / Ders Kataloğu</h1>
+
+                    <!-- Language Button -->
+                    <a href="#" class="lang-btn">
+                        <i class="bi bi-globe"></i>
+                        ENGLISH
+                    </a>
+                </div>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h2 class="hero-title">Ders Adı veya Kodu ile Arama</h2>
+                    <div class="search-box">
+                        <div class="input-group">
+                            <span class="input-group-text search-icon">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="" aria-label="Ders ara">
+                            <button class="btn btn-search" type="button" id="searchButton">
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ===================================
+       Main Content Area
+       =================================== -->
+    <main class="main-content">
+        <div class="container">
+            <div class="main-wrapper">
+                <div class="row g-0">
+                    <!-- Sidebar -->
+                    <div class="col-lg-3 sidebar-column">
+                        <div class="sidebar-accordion">
+                            <div class="accordion" id="sidebarAccordion">
+                                <!-- Included for consistency, can be updated later -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                            Accordion Item #1
+                                        </button>
+                                    </h2>
+                                    <div id="collapse1" class="accordion-collapse collapse"
+                                        data-bs-parent="#sidebarAccordion">
+                                        <div class="accordion-body">
+                                            Alt menü içeriği burada yer alacak.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="col-lg-9 content-column">
+                        <div class="content-card-wrapper">
+
+                            <!-- Page Title -->
+                            <h3 class="mb-4" style="font-weight: 700; color: #333;">Ders Bilgileri</h3>
+
+                            <!-- Course Title Card -->
+                            <div class="course-info-card mb-4"
+                                style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                                <div class="program-info-header">VERİTABANI II</div>
+                                <div class="p-3 bg-white">
+                                    <div class="row g-0 text-center" style="font-size: 13px;">
+                                        <div class="col-md-3 border-end">Önlisans</div>
+                                        <div class="col-md-3 border-end">TYYÇ: 5. Düzey</div>
+                                        <div class="col-md-3 border-end">QF-EHEA: Kısa Düzey</div>
+                                        <div class="col-md-3">EQF-LLL: 5. Düzey</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section I: Genel Bilgiler -->
+                            <h4 class="section-header">Bölüm I: Genel Bilgiler</h4>
+
+                            <!-- Course Basics Table -->
+                            <div class="table-responsive mb-4"
+                                style="border-radius: 8px; overflow: hidden; border: 1px solid #ddd;">
+                                <table class="table table-bordered mb-0 info-table">
+                                    <thead class="table-light fw-bold">
+                                        <tr>
+                                            <th>Ders Kodu</th>
+                                            <th>Ders Adı</th>
+                                            <th>Yıl</th>
+                                            <th>Yarıyıl</th>
+                                            <th>Teorik</th>
+                                            <th>Pratik</th>
+                                            <th>Kredi</th>
+                                            <th>AKTS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>HST302</td>
+                                            <td>İletişim Becerileri ve Akademik Raporlama I</td>
+                                            <td>1</td>
+                                            <td>Bahar</td>
+                                            <td>3</td>
+                                            <td>2</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Temel Bilgiler Table -->
+                            <div class="table-responsive mb-5"
+                                style="border-radius: 8px; overflow: hidden; border: 1px solid #ddd;">
+                                <table class="table table-bordered mb-0 info-table text-start">
+                                    <tbody>
+                                        <tr class="table-light">
+                                            <td colspan="2" class="fw-bold" style="color: var(--text-brand);">Temel
+                                                Bilgiler</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 25%; background-color: #f8f9fa;">Öğretim Dili</td>
+                                            <td>Türkçe</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background-color: #f8f9fa;">Dersin Türü</td>
+                                            <td>Must Course</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background-color: #f8f9fa;">Dersin Seviyesi</td>
+                                            <td>Lisans</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background-color: #f8f9fa;">Dersin Veriliş Şekli</td>
+                                            <td>Yüz yüze</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background-color: #f8f9fa;">Dersin Koordinatörü</td>
+                                            <td>Dr. Öğr. Üyesi MEHMET SİNAN ALTUNÇ</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background-color: #f8f9fa;">Dersi Veren(ler)</td>
+                                            <td>
+                                                Dr. Öğr. Üyesi SALİH OKTAR<br>
+                                                Dr. Öğr. Üyesi GÜNER HANDE ULUTÜRK<br>
+                                                Dr. Öğr. Üyesi MEHMET SİNAN ALTUNÇ
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background-color: #f8f9fa;">Opsiyonel Program Bileşenleri</td>
+                                            <td>Yok</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background-color: #f8f9fa;">Dersin Amacı</td>
+                                            <td>Ceza muhakemesinin yürüyüşü hakkında bilgi verilmesi amaçlanmaktadır. Bu
+                                                bakımdan ilk derece muhakemesi ve kanunyolu muhakemesinin özellikleri
+                                                ele alınmaktadır. Ayrıca araştırma ve koruma tedbirleri ile duruşmanın
+                                                safhaları incelenmektedir. Böylelikle öğrencilerin ceza muhakemesi
+                                                işlemlerini baştan sona görmesi amaçlanmaktadır.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Section II: Dersin Tanımı -->
+                            <h4 class="section-header">Bölüm II: Dersin Tanımı</h4>
+
+                            <!-- Dersin Amacı ve İçeriği Table -->
+                            <div class="table-responsive mb-4"
+                                style="border-radius: 8px; overflow: hidden; border: 1px solid #ddd;">
+                                <table class="table table-bordered mb-0 info-table text-start">
+                                    <tbody>
+                                        <tr class="table-light">
+                                            <td colspan="2" class="fw-bold" style="color: var(--text-brand);">Dersin
+                                                Amacı ve İçeriği</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 25%; background-color: #f8f9fa;">Dersin Amacı</td>
+                                            <td>Bu ders ile öğrencinin, veritabanı ve sunucularını yönetme ile ilgili
+                                                yeterliliklerin kazandırılması amaçlanmaktadır.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background-color: #f8f9fa;">Dersin İçeriği</td>
+                                            <td>Bu dersin içeriği tasarım ilkelerini, pratik kurulumu ve hem sistem
+                                                tasarımcıları hem de yazılım mühendisleri için geliştirme yeteneklerini
+                                                kapsayacak şekilde, veritabanları ile ilgili gerekli temel bilgileri
+                                                sağlamaktır. Derste ayrıca yapısal sorgulama dillerinin önemi vurgulanır
+                                                ve veritabanları oluşturulduktan sonra sorgulama ve raporlamayı da
+                                                içeren çeşitli görevler için kullanımları gösterilir.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Derse Özgü Kurallar Table -->
+                            <div class="table-responsive mb-4"
+                                style="border-radius: 8px; overflow: hidden; border: 1px solid #ddd;">
+                                <table class="table table-bordered mb-0 info-table text-start">
+                                    <tbody>
+                                        <tr class="table-light">
+                                            <td class="fw-bold" style="color: var(--text-brand);">Derse Özgü Kurallar
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-3">
+                                                <p class="mb-2"><strong>Devam Zorunluluğu:</strong> Derslere %70
+                                                    oranında devam zorunludur. Devamsızlık hakkını aşan öğrenciler
+                                                    başarısız sayılır.</p>
+                                                <p class="mb-2"><strong>Zamanında Katılım:</strong> Derslere zamanında
+                                                    gelmek ve sınıf düzenine riayet etmek gerekir.</p>
+                                                <p class="mb-2"><strong>Ödev ve Projeler:</strong> Tüm ödev ve projeler
+                                                    belirtilen tarihlerde teslim edilmelidir.</p>
+                                                <p class="mb-2"><strong>Ders İçi Davranış:</strong> Cep telefonları
+                                                    sessizde tutulmalı ve derste dikkat dağıtıcı davranışlardan
+                                                    kaçınılmalıdır.</p>
+                                                <p class="mb-2"><strong>Katılım:</strong> Ders süresince tartışmalara ve
+                                                    uygulamalara aktif katılım beklenmektedir.</p>
+                                                <p class="mb-0"><strong>Akademik Dürüstlük:</strong> İntihal ve kopya
+                                                    kesinlikle yasaktır. Alıntılar mutlaka kaynak gösterilerek
+                                                    yapılmalıdır.</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Dersin Öğrenme Çıktıları (DÖÇ) -->
+                            <div class="table-responsive mb-5"
+                                style="border-radius: 8px; overflow: hidden; border: 1px solid #ddd;">
+                                <table class="table table-bordered mb-0 info-table text-start">
+                                    <tbody>
+                                        <tr class="table-light">
+                                            <td class="fw-bold" style="color: var(--text-brand);">Dersin Öğrenme
+                                                Çıktıları (DÖÇ)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-3">
+                                                <p class="mb-3">Ders Öğrenme Çıktıları (DÖÇ), dersi başarı ile
+                                                    tamamlayan öğrencilerin kendilerinden sahip olmaları beklenen bilgi,
+                                                    beceri ve yetkinlikleri ifade eder. Bu bağlamda, bu ders için
+                                                    tanımlanmış olan Ders Öğrenme Çıktıları aşağıda verilmektedir.</p>
+
+                                                <p class="mb-1 fw-bold text-danger">Bilgi <span
+                                                        class="text-dark fw-normal" style="font-size: 0.9em;">(Kuramsal
+                                                        ve/veya olgusal bilgi olarak tanımlanmıştır.)</span></p>
+                                                <ul class="list-unstyled mb-3 ps-3">
+                                                    <li class="mb-1">1) Sunumunu teknik içerik, görseller ve zaman
+                                                        yönetimi açısından etkili biçimde gerçekleştirir.</li>
+                                                    <li class="mb-1">2) Proje raporunu hazırlarken bilgi derinliği
+                                                        sağlar ve konuyu bütüncül biçimde ele alır.</li>
+                                                    <li class="mb-1">3) Proje kapsamında güvenilir kaynaklardan bilgi
+                                                        toplar, sentezler ve doğru biçimde referanslandırır.</li>
+                                                </ul>
+
+                                                <p class="mb-1 fw-bold text-danger">Beceriler <span
+                                                        class="text-dark fw-normal" style="font-size: 0.9em;">(Bilişsel
+                                                        ve/veya uygulama becerileri olarak tanımlanmıştır.)</span></p>
+                                                <ul class="list-unstyled mb-3 ps-3">
+                                                    <li class="mb-1">1) Veritabanı sistemlerini ve özelliklerini
+                                                        değerlendirir.</li>
+                                                    <li class="mb-1">2) Veritabanı performansını ve işlevselliğini
+                                                        analiz eder.</li>
+                                                    <li class="mb-1">3) Veritabanı projesini planlar ve düzenli bir
+                                                        sunum yapısı oluşturur.</li>
+                                                    <li class="mb-1">4) Veritabanı projesini tasarım ve uygulama
+                                                        aşamalarına uygun şekilde hayata geçirir ve sistem üzerinde
+                                                        çalıştırır.</li>
+                                                </ul>
+
+                                                <p class="mb-1 fw-bold text-danger">Yetkinlikler <span
+                                                        class="text-dark fw-normal" style="font-size: 0.9em;">("Bağımsız
+                                                        Çalışabilme", "Sorumluluk Alabilme", "Öğrenme", "İletişim ve
+                                                        Sosyal" ve "Alana Özgü" yetkinlikler olarak
+                                                        tanımlanmıştır.)</span></p>
+                                                <ul class="list-unstyled mb-0 ps-3">
+                                                    <li class="mb-1">1) Bireysel ve takım çalışmalarında sorumluluk alır
+                                                        ve etkin rol oynar.</li>
+                                                    <li class="mb-1">2) Öğrenme sürecini değerlendirir ve yaşam boyu
+                                                        öğrenme bilincini geliştirir.</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Haftalık Ders Planı -->
+                            <div class="table-responsive info-block-wrapper">
+                                <table class="table table-bordered mb-0 info-table zebra-table text-start align-middle"
+                                    style="font-size: 13px;">
+                                    <tbody>
+                                        <tr class="table-title-row">
+                                            <td colspan="4">Haftalık
+                                                Ders Planı</td>
+                                        </tr>
+                                        <tr class="fw-bold bg-light">
+                                            <td style="width: 50px;">Hafta</td>
+                                            <td>Konu</td>
+                                            <td>Materyal Paylaşımı *</td>
+                                            <td style="width: 100px;">Pekiştirme</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="text-muted" style="font-size: 0.9em;">Ön Hazırlık</span>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">1</td>
+                                            <td>SQL hatırlama ve tekrar</td>
+                                            <td>Kerem Köseoğlu, Veritabanı Mantığı, Pusula Yayıncılık, 2016. İlgili
+                                                bölümün ve elde edilecek diğer kaynakların okunması</td>
+                                            <td class="text-center"><a href="#"
+                                                    class="text-danger text-decoration-none"><i
+                                                        class="bi bi-download"></i> İndir</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">2</td>
+                                            <td>DDL ve DML ifadeleri</td>
+                                            <td>Kerem Köseoğlu, Veritabanı Mantığı, Pusula Yayıncılık, 2016. İlgili
+                                                bölümün ve elde edilecek diğer kaynakların okunması</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">3</td>
+                                            <td>DDL ve DML ifadeleri</td>
+                                            <td>Kerem Köseoğlu, Veritabanı Mantığı, Pusula Yayıncılık, 2016. İlgili
+                                                bölümün ve elde edilecek diğer kaynakların okunması</td>
+                                            <td class="text-center"><a href="#"
+                                                    class="text-danger text-decoration-none"><i
+                                                        class="bi bi-download"></i> İndir</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">4</td>
+                                            <td>TCL ifadeleri ve A.C.I.D kuralları</td>
+                                            <td>Kerem Köseoğlu, Veritabanı Mantığı, Pusula Yayıncılık, 2016. İlgili
+                                                bölümün ve elde edilecek diğer kaynakların okunması</td>
+                                            <td class="text-center"><a href="#"
+                                                    class="text-danger text-decoration-none"><i
+                                                        class="bi bi-download"></i> İndir</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">5</td>
+                                            <td>Normalizasyon</td>
+                                            <td>Kerem Köseoğlu, Veritabanı Mantığı, Pusula Yayıncılık, 2016. İlgili
+                                                bölümün ve elde edilecek diğer kaynakların okunması</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">6</td>
+                                            <td>Alt sorgular ve join ifadeleri</td>
+                                            <td>Kerem Köseoğlu, Veritabanı Mantığı, Pusula Yayıncılık, 2016. İlgili
+                                                bölümün ve elde edilecek diğer kaynakların okunması</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">7</td>
+                                            <td>Görünüm sorguları ve union ifadeleri</td>
+                                            <td>Kerem Köseoğlu, Veritabanı Mantığı, Pusula Yayıncılık, 2016. İlgili
+                                                bölümün ve elde edilecek diğer kaynakların okunması</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">8</td>
+                                            <td>Ara Sınav</td>
+                                            <td></td>
+                                            <td class="text-center"><a href="#"
+                                                    class="text-danger text-decoration-none"><i
+                                                        class="bi bi-download"></i> İndir</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">9</td>
+                                            <td>DDL ve DML ifadeleri</td>
+                                            <td>Kerem Köseoğlu, Veritabanı Mantığı, Pusula Yayıncılık, 2016. İlgili
+                                                bölümün ve elde edilecek diğer kaynakların okunması</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">10</td>
+                                            <td>DDL ve DML ifadeleri</td>
+                                            <td>Kerem Köseoğlu, Veritabanı Mantığı, Pusula Yayıncılık, 2016. İlgili
+                                                bölümün ve elde edilecek diğer kaynakların okunması</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">11</td>
+                                            <td>TCL ifadeleri ve A.C.I.D kuralları</td>
+                                            <td>Kerem Köseoğlu, Veritabanı Mantığı, Pusula Yayıncılık, 2016. İlgili
+                                                bölümün ve elde edilecek diğer kaynakların okunması</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">12</td>
+                                            <td>Normalizasyon</td>
+                                            <td>Kerem Köseoğlu, Veritabanı Mantığı, Pusula Yayıncılık, 2016. İlgili
+                                                bölümün ve elde edilecek diğer kaynakların okunması</td>
+                                            <td class="text-center"><a href="#"
+                                                    class="text-danger text-decoration-none"><i
+                                                        class="bi bi-download"></i> İndir</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">13</td>
+                                            <td>SQL hatırlama ve tekrar</td>
+                                            <td>Kerem Köseoğlu, Veritabanı Mantığı, Pusula Yayıncılık, 2016. İlgili
+                                                bölümün ve elde edilecek diğer kaynakların okunması</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">14</td>
+                                            <td>Alt sorgular ve join ifadeleri</td>
+                                            <td>Kerem Köseoğlu, Veritabanı Mantığı, Pusula Yayıncılık, 2016. İlgili
+                                                bölümün ve elde edilecek diğer kaynakların okunması</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="p-2 border-top bg-light text-muted small">
+                                    * Bu alan öğrencilerin ders öncesi hazırlık ve sonrası dersi pekiştirme için
+                                    paylaşılan ders materyallerini içerir.
+                                </div>
+                            </div>
+
+                            <!-- Ders İçin Zorunlu/Önerilen Kaynaklar -->
+                            <div class="table-responsive info-block-wrapper">
+                                <table class="table table-bordered mb-0 info-table zebra-table text-start align-middle"
+                                    style="font-size: 13px;">
+                                    <tbody>
+                                        <tr class="table-title-row">
+                                            <td colspan="2">Ders İçin
+                                                Zorunlu/Önerilen Kaynaklar</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 25%; font-weight: 600;">Ders Notları / Kitaplar</td>
+                                            <td>
+                                                Veritabanı Sistemleri, Açıköğretim Fakültesi Yayını No: 2272<br>
+                                                Coronel, Carlos, et al. Database Systems: Design, Implementation, and
+                                                Management. Amerika Birleşik Devletleri, Cengage Learning, 2013.<br>
+                                                Harrington, Jan L.. Relational Database Design and Implementation:
+                                                Clearly Explained. Hollanda, Elsevier Science, 2009.<br>
+                                                Dr. Ali Nizam, 2011; Veritabanı Tasarımı-İlişkisel Veri Modeli ve
+                                                Uygulamaları, Papatya Bilim<br><br>
+                                                <a href="#"
+                                                    class="text-danger text-decoration-none">https://www.w3schools.com/sql/sql_ref_keywords.asp</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 600;">Diğer Kaynaklar</td>
+                                            <td>
+                                                Veritabanı Sistemleri, Açıköğretim Fakültesi Yayını No: 2272<br>
+                                                Coronel, Carlos, et al. Database Systems: Design, Implementation, and
+                                                Management. Amerika Birleşik Devletleri, Cengage Learning, 2013.<br>
+                                                Harrington, Jan L.. Relational Database Design and Implementation:
+                                                Clearly Explained. Hollanda, Elsevier Science, 2009.<br>
+                                                Dr. Ali Nizam, 2011; Veritabanı Tasarımı-İlişkisel Veri Modeli ve
+                                                Uygulamaları, Papatya Bilim<br><br>
+                                                <a href="#"
+                                                    class="text-danger text-decoration-none">https://www.w3schools.com/sql/sql_ref_keywords.asp</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Ders Öğrenme Çıktıları - Program Öğrenme Çıktıları İlişkisi (Legacy Matrix) -->
+                            <div class="table-responsive info-block-wrapper">
+                                <table class="table table-bordered mb-0 info-table zebra-table text-start align-middle"
+                                    style="font-size: 12px;">
+                                    <thead>
+                                        <tr class="table-light">
+                                            <th style="width: 80%;">Program Öğrenme Çıktıları</th>
+                                            <th class="text-center">İlişki</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1) Hukuk disiplinine ilişkin temel kavram ve kurumları kavrar.</td>
+                                            <td class="text-center text-danger"><i class="bi bi-check-lg"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2) İş sağlığı ve güvenliği, çevre bilinci ve kalite süreçleri hakkında
+                                                bilgi sahibi olur.</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3) Algoritmik düşünme ve problem çözme yeteneği kazanır.</td>
+                                            <td class="text-center text-danger"><i class="bi bi-check-lg"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4) Mesleği ile ilgili bilişim teknolojilerini (yazılım, program,
+                                                animasyon vb.) etkin kullanır.</td>
+                                            <td class="text-center text-danger"><i class="bi bi-check-lg"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>5) Bireysel çalışma ve bağımsız karar verme yetisi gelişir.</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>6) Bilgi ve beceriler düzeyinde düşüncelerini yazılı ve sözlü iletişim
+                                                yolu ile etkin biçimde sunabilir, anlaşılır biçimde ifade eder.</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>7) Mesleki ve etik sorumluluk bilincine sahip olur.</td>
+                                            <td class="text-center text-danger"><i class="bi bi-check-lg"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>8) Kariyer yönetimi ve yaşam boyu öğrenme konularında farkındalığa
+                                                sahiptir.</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>9) Alanında edindiği temel düzeydeki bilgi ve becerileri kullanarak
+                                                verileri yorumlar ve değerlendirir.</td>
+                                            <td class="text-center text-danger"><i class="bi bi-check-lg"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>10) Bir yabancı dili kullanarak alanındaki bilgileri takip eder ve
+                                                meslektaşları ile iletişim kurar.</td>
+                                            <td class="text-center text-danger"><i class="bi bi-check-lg"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>11) Alanının gerektirdiği en az Avrupa Bilgisayar Kullanma Lisansı İleri
+                                                Düzeyinde bilgisayar yazılımı ile birlikte bilişim ve iletişim
+                                                teknolojilerini kullanır.</td>
+                                            <td class="text-center text-danger"><i class="bi bi-check-lg"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>12) Mesleği için güncel gelişmeleri ve uygulamaları takip eder, etkin
+                                                şekilde kullanır.</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Section III: Program Öğrenme Çıktıları İle İlişkisi -->
+                            <h4 class="section-header">Bölüm III: Dersin Program Öğrenme Çıktıları İle İlişkisi</h4>
+
+                            <!-- Katkı Düzeyi Legend -->
+                            <div class="row g-0 mb-2">
+                                <div class="col-12">
+                                    <div class="p-2 fw-bold text-danger bg-light border-bottom">Dersin Program Öğrenme
+                                        Çıktılarına Katkı Düzeyi</div>
+                                </div>
+                                <div class="col-12 d-flex text-center border" style="font-size: 13px;">
+                                    <div class="flex-fill p-2 border-end bg-white">Etkisi Yok</div>
+                                    <div class="flex-fill p-2 border-end" style="background-color: #e3f2fd;">1 En Düşük
+                                    </div>
+                                    <div class="flex-fill p-2 border-end" style="background-color: #e0f2f1;">2 Düşük
+                                    </div>
+                                    <div class="flex-fill p-2 border-end" style="background-color: #fff9c4;">3 Orta
+                                    </div>
+                                    <div class="flex-fill p-2 border-end" style="background-color: #f3e5f5;">4 Yüksek
+                                    </div>
+                                    <div class="flex-fill p-2" style="background-color: #ffebee;">5 En Yüksek</div>
+                                </div>
+                            </div>
+
+                            <!-- Contribution Table -->
+                            <div class="table-responsive info-block-wrapper">
+                                <table class="table table-bordered mb-0 info-table text-start align-middle"
+                                    style="font-size: 13px;">
+                                    <thead>
+                                        <tr class="bg-light">
+                                            <th style="width: 50px;" class="text-center">#</th>
+                                            <th>Program Öğrenme Çıktıları</th>
+                                            <th style="width: 80px;" class="text-center">Katkı Payı</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="background-color: #fff9c4;">
+                                            <td class="text-center fw-bold">1</td>
+                                            <td>Çeşitli hukuk disiplinlerine ilişkin kavram ve kurumları ve bu kavram ve
+                                                kurumlar arasındaki ilişkileri sıralar.</td>
+                                            <td class="text-center fw-bold">3</td>
+                                        </tr>
+                                        <tr style="background-color: #f3e5f5;">
+                                            <td class="text-center fw-bold">2</td>
+                                            <td>Hukuk metodolojisi ile yorum yöntemlerinin bilgisine sahip olur.</td>
+                                            <td class="text-center fw-bold">4</td>
+                                        </tr>
+                                        <tr style="background-color: #e3f2fd;">
+                                            <td class="text-center fw-bold">3</td>
+                                            <td>Modern hukuk kazanımlarını tarihsel bilgi birikimi ile yorumlar.</td>
+                                            <td class="text-center fw-bold">1</td>
+                                        </tr>
+                                        <tr style="background-color: #e0f2f1;">
+                                            <td class="text-center fw-bold">4</td>
+                                            <td>Hukuk kurallarına temel teşkil eden felsefi düşünce akımları hakkında
+                                                bilgi sahibidir.</td>
+                                            <td class="text-center fw-bold">2</td>
+                                        </tr>
+                                        <tr style="background-color: #f3e5f5;">
+                                            <td class="text-center fw-bold">5</td>
+                                            <td>Yasal düzenlemelerden, yargı organlarının kararlarından ve bunlarla
+                                                ilgili bilimsel değerlendirmelerden haberdardır.</td>
+                                            <td class="text-center fw-bold">4</td>
+                                        </tr>
+                                        <tr style="background-color: #ffebee;">
+                                            <td class="text-center fw-bold">6</td>
+                                            <td>Hukuki uyuşmazlıkları mevzuat metinleri, yargı organlarının kararları ve
+                                                doktrindeki görüşleri değerlendirerek çözüme kavuşturur.</td>
+                                            <td class="text-center fw-bold">5</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center fw-bold">7</td>
+                                            <td>En az bir yabancı dili bilim dili olarak kullanır.</td>
+                                            <td class="text-center fw-bold"></td>
+                                        </tr>
+                                        <tr style="background-color: #fff9c4;">
+                                            <td class="text-center fw-bold">8</td>
+                                            <td>Çeşitli hukuk disiplinlerine ilişkin kavram ve kurumları ve bu kavram ve
+                                                kurumlar arasındaki ilişkileri sıralar.</td>
+                                            <td class="text-center fw-bold">3</td>
+                                        </tr>
+                                        <tr style="background-color: #fff9c4;">
+                                            <td class="text-center fw-bold">9</td>
+                                            <td>Hukuk metodolojisi ile yorum yöntemlerinin bilgisine sahip olur.</td>
+                                            <td class="text-center fw-bold">3</td>
+                                        </tr>
+                                        <tr style="background-color: #e3f2fd;">
+                                            <td class="text-center fw-bold">10</td>
+                                            <td>Modern hukuk kazanımlarını tarihsel bilgi birikimi ile yorumlar.</td>
+                                            <td class="text-center fw-bold">1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Section IV: Ölçme ve Değerlendirme -->
+                            <h4 class="section-header">Bölüm IV: Dersin Öğrenme ve Öğretme Yöntemleri ile Ölçme ve
+                                Değerlendirme Yöntemleri</h4>
+
+                            <!-- Yöntemler Table -->
+                            <div class="table-responsive info-block-wrapper">
+                                <table class="table table-bordered mb-0 info-table zebra-table text-start"
+                                    style="font-size: 13px;">
+                                    <tbody>
+                                        <tr class="table-title-row">
+                                            <td colspan="2">Dersin
+                                                Öğrenme ve Öğretme Yöntemleri</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="p-3">
+                                                (Üniversitemiz genelinde kullanılan tüm öğrenme ve öğretme yöntemleri
+                                                sistematik olarak yönetilmektedir. Akademik birimlerden gelen talepler
+                                                doğrultusunda bölüm/programların öğrenme ve öğretme yöntemleri ilgili
+                                                kurullarımız tarafından değerlendirilmekte ve uygun bulunursa,
+                                                üniversite havuzunda toplanmaktadır. Bölüm ve programlar, kendileri için
+                                                program tasarımlarına uygun olan yöntemleri bu havuzdan
+                                                seçebilmektedirler. Benzer şekilde, dersler için kullanılması uygun
+                                                görülen yöntemler de programlar düzeyinde belirlenmiş olan yöntemler
+                                                arasından seçilebilmektedir.)
+                                            </td>
+                                        </tr>
+                                        <tr class="fw-bold bg-light">
+                                            <td>Programa Genelinde Kullanılan Ölçme ve Değerlendirme Yöntemleri</td>
+                                            <td>Ders İçin Kullanılan Ölçme ve Değerlendirme Yöntemleri</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ara Sınav</td>
+                                            <td class="text-center text-danger"><i class="bi bi-check-lg"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Yarıyıl Sonu Sınavı</td>
+                                            <td class="text-center text-danger"><i class="bi bi-check-lg"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kısa Sınav</td>
+                                            <td class="text-center text-danger"><i class="bi bi-check-lg"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Uygulamalı Sınav</td>
+                                            <td class="text-center text-danger"><i class="bi bi-check-lg"></i></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Katkı Oranı Table -->
+                            <div class="table-responsive info-block-wrapper">
+                                <table class="table table-bordered mb-0 info-table zebra-table text-start"
+                                    style="font-size: 13px;">
+                                    <tbody>
+                                        <tr class="table-title-row">
+                                            <td colspan="3" class="fw-bold" style="color: var(--text-brand);">Dersin
+                                                Ölçme ve Değerlendirme Yöntemlerinin Başarı Notuna Katkısı</td>
+                                        </tr>
+                                        <tr class="fw-bold bg-light">
+                                            <td>Ölçme ve Değerlendirme Yöntemleri</td>
+                                            <td>Uygulama Sayısı / Yarıyıl</td>
+                                            <td>Katkı Oranı</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ödev</td>
+                                            <td>1</td>
+                                            <td>%15</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ara Sınavlar</td>
+                                            <td>1</td>
+                                            <td>%35</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Yarıyıl Sonu Sınavı</td>
+                                            <td>1</td>
+                                            <td>%50</td>
+                                        </tr>
+                                        <tr class="fw-bold bg-light">
+                                            <td colspan="2">Toplam</td>
+                                            <td>%100</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">Yarıyıl İçi Ölçme Ve Değerlendirme Yöntemlerinin Başarı
+                                                Notuna Katkı Oranı</td>
+                                            <td>%50</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">Yarıyıl Sonu Sınavının Başarı Notuna Katkı Oranı</td>
+                                            <td>%50</td>
+                                        </tr>
+                                        <tr class="fw-bold bg-light">
+                                            <td colspan="2">Toplam</td>
+                                            <td>%100</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Section V: İş Yükü ve AKTS -->
+                            <h4 class="section-header">Bölüm V: Dersin İş Yükü Ve Akts Kredisi</h4>
+
+                            <!-- İş Yükü Table -->
+                            <div class="table-responsive info-block-wrapper">
+                                <table class="table table-bordered mb-0 info-table zebra-table text-start align-middle"
+                                    style="font-size: 13px;">
+                                    <tbody>
+                                        <tr class="table-title-row">
+                                            <td colspan="4">Öğrenme ve
+                                                Öğretme Etkinlikleri İş Yükü</td>
+                                        </tr>
+                                        <tr class="fw-bold bg-light">
+                                            <td>Öğrenme ve Öğretme Etkinlikleri</td>
+                                            <td>Etkinlik Sayısı/Yarıyıl</td>
+                                            <td>Süresi (saat)</td>
+                                            <td>Toplam İş Yükü</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ders</td>
+                                            <td>14</td>
+                                            <td>1</td>
+                                            <td>14</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Laboratuvar</td>
+                                            <td>14</td>
+                                            <td>2</td>
+                                            <td>28</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Uygulama</td>
+                                            <td>1</td>
+                                            <td>6</td>
+                                            <td>6</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Derse Özgü Staj</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Arazi Çalışması</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sınıf Dışı Ders Çalışması</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ders</td>
+                                            <td>14</td>
+                                            <td>1</td>
+                                            <td>14</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Laboratuvar</td>
+                                            <td>14</td>
+                                            <td>2</td>
+                                            <td>28</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Uygulama</td>
+                                            <td>1</td>
+                                            <td>6</td>
+                                            <td>6</td>
+                                        </tr>
+                                        <tr class="fw-bold bg-light">
+                                            <td colspan="3">Öğrenme ve Öğretme Etkinlikleri Toplam İş Yükü</td>
+                                            <td>110</td>
+                                        </tr>
+
+                                        <!-- Ölçme ve Değerlendirme Etkinlikleri -->
+                                        <tr class="table-light">
+                                            <td colspan="4" class="fw-bold" style="color: var(--text-brand);">Ölçme ve
+                                                Değerlendirme Etkinlikleri İş Yükü</td>
+                                        </tr>
+                                        <tr class="fw-bold bg-light">
+                                            <td>Ölçme ve Değerlendirme Etkinlikleri</td>
+                                            <td>Etkinlik Sayısı/Yarıyıl</td>
+                                            <td>Süresi (saat)</td>
+                                            <td>Toplam İş Yükü</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kısa Sınav</td>
+                                            <td>1</td>
+                                            <td>10</td>
+                                            <td>10</td>
+                                        </tr>
+                                        <tr style="background-color: #f8f9fa;">
+                                            <td>Ara Sınavlar</td>
+                                            <td>1</td>
+                                            <td>15</td>
+                                            <td>15</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Yarıyıl Sonu Sınavı</td>
+                                            <td>1</td>
+                                            <td>20</td>
+                                            <td>20</td>
+                                        </tr>
+                                        <tr class="fw-bold bg-light">
+                                            <td colspan="3">Ölçme ve Değerlendirme Etkinlikleri Toplam İş Yükü</td>
+                                            <td>45</td>
+                                        </tr>
+                                        <tr class="fw-bold bg-light">
+                                            <td colspan="3">Toplam İş Yükü (Öğrenme ve Öğretme + Ölçme ve Değerlendirme
+                                                Etkinlikleri)</td>
+                                            <td>155</td>
+                                        </tr>
+                                        <tr class="fw-bold bg-light">
+                                            <td colspan="3">Dersin Akts Kredisi (Toplam İş Yükü/25.5 Saat)</td>
+                                            <td>5</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===================================
+       Footer Section
+       =================================== -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2026 • Beykoz Üniversitesi</p>
+                <a href="#" class="footer-icon back-to-top" title="Yukarı Çık">
+                    <i class="bi bi-arrow-up-circle"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

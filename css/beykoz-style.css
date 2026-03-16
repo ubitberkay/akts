@@ -1349,3 +1349,131 @@ h4 {
     background-color: #bbdefb !important;
     opacity: 0.8;
 }
+
+/* ===================================
+   Course General Info Page Styles
+   =================================== */
+
+.course-info-card .program-info-header {
+    background-color: var(--bg-brand) !important;
+    color: white;
+    font-weight: 700;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 8px 8px 0 0;
+    /* Add top radius to header */
+}
+
+/* Ensure wrapper clips content */
+.course-info-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.section-header {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Info Table Improvements */
+.info-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 0;
+    background-color: white;
+    /* Prevent transparent background issues */
+}
+
+.info-table th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.info-table td {
+    vertical-align: middle;
+}
+
+/* Fix for table corners inside rounded div */
+.info-table th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.info-table th:last-child {
+    border-top-right-radius: 8px;
+}
+
+/* But standard bootstrap bordered tables override this. 
+   Better approach: Wrapper handles border/radius, table handles content. */
+
+.table-responsive {
+    background-color: white;
+    /* Ensure wrapper isn't transparent */
+}
+
+/* Specific coloring for contribution table rows override if needed */
+.bg-light-cyan {
+    background-color: #e0f7fa !important;
+}
+
+.bg-light-yellow {
+    background-color: #fff9c4 !important;
+}
+
+.bg-light-purple {
+    background-color: #f3e5f5 !important;
+}
+
+.bg-light-red {
+    background-color: #ffebee !important;
+}
+
+/* Zebra Striping */
+/* Zebra Striping (Matched to Course Program Detail) */
+.zebra-table tbody tr:nth-child(odd) td,
+.zebra-table tbody tr:nth-child(odd) th {
+    background-color: #ffffff !important;
+}
+
+.zebra-table tbody tr:nth-child(even) td,
+.zebra-table tbody tr:nth-child(even) th {
+    background-color: #f2f2f2 !important;
+}
+
+/* Match 'semester-header' style for table titles */
+.zebra-table tbody tr.table-title-row td {
+    background-color: #f2f2f2 !important;
+    color: var(--text-brand);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+
+/* Override for specific header rows within tbody if they need to be distinct */
+.zebra-table tbody tr.table-light td,
+.zebra-table tbody tr.bg-light td,
+.zebra-table tbody tr.table-light th,
+.zebra-table tbody tr.bg-light th {
+    background-color: #f8f9fa !important;
+    /* Maintain light gray for headers */
+    font-weight: bold;
+}
+
+/* Info Block Wrapper (matches semester-block) */
+.info-block-wrapper {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
