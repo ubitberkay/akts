@@ -237,6 +237,15 @@
             color: #374151;
             vertical-align: middle;
             background-color: #fff;
+            padding: 8px 12px;
+        }
+
+        /* Set width for columns 1-15 */
+        .matrix-table th:nth-child(n+2):nth-child(-n+16),
+        .matrix-table td:nth-child(n+2):nth-child(-n+16) {
+            width: 30px;
+            min-width: 30px;
+            max-width: 30px;
         }
 
         .matrix-table td:first-child {

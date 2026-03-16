@@ -226,7 +226,7 @@
             background: white;
             border: 1px solid #e0e0e0;
             border-radius: 12px;
-            padding: 20px;
+            padding: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             width: 320px;
             z-index: 1050;
@@ -300,6 +300,45 @@
         /* As is */
         .arrow-left {
             transform: rotate(0deg);
+        }
+
+        /* Responsive Improvements */
+        @media (max-width: 991.98px) {
+            .matrix-table {
+                min-width: 1000px; /* Force minimum width to prevent squashing */
+                table-layout: auto !important; /* Allow cells to grow based on content */
+            }
+            
+            .matrix-container {
+                -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            }
+
+            /* Adjust header text for mobile if needed */
+            .header-pink, .header-blue {
+                padding: 8px !important;
+            }
+        }
+
+        /* Hero and Main layout fixes for mobile */
+        @media (max-width: 767.98px) {
+            .page-title {
+                font-size: 20px;
+            }
+            
+            .custom-tabs {
+                gap: 15px;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 5px;
+            }
+            
+            .custom-tab {
+                font-size: 14px;
+            }
+
+            .main-header-block {
+                overflow-x: auto;
+            }
         }
 
         /* Check SVG later */
@@ -1102,13 +1141,28 @@
         function positionTooltip(event, tooltipEl) {
             const xOffset = 20;
             const yOffset = 20;
+            const tooltipWidth = tooltipEl.offsetWidth;
+            const tooltipHeight = tooltipEl.offsetHeight;
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
 
-            // Basic positioning
+            // event.pageX/Y imlecin döküman üzerindeki tam konumudur (scroll dahil)
             let left = event.pageX + xOffset;
             let top = event.pageY + yOffset;
 
-            // Viewport boundary detection could be added here if needed
-            // But simple offset usually works for this context
+            // Sağ kenar kontrolü: İmlecin viewport üzerindeki konumu + tooltip genişliği > pencere genişliği
+            if (event.clientX + xOffset + tooltipWidth > windowWidth) {
+                left = event.pageX - tooltipWidth - xOffset;
+            }
+
+            // Alt kenar kontrolü: İmlecin viewport üzerindeki konumu + tooltip yüksekliği > pencere yüksekliği
+            if (event.clientY + yOffset + tooltipHeight > windowHeight) {
+                top = event.pageY - tooltipHeight - yOffset;
+            }
+
+            // Sol ve üst kenar güvenlik kontrolü
+            if (left < 5) left = 5;
+            if (top < 5) top = 5;
 
             tooltipEl.style.left = left + 'px';
             tooltipEl.style.top = top + 'px';
