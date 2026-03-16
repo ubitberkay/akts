@@ -337,10 +337,13 @@ h4 {
 /* Sidebar Accordion */
 .sidebar-accordion {
     background-color: var(--bg-gray-300);
-    border-radius: 12px;
+    border-radius: 16px;
     box-shadow: none;
     overflow: visible;
-    padding: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
     height: fit-content;
 }
 
@@ -355,8 +358,8 @@ h4 {
 }
 
 .sidebar-accordion .accordion-button {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 500;
     color: var(--text-default);
     background-color: transparent;
     padding: 14px 0;
