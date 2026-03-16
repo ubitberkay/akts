@@ -154,8 +154,8 @@ h4 {
     position: relative;
     z-index: 100;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 }
 
 .header-content {
@@ -547,7 +547,8 @@ h4 {
    =================================== */
 .main-footer {
     background-color: transparent;
-    padding: 24px 0;
+    padding-top: 24px;
+    padding-bottom: 32px;
     margin-top: auto;
 }
 
