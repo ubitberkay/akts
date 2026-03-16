@@ -9,7 +9,7 @@
 :root {
     /* Backgrounds */
     --bg-white: #FFFFFF;
-    --bg-gray-200: #E5E7EB;
+    --bg-gray-200: #C7CED5;
     --bg-gray-300: #CBD0D6;
     --bg-gray-400: #949BA8;
     --bg-gray-800: #1F2937;
@@ -242,7 +242,7 @@ h4 {
 
 .search-box .input-group {
     background-color: var(--bg-white);
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -250,7 +250,7 @@ h4 {
 .search-box .search-icon {
     background-color: var(--bg-white);
     border: none;
-    padding: 12px 12px 12px 16px;
+    padding: 5px 5px 5px 16px;
     color: var(--text-light);
     font-size: 16px;
 }
@@ -259,7 +259,7 @@ h4 {
     background-color: var(--bg-white);
     border: none;
     border-radius: 0;
-    padding: 12px 16px 12px 8px;
+    padding: 5px 5px 5px 16px;
     font-size: 14px;
     height: 48px;
     color: var(--text-default);
