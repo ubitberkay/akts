@@ -423,7 +423,8 @@
     <footer class="main-footer">
         <div class="container">
             <div class="footer-content">
-                <p>© 2026 • Bahçeşehir Üniversitesi</p>
+                <p>© <span id="current-year"></span> • Bahçeşehir Üniversitesi</p>
+                <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
                 <a href="#" class="footer-icon back-to-top" title="Yukarı Çık">
                     <i class="bi bi-arrow-up-circle"></i>
                 </a>
