@@ -108,6 +108,22 @@ h4 {
 }
 
 /* ===================================
+   Buttons
+   =================================== */
+.btn-primary {
+    background-color: #0A58CA !important;
+    border-color: #0A58CA !important;
+    border-radius: 20px;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #084298 !important;
+    border-color: #084298 !important;
+}
+
+/* ===================================
    Hero Wrapper
    =================================== */
 .hero-wrapper {
