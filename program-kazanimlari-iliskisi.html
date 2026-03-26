@@ -226,7 +226,7 @@
             background: white;
             border: 1px solid #e0e0e0;
             border-radius: 12px;
-            padding: 20px;
+            padding: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             width: 320px;
             z-index: 1050;
@@ -300,6 +300,45 @@
         /* As is */
         .arrow-left {
             transform: rotate(0deg);
+        }
+
+        /* Responsive Improvements */
+        @media (max-width: 991.98px) {
+            .matrix-table {
+                min-width: 1000px; /* Force minimum width to prevent squashing */
+                table-layout: auto !important; /* Allow cells to grow based on content */
+            }
+            
+            .matrix-container {
+                -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            }
+
+            /* Adjust header text for mobile if needed */
+            .header-pink, .header-blue {
+                padding: 8px !important;
+            }
+        }
+
+        /* Hero and Main layout fixes for mobile */
+        @media (max-width: 767.98px) {
+            .page-title {
+                font-size: 20px;
+            }
+            
+            .custom-tabs {
+                gap: 15px;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 5px;
+            }
+            
+            .custom-tab {
+                font-size: 14px;
+            }
+
+            .main-header-block {
+                overflow-x: auto;
+            }
         }
 
         /* Check SVG later */
@@ -610,19 +649,31 @@
                                         <col style="width: 19.5%;"> <!-- Text Header -->
                                         <col style="width: 3%;"> <!-- Number Header -->
 
-                                        <!-- Data Columns (1-12) -->
-                                        <col style="width: 4.5%;">
-                                        <col style="width: 4.5%;">
-                                        <col style="width: 4.5%;">
-                                        <col style="width: 4.5%;">
-                                        <col style="width: 4.5%;">
-                                        <col style="width: 4.5%;">
-                                        <col style="width: 4.5%;">
-                                        <col style="width: 4.5%;">
-                                        <col style="width: 4.5%;">
-                                        <col style="width: 4.5%;">
-                                        <col style="width: 4.5%;">
-                                        <col style="width: 4.5%;">
+                                        <!-- Data Columns (1-24) -->
+                                        <col style="width: 2.25%; background-color: #ffe5e5;">
+                                        <col style="width: 2.25%; background-color: #dcf2fd;">
+                                        <col style="width: 2.25%; background-color: #ffe5e5;">
+                                        <col style="width: 2.25%; background-color: #dcf2fd;">
+                                        <col style="width: 2.25%; background-color: #ffe5e5;">
+                                        <col style="width: 2.25%; background-color: #dcf2fd;">
+                                        <col style="width: 2.25%; background-color: #ffe5e5;">
+                                        <col style="width: 2.25%; background-color: #dcf2fd;">
+                                        <col style="width: 2.25%; background-color: #ffe5e5;">
+                                        <col style="width: 2.25%; background-color: #dcf2fd;">
+                                        <col style="width: 2.25%; background-color: #ffe5e5;">
+                                        <col style="width: 2.25%; background-color: #dcf2fd;">
+                                        <col style="width: 2.25%; background-color: #ffe5e5;">
+                                        <col style="width: 2.25%; background-color: #dcf2fd;">
+                                        <col style="width: 2.25%; background-color: #ffe5e5;">
+                                        <col style="width: 2.25%; background-color: #dcf2fd;">
+                                        <col style="width: 2.25%; background-color: #ffe5e5;">
+                                        <col style="width: 2.25%; background-color: #dcf2fd;">
+                                        <col style="width: 2.25%; background-color: #ffe5e5;">
+                                        <col style="width: 2.25%; background-color: #dcf2fd;">
+                                        <col style="width: 2.25%; background-color: #ffe5e5;">
+                                        <col style="width: 2.25%; background-color: #dcf2fd;">
+                                        <col style="width: 2.25%; background-color: #ffe5e5;">
+                                        <col style="width: 2.25%; background-color: #dcf2fd;">
 
                                         <!-- Right Side -->
                                         <col style="width: 3%;"> <!-- Number Header -->
@@ -633,14 +684,15 @@
                                             <!-- Top Left Header (Pink) -->
                                             <th colspan="2" rowspan="2" class="header-pink"
                                                 style="border-right: 1px solid #ccc;">
-                                                <!-- Arrow Icon Bottom Left -->
-                                                <div style="position: absolute; bottom: 12px; left: 12px;">
+                                                <!-- Arrow Icon Vertically Centered Left -->
+                                                <div style="position: absolute; top: 50%; transform: translateY(-50%); left: 12px;">
                                                     <!-- Corner Down Right Arrow -->
+                                                    <!-- Tabler Icon corner-left-down -->
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                         stroke="#222" stroke-width="1.5" stroke-linecap="round"
                                                         stroke-linejoin="round">
-                                                        <polyline points="15 10 20 15 15 20"></polyline>
-                                                        <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                                        <path d="M18 6h-6a3 3 0 0 0 -3 3v10l-4 -4m8 0l-4 4" />
                                                     </svg>
                                                 </div>
                                                 <div style="text-align: left; padding-left: 36px;">
@@ -654,7 +706,7 @@
                                             </th>
 
                                             <!-- Middle Header (Program Kazanımları) -->
-                                            <th colspan="12"
+                                            <th colspan="24"
                                                 style="background: white; border-bottom: 0px; font-weight: bold; padding: 10px; text-align: left; padding-left: 15px;">
                                                 Program Kazanımları</th>
 
@@ -669,51 +721,61 @@
                                                         style="font-size: 12px; font-weight: 600; color:#555; margin-top: 2px;">
                                                         Tanımlayıcıları</div>
                                                 </div>
-                                                <!-- Arrow Icon Top Right -->
-                                                <div style="position: absolute; top: 12px; right: 12px;">
+                                                <!-- Arrow Icon Vertically Centered Right -->
+                                                <div style="position: absolute; top: 50%; transform: translateY(-50%); right: 12px;">
                                                     <!-- Corner Down Left Arrow -->
+                                                    <!-- Tabler Icon corner-right-down -->
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                         stroke="#222" stroke-width="1.5" stroke-linecap="round"
                                                         stroke-linejoin="round">
-                                                        <polyline points="9 10 4 15 9 20"></polyline>
-                                                        <path d="M20 4v7a4 4 0 0 1-4 4H4"></path>
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                                        <path d="M6 6h6a3 3 0 0 1 3 3v10l-4 -4m8 0l-4 4" />
                                                     </svg>
                                                 </div>
                                             </th>
                                         </tr>
                                         <tr style="height: 30px;">
                                             <!-- Numbers 1-12 -->
-                                            <th>1</th>
-                                            <th>2</th>
-                                            <th>3</th>
-                                            <th>4</th>
-                                            <th>5</th>
-                                            <th>6</th>
-                                            <th>7</th>
-                                            <th>8</th>
-                                            <th>9</th>
-                                            <th>10</th>
-                                            <th>11</th>
-                                            <th>12</th>
+                                            <th colspan="2">1</th>
+                                            <th colspan="2">2</th>
+                                            <th colspan="2">3</th>
+                                            <th colspan="2">4</th>
+                                            <th colspan="2">5</th>
+                                            <th colspan="2">6</th>
+                                            <th colspan="2">7</th>
+                                            <th colspan="2">8</th>
+                                            <th colspan="2">9</th>
+                                            <th colspan="2">10</th>
+                                            <th colspan="2">11</th>
+                                            <th colspan="2">12</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <!-- 1 - BİLGİ SECTION -->
                                         <tr class="category-row">
                                             <td colspan="2" class="category-title-left">1 - Bilgi</td>
-                                            <td colspan="12" class="category-spacer"></td>
+                                            <td colspan="24" class="category-spacer"></td>
                                             <td colspan="2" class="category-title-right">1 - Bilgi</td>
                                         </tr>
                                         <tr>
                                             <td class="side-header-pink" rowspan="3">Kuramsal - Olgusal</td>
                                             <td class="side-num-pink">1</td>
-                                            <!-- Matrix Cols -->
+                                            
                                             <td class="bg-cell-soft-red interactive-cell" data-pk="Temel bilgi."
                                                 data-ta="Olgusal Hakimiyet.">1</td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -721,166 +783,285 @@
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
                                             <td></td>
-                                            <!-- Right Cols -->
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+
                                             <td class="side-num-blue">1</td>
                                             <td class="side-header-blue" rowspan="3">Kuramsal - Olgusal</td>
                                         </tr>
                                         <tr>
                                             <td class="side-num-pink">2</td>
+                                            
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell" data-pk="Eleştirel düşünme."
                                                 data-ta="Problem çözme.">2</td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+
                                             <td class="side-num-blue">2</td>
                                         </tr>
                                         <tr>
                                             <td class="side-num-pink">3</td>
+                                            
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell" data-pk="Liderlik."
                                                 data-ta="Yönetim.">3</td>
                                             <td></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+
                                             <td class="side-num-blue">3</td>
                                         </tr>
 
                                         <!-- 2 - BECERİLER SECTION -->
                                         <tr class="category-row">
                                             <td colspan="2" class="category-title-left">2 - Beceriler</td>
-                                            <td colspan="12" class="category-spacer"></td>
+                                            <td colspan="24" class="category-spacer"></td>
                                             <td colspan="2" class="category-title-right">2 - Beceriler</td>
                                         </tr>
                                         <tr>
                                             <td class="side-header-pink" rowspan="2">Bilişsel - Uygulamalı</td>
                                             <td class="side-num-pink">1</td>
+                                            
                                             <td class="bg-cell-soft-red interactive-cell" data-pk="Problem çözme."
                                                 data-ta="Analiz.">1</td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+
                                             <td class="side-num-blue">1</td>
                                             <td class="side-header-blue" rowspan="2">Bilişsel - Uygulamalı</td>
                                         </tr>
                                         <tr>
                                             <td class="side-num-pink">2</td>
+                                            
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell" data-pk="Teknoloji kullanımı."
                                                 data-ta="Dijital yetkinlik.">2</td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+
                                             <td class="side-num-blue">2</td>
                                         </tr>
 
                                         <!-- 3 - YETKİNLİKLER SECTION -->
                                         <tr class="category-row">
                                             <td colspan="2" class="category-title-left">3 - Yetkinlikler</td>
-                                            <td colspan="12" class="category-spacer"></td>
+                                            <td colspan="24" class="category-spacer"></td>
                                             <td colspan="2" class="category-title-right">3 - Yetkinlikler</td>
                                         </tr>
                                         <tr>
                                             <td class="side-header-pink" rowspan="6">İletişim ve Sosyal Yetkinlik</td>
                                             <td class="side-num-pink">1</td>
+                                            
                                             <td class="bg-cell-soft-red interactive-cell" data-pk="Etik değerler."
                                                 data-ta="Mesleki etik.">1</td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+
                                             <td class="side-num-blue">1</td>
                                             <td class="side-header-blue" rowspan="6">İletişim ve Sosyal Yetkinlik</td>
                                         </tr>
                                         <tr>
                                             <td class="side-num-pink">2</td>
+                                            
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell" data-pk="Sosyal sorumluluk."
                                                 data-ta="Toplum hizmeti.">2</td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+
                                             <td class="side-num-blue">2</td>
                                         </tr>
                                         <tr>
                                             <td class="side-num-pink">3</td>
+                                            
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell" data-pk="İletişim."
                                                 data-ta="Global iletişim.">3</td>
                                             <td></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+
                                             <td class="side-num-blue">3</td>
                                         </tr>
                                         <tr>
                                             <td class="side-num-pink">4</td>
+                                            
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell" data-pk="Takım çalışması."
                                                 data-ta="Organizasyon.">4</td>
                                             <td></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+
                                             <td class="side-num-blue">4</td>
                                         </tr>
                                         <tr>
                                             <td class="side-num-pink">5</td>
+                                            
                                             <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
@@ -888,17 +1069,33 @@
                                                 data-ta="Sürekli gelişim.">5</td>
                                             <td></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+
                                             <td class="side-num-blue">5</td>
                                         </tr>
                                         <tr>
                                             <td class="side-num-pink">6</td>
+                                            
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -906,10 +1103,17 @@
                                                 data-ta="Dil yetkinliği.">6</td>
                                             <td></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+
                                             <td class="side-num-blue">6</td>
                                         </tr>
 
@@ -917,54 +1121,96 @@
                                         <tr>
                                             <td class="side-header-pink" rowspan="3">Öğrenme Yetkinliği</td>
                                             <td class="side-num-pink">1</td>
+                                            
                                             <td class="bg-cell-soft-red interactive-cell" data-pk="Bilgi analizi."
                                                 data-ta="Analitik düşünme.">1</td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+
                                             <td class="side-num-blue">1</td>
                                             <td class="side-header-blue" rowspan="3">Öğrenme Yetkinliği</td>
                                         </tr>
                                         <tr>
                                             <td class="side-num-pink">2</td>
+                                            
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell" data-pk="Öğrenmeyi öğrenme."
                                                 data-ta="Metabilişsel.">2</td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+
                                             <td class="side-num-blue">2</td>
                                         </tr>
                                         <tr>
                                             <td class="side-num-pink">3</td>
+                                            
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell" data-pk="Bağımsız çalışma."
                                                 data-ta="Öz yönetim.">3</td>
                                             <td></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+
                                             <td class="side-num-blue">3</td>
                                         </tr>
 
@@ -973,58 +1219,97 @@
                                             <td class="side-header-pink" rowspan="3">Bağımsız
                                                 Çalışabilme<br>ve<br>Sorumluluk Alabilme Yetkinliği</td>
                                             <td class="side-num-pink">1</td>
-                                            <!-- Row 1 -->
+                                            
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell" data-pk="Proje."
                                                 data-ta="Sorumluluk.">1</td>
                                             <td></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+
                                             <td class="side-num-blue">1</td>
                                             <td class="side-header-blue" rowspan="3">Bağımsız
                                                 Çalışabilme<br>ve<br>Sorumluluk Alabilme Yetkinliği</td>
                                         </tr>
                                         <tr>
                                             <td class="side-num-pink">2</td>
-                                            <!-- Row 2 -->
+                                            
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell" data-pk="Karar verme."
                                                 data-ta="İnisiyatif.">2</td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
                                             <td></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+
                                             <td class="side-num-blue">2</td>
                                         </tr>
                                         <tr>
                                             <td class="side-num-pink">3</td>
-                                            <!-- Row 3 -->
+                                            
                                             <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell" data-pk="Gelişim."
                                                 data-ta="Kariyer.">3</td>
                                             <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="bg-cell-soft-blue interactive-cell"></td>
                                             <td></td>
                                             <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="bg-cell-soft-red interactive-cell"></td>
+                                            <td></td>
+
                                             <td class="side-num-blue">3</td>
                                         </tr>
                                     </tbody>
@@ -1102,13 +1387,28 @@
         function positionTooltip(event, tooltipEl) {
             const xOffset = 20;
             const yOffset = 20;
+            const tooltipWidth = tooltipEl.offsetWidth;
+            const tooltipHeight = tooltipEl.offsetHeight;
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
 
-            // Basic positioning
+            // event.pageX/Y imlecin döküman üzerindeki tam konumudur (scroll dahil)
             let left = event.pageX + xOffset;
             let top = event.pageY + yOffset;
 
-            // Viewport boundary detection could be added here if needed
-            // But simple offset usually works for this context
+            // Sağ kenar kontrolü: İmlecin viewport üzerindeki konumu + tooltip genişliği > pencere genişliği
+            if (event.clientX + xOffset + tooltipWidth > windowWidth) {
+                left = event.pageX - tooltipWidth - xOffset;
+            }
+
+            // Alt kenar kontrolü: İmlecin viewport üzerindeki konumu + tooltip yüksekliği > pencere yüksekliği
+            if (event.clientY + yOffset + tooltipHeight > windowHeight) {
+                top = event.pageY - tooltipHeight - yOffset;
+            }
+
+            // Sol ve üst kenar güvenlik kontrolü
+            if (left < 5) left = 5;
+            if (top < 5) top = 5;
 
             tooltipEl.style.left = left + 'px';
             tooltipEl.style.top = top + 'px';
