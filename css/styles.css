@@ -41,7 +41,7 @@ body {
     line-height: 1.5;
     font-weight: 400;
     color: var(--text-default);
-    background-color: var(--bg-gray-200);
+    background-color: #E9ECEF;
 }
 
 /* Typography */
@@ -303,6 +303,13 @@ h4 {
     padding: 24px 0;
 }
 
+.main-content p {
+    color: #000000;
+    size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
 /* Main Wrapper - Container */
 .main-wrapper {
     background-color: transparent;
@@ -336,7 +343,7 @@ h4 {
 
 /* Sidebar Accordion */
 .sidebar-accordion {
-    background-color: var(--bg-gray-300);
+    background-color: #D6DBE0;
     border-radius: 16px;
     box-shadow: none;
     overflow: visible;
@@ -406,9 +413,10 @@ h4 {
 }
 
 .content-card p {
-    color: var(--text-light);
-    font-size: 14px;
-    line-height: 1.6;
+    color: #000000;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
     margin-bottom: 0;
 }
 
@@ -443,7 +451,10 @@ h4 {
     padding: 10px 16px;
     border-right: 1px solid var(--bg-gray-300);
     border-bottom: 1px solid var(--bg-gray-300);
-    color: var(--text-light);
+    color: var(--text-default);
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
 }
 
 .akts-table tbody td:last-child {
@@ -469,9 +480,10 @@ h4 {
 
 .program-description p {
     margin-bottom: 12px;
-    font-size: 14px;
-    line-height: 1.7;
-    color: var(--text-light);
+    color: #000000;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
     text-align: justify;
 }
 
@@ -481,10 +493,11 @@ h4 {
 }
 
 .program-tabs .nav-link {
-    color: var(--text-light);
-    font-size: 14px;
-    font-weight: 500;
+    color: var(--text-default);
+    font-size: 18px;
+    font-weight: 600;
     border: none;
+    line-height: 22.5px;
     padding-top: 8px;
     padding-bottom: 8px;
     border-bottom: 2px solid transparent;
@@ -526,11 +539,19 @@ h4 {
     margin-bottom: 16px;
 }
 
+.tab-content p {
+    color: #000000;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
 .tab-content li {
-    font-size: 14px;
-    color: var(--text-light);
+    color: #000000;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
     margin-bottom: 8px;
-    line-height: 1.6;
 }
 
 .tab-content a {
