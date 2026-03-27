@@ -368,10 +368,14 @@ h4 {
     height: fit-content;
 }
 
+
 .sidebar-accordion .accordion-item {
     border: none;
-    border-bottom: 1px solid var(--bg-gray-300);
     background-color: transparent;
+    gap: 8px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px;
 }
 
 .sidebar-accordion .accordion-item:last-child {
@@ -398,9 +402,18 @@ h4 {
 }
 
 .sidebar-accordion .accordion-button::after {
-    background-size: 12px;
-    width: 12px;
-    height: 12px;
+    width: 9px;
+    height: 9px;
+    background-image: none !important;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+}
+
+.sidebar-accordion .accordion-button:not(.collapsed)::after {
+    transform: rotate(-135deg);
+    margin-top: 12px;
 }
 
 .sidebar-accordion .accordion-body {
