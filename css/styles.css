@@ -253,6 +253,7 @@ h4 {
     padding: 5px 5px 5px 16px;
     color: var(--text-light);
     font-size: 16px;
+    border-radius: 10px;
 }
 
 .search-box .form-control {
@@ -276,13 +277,13 @@ h4 {
 }
 
 .search-box .btn-search {
-    background-color: var(--bg-blue-600);
-    border: none;
-    border-radius: 12px !important;
+    background-color: #0A58CA;
+    border-left: 1px solid #0A58CA;
+    border-radius: 8px !important;
     padding: 0;
     color: var(--text-white);
-    height: 36px;
-    width: 36px;
+    height: 38px;
+    width: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -290,6 +291,10 @@ h4 {
     flex-shrink: 0;
     position: relative;
     z-index: 10;
+}
+
+.bi-arrow-right {
+    color: #FFFFFF;
 }
 
 .search-box .btn-search:hover {
