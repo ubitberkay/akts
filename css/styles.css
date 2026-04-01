@@ -355,7 +355,6 @@ h4 {
   padding: 24px;
   border-radius: 16px;
   box-shadow: var(--shadow-big);
-  height: 100%;
 }
 
 /* Sidebar Accordion */
@@ -844,16 +843,14 @@ table thead {
 
 /* No Result Styles */
 .no-result-container {
-  background-color: var(--bg-gray-200);
+  background-color: #E9ECEF;
   border-radius: 12px;
-  padding: 80px 24px;
+  padding: 79px 24px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 300px;
-  margin-top: 24px;
+  justify-content: center; 
 }
 
 /* ===================================
@@ -1002,19 +999,18 @@ table thead {
   vertical-align: middle;
 }
 
-.no-result-img {
-  width: 48px;
-  height: 48px;
-}
 
 .no-result-icon {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
-
-.no-result-text {
+.no-result-icon i{
+  font-size: 64px;
+    color: var(--text-light);
+}
+.main-content .no-result-text {
   font-size: 20px;
   font-weight: 600;
-  color: #6c757d;
+  color: var(--text-light);
   line-height: 25px;
   margin: 0;
 }
