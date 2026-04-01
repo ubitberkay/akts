@@ -11,325 +11,13 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Tabler Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 
     <!-- Custom Styles -->
     <link href="css/styles.css" rel="stylesheet">
 
-    <style>
-        /* Specific Styles for Ders Tanıtım Matrisi */
-        .page-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 24px;
-            color: #111827;
-        }
-
-        /* Common Box Styles */
-        .section-box {
-            border: 1px solid #DEE2E6;
-            border-radius: 8px;
-            overflow: hidden;
-            background-color: #fff;
-            margin-bottom: 24px;
-        }
-
-        /* Dark Blue Header for "İŞLETME" (Matches .table-header-hukuk) */
-        .section-header-dark {
-            background-color: #0A58CA;
-            color: white;
-            font-weight: 700;
-            padding: 12px 20px;
-            font-size: 15px;
-            text-transform: uppercase;
-        }
-
-        /* Light Blue Header for "Program Öğrenme Çıktıları" and Matrix Header */
-        .section-header-light {
-            background-color: #F8FAFC;
-            /* Light Gray/Blue */
-            color: #0A58CA;
-            /* Strong Blue Text */
-            font-weight: 700;
-            padding: 14px 20px;
-            font-size: 15px;
-            border-bottom: 1px solid #DEE2E6;
-        }
-
-        /* Info Table (Top Section) */
-        .info-table {
-            width: 100%;
-            margin: 0;
-            border-collapse: collapse;
-        }
-
-        .info-table td {
-            padding: 14px 20px;
-            border: 1px solid #DEE2E6;
-            font-size: 14px;
-            color: #1F2937;
-            vertical-align: top;
-        }
-
-        .info-table tr:first-child td {
-            background-color: #fff;
-            font-weight: 700;
-            color: #111827;
-        }
-
-        .info-text-row td {
-            color: #4B5563 !important;
-            font-weight: 400 !important;
-            line-height: 1.6;
-            font-size: 13.5px !important;
-        }
-
-        .matrix-section-title {
-            font-size: 18px;
-            font-weight: 700;
-            margin-top: 32px;
-            margin-bottom: 8px;
-            color: #111827;
-        }
-
-        .matrix-description {
-            font-size: 14px;
-            color: #6B7280;
-            margin-bottom: 24px;
-        }
-
-        /* Tabs */
-        .nav-tabs-custom {
-            border-bottom: 1px solid #E5E7EB;
-            margin-bottom: 24px;
-            gap: 24px;
-        }
-
-        .nav-tabs-custom .nav-link {
-            border: none;
-            color: #4B5563;
-            font-weight: 600;
-            font-size: 15px;
-            padding: 12px 4px;
-            background: transparent;
-            border-bottom: 2px solid transparent;
-            margin: 0;
-        }
-
-        .nav-tabs-custom .nav-link:hover {
-            color: #0A58CA;
-        }
-
-        .nav-tabs-custom .nav-link.active {
-            color: #0A58CA;
-            border-bottom: 2px solid #0A58CA;
-            background: transparent;
-        }
-
-        /* Program Outcomes List */
-        .program-outcome-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .program-outcome-list li {
-            padding: 12px 20px;
-            font-size: 14px;
-            color: #374151;
-            line-height: 1.5;
-            border-bottom: 1px solid #DEE2E6;
-            background-color: #fff;
-        }
-
-        .program-outcome-list li:nth-child(even) {
-            background-color: #F8F9FA;
-        }
-
-        .program-outcome-list li:last-child {
-            border-bottom: none;
-        }
-
-        /* Matrix Section Styles */
-        .matrix-container {
-            border: 1px solid #DEE2E6;
-            border-radius: 8px;
-            overflow: hidden;
-            background: white;
-            margin-top: 24px;
-        }
-
-        /* Scale Bar */
-        .scale-bar {
-            display: flex;
-            width: 100%;
-            font-size: 13px;
-            border-bottom: 1px solid #DEE2E6;
-        }
-
-        .scale-item {
-            flex: 1;
-            padding: 10px;
-            text-align: center;
-            font-weight: 500;
-            border-right: 1px solid #DEE2E6;
-            color: #1F2937;
-        }
-
-        .scale-item:last-child {
-            border-right: none;
-        }
-
-        /* Refined Pastel Colors */
-        .scale-1 {
-            background-color: #E1F5FE;
-            color: #0277BD;
-        }
-
-        .scale-2 {
-            background-color: #E8F5E9;
-            color: #2E7D32;
-        }
-
-        .scale-3 {
-            background-color: #FFFDE7;
-            color: #F9A825;
-        }
-
-        .scale-4 {
-            background-color: #F3E5F5;
-            color: #7B1FA2;
-        }
-
-        .scale-5 {
-            background-color: #FFEBEE;
-            color: #C62828;
-        }
-
-        /* Matrix Table */
-        .matrix-table {
-            width: 100%;
-            margin-bottom: 0;
-            border-collapse: collapse;
-        }
-
-        .matrix-table th {
-            background-color: #F8F9FA;
-            font-weight: 700;
-            color: #111827;
-            text-align: center;
-            padding: 10px 4px;
-            font-size: 13px;
-            border-bottom: 1px solid #DEE2E6;
-            border-right: 1px solid #DEE2E6;
-            vertical-align: middle;
-            height: 48px;
-        }
-
-        .matrix-table td {
-            text-align: center;
-            padding: 0;
-            height: 40px;
-            border-bottom: 1px solid #DEE2E6;
-            border-right: 1px solid #DEE2E6;
-            font-size: 14px;
-            font-weight: 500;
-            color: #374151;
-            vertical-align: middle;
-            background-color: #fff;
-            padding: 8px 12px;
-        }
-
-        /* Set width for columns 1-15 */
-        .matrix-table th:nth-child(n+2):nth-child(-n+16),
-        .matrix-table td:nth-child(n+2):nth-child(-n+16) {
-            width: 30px;
-            min-width: 30px;
-            max-width: 30px;
-        }
-
-        .matrix-table td:first-child {
-            text-align: left;
-            padding: 8px 12px;
-            width: auto;
-            min-width: 250px;
-        }
-
-        .course-code-link {
-            text-decoration: none;
-            color: #0A58CA;
-            font-weight: 500;
-            margin-right: 6px;
-            font-size: 14px;
-        }
-
-        .course-code-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Cell Backgrounds */
-        .cell-1 {
-            background-color: #E0F3FF !important;
-        }
-
-        .cell-2 {
-            background-color: #D9FBF1 !important;
-        }
-
-        .cell-3 {
-            background-color: #FFF8D2 !important;
-        }
-
-        .cell-4 {
-            background-color: #F3E5F5 !important;
-        }
-
-        .cell-5 {
-            background-color: #FFE5E5 !important;
-        }
-
-        .total-col {
-            font-weight: 700;
-            color: #111827;
-        }
-
-        /* Buttons Bottom */
-        .section-buttons {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 0;
-            align-items: center;
-            /* Ensure vertical alignment */
-        }
-
-        .btn-section-select {
-            background-color: #2563EB !important;
-            /* var(--bg-blue-600) forced */
-            color: #FFFFFF !important;
-            /* Force white text */
-            border-radius: 20px;
-            padding: 6px 16px;
-            font-size: 13px;
-            font-weight: 600;
-            /* Increased weight for better visibility */
-            border: none;
-            transition: all 0.2s;
-            text-decoration: none;
-            display: inline-flex;
-            /* Use inline-flex for better centering */
-            align-items: center;
-            justify-content: center;
-            line-height: 1.2;
-            white-space: nowrap;
-            /* Prevent wrapping */
-        }
-
-        .btn-section-select:hover {
-            background-color: #1D4ED8 !important;
-            color: #FFFFFF !important;
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -346,7 +34,7 @@
                     </div>
                     <h1 class="header-title">Bilgi Paketi / Ders Kataloğu</h1>
                     <a href="#" class="lang-btn">
-                        <i class="bi bi-globe"></i>
+                        <i class="ti ti-world"></i>
                         ENGLISH
                     </a>
                 </div>
@@ -358,11 +46,11 @@
                     <div class="search-box">
                         <div class="input-group">
                             <span class="input-group-text search-icon">
-                                <i class="bi bi-search"></i>
+                                <i class="ti ti-search"></i>
                             </span>
                             <input type="text" class="form-control" placeholder="" aria-label="Ders ara">
                             <button class="btn btn-search" type="button" id="searchButton">
-                                <i class="bi bi-arrow-right"></i>
+                                <i class="ti ti-arrow-right"></i>
                             </button>
                         </div>
                     </div>
@@ -490,15 +178,14 @@
 
                                     <!-- Program Outcomes Box -->
                                     <!-- Program Outcomes Table (Semester Table Design) -->
-                                    <h3 class="semester-title"
-                                        style="font-size: 16px; margin-bottom: 15px; color: #0A58CA; font-weight: 700; text-transform: uppercase;">
+                                    <h3 class="semester-title style-83abc571">
                                         Program Öğrenme Çıktıları</h3>
                                     <div class="table-responsive mb-4">
                                         <table class="table akts-table course-table table-bordered table-striped-even">
                                             <thead>
                                                 <tr>
 
-                                                    <th style="color: #0A58CA;">Program Öğrenme Çıktısı</th>
+                                                    <th class="style-f741136f">Program Öğrenme Çıktısı</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -572,12 +259,12 @@
                                 </div>
 
                                 <!-- Matrix Container 1: Header + Scale -->
-                                <div class="matrix-container" style="margin-bottom: 24px;">
+                                <div class="matrix-container style-dc2cb2da">
                                     <div class="section-header-light">
                                         Program ve Öğrenme Kazanımları İlişkisi
                                     </div>
                                     <!-- Scale -->
-                                    <div class="scale-bar" style="border-bottom: none;">
+                                    <div class="scale-bar style-211a0439">
                                         <div class="scale-item">Etkisi Yok</div>
                                         <div class="scale-item scale-1">1 En Düşük</div>
                                         <div class="scale-item scale-2">2 Düşük</div>
@@ -910,7 +597,7 @@
                                                     <td>20.80</td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding: 8px 16px;">
+                                                    <td class="style-1f037b2d">
                                                         <div class="section-buttons">
                                                             <a href="#" class="btn-section-select"
                                                                 data-bs-toggle="modal"
@@ -922,7 +609,7 @@
                                                     <td colspan="17"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding: 8px 16px;">
+                                                    <td class="style-1f037b2d">
                                                         <div class="section-buttons">
                                                             <a href="#" class="btn-section-select"
                                                                 data-bs-toggle="modal"
@@ -934,7 +621,7 @@
                                                     <td colspan="17"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding: 8px 16px;">
+                                                    <td class="style-1f037b2d">
                                                         <div class="section-buttons">
                                                             <a href="#" class="btn-section-select"
                                                                 data-bs-toggle="modal"
@@ -977,7 +664,7 @@
                 <p>© <span id="current-year"></span> • Bahçeşehir Üniversitesi</p>
                 <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
                 <a href="#" class="footer-icon back-to-top" title="Yukarı Çık">
-                    <i class="bi bi-arrow-up-circle"></i>
+                    <i class="ti ti-arrow-up-circle"></i>
                 </a>
             </div>
         </div>
@@ -1075,7 +762,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="modal-footer border-0" style="background-color: #f2f4f6;">
+                <div class="modal-footer border-0 style-06054b0e">
                     <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">Kapat</button>
                 </div>
             </div>

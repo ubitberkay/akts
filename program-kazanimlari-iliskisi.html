@@ -10,339 +10,12 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 
     <!-- Custom Styles -->
     <link href="css/styles.css" rel="stylesheet">
 
-    <style>
-        /* Matrix Table Styling */
-        .matrix-container {
-            overflow-x: auto;
-            border-radius: 8px;
-            border: 1px solid #dee2e6;
-            margin-top: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            background: #fff;
-        }
-
-        .matrix-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 11px;
-            /* Slightly smaller for compact fit */
-            table-layout: fixed;
-            /* Crucial for strict width control */
-        }
-
-        .matrix-table th,
-        .matrix-table td {
-            text-align: center;
-            vertical-align: middle;
-            border: 1px solid #e0e0e0;
-            padding: 4px;
-            /* Reduced padding */
-            height: 40px;
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-        }
-
-        /* Top corners - adjust border radius visually via container */
-
-        /* Specialized Column Widths - Percentage Based */
-
-        /* Col 1 & 16: Side Text Headers */
-        .matrix-table th:first-child,
-        .matrix-table td:first-child,
-        .matrix-table th:last-child,
-        .matrix-table td:last-child {
-            /* Width controlled by colgroup */
-            text-align: left;
-            padding: 8px 12px;
-            font-weight: 600;
-            color: #333;
-            white-space: normal;
-            line-height: 1.3;
-        }
-
-        /* Side Number Headers */
-        .side-num-pink,
-        .side-num-blue {
-            /* Width controlled by colgroup */
-            font-weight: bold;
-            color: #555;
-            text-align: center;
-        }
-
-        /* Matrix Cells (Cols 3-14) */
-        .matrix-table th:not(:first-child):not(:last-child):not(.col-num-side),
-        .matrix-table td:not(:first-child):not(:last-child):not(.col-num-side):not(.category-title-left):not(.category-title-right):not(.category-spacer) {
-            /* Width controlled by colgroup */
-            padding: 4px;
-            height: 38px;
-            /* Fixed height for squares */
-            /* Remove aspect-ratio to avoid flexbox issues if any */
-        }
-
-        /* Header Colors */
-        .header-pink {
-            background-color: #ffe5e5 !important;
-            color: #333;
-            vertical-align: middle !important;
-            padding: 12px !important;
-            position: relative;
-        }
-
-        .header-blue {
-            background-color: #dcf2fd !important;
-            color: #333;
-            vertical-align: middle !important;
-            padding: 12px !important;
-            position: relative;
-        }
-
-        /* Side Header Colors */
-        .side-header-pink {
-            background-color: #ffe5e5 !important;
-        }
-
-        .side-header-blue {
-            background-color: #dcf2fd !important;
-        }
-
-        .side-num-pink {
-            background-color: #fff0f0 !important;
-            /* Slightly lighter pink for numbers */
-        }
-
-        .side-num-blue {
-            background-color: #eaf8ff !important;
-            /* Slightly lighter blue for numbers */
-        }
-
-        /* Category Row Styles */
-        .category-row td {
-            background-color: #f8f9fa;
-            /* Slightly off-white for distinction? No, white in image */
-            background-color: #fff;
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
-            font-weight: bold;
-            color: #000;
-            padding: 4px 12px;
-            /* Thinner row */
-            font-size: 11px;
-        }
-
-        /* Interactive Cells */
-        .bg-cell-soft-red {
-            background-color: #ffe5e5;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .bg-cell-soft-blue {
-            background-color: #dcf2fd;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .interactive-cell:hover {
-            opacity: 0.8;
-            outline: 2px solid #aaa;
-        }
-
-        /* Tooltip Styling */
-        #customTooltip {
-            display: none;
-            position: absolute;
-            background: #fff;
-            border: 1px solid #eee;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-            font-size: 13px;
-            max-width: 300px;
-            z-index: 1000;
-            color: #333;
-            line-height: 1.5;
-        }
-
-        #customTooltip strong {
-            display: block;
-            margin-bottom: 4px;
-            color: #000;
-        }
-
-        #customTooltip p {
-            margin: 0 0 10px 0;
-            color: #555;
-        }
-
-        /* Arrow for tooltip */
-        #customTooltip::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: -6px;
-            /* Left side arrow */
-            width: 12px;
-            height: 12px;
-            background: #fff;
-            transform: rotate(45deg);
-            border-left: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-        }
-
-        /* Tabs Styling */
-        .custom-tabs {
-            display: flex;
-            gap: 32px;
-            border-bottom: 1px solid #dee2e6;
-            margin-bottom: 24px;
-        }
-
-        .custom-tab {
-            padding: 12px 4px;
-            font-weight: 600;
-            color: #666;
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            margin-bottom: -1px;
-            cursor: pointer;
-            font-size: 15px;
-        }
-
-        .custom-tab.active {
-            color: #0A58CA;
-            border-bottom-color: #0A58CA;
-        }
-
-        /* Tooltip Styling */
-        #customTooltip {
-            display: none;
-            position: absolute;
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            width: 320px;
-            z-index: 1050;
-            font-size: 14px;
-            pointer-events: none;
-        }
-
-        #customTooltip strong {
-            display: block;
-            margin-bottom: 6px;
-            color: #111;
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        #customTooltip p {
-            margin: 0 0 16px 0;
-            line-height: 1.5;
-            color: #555;
-            font-size: 13px;
-        }
-
-        #customTooltip p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Hover effect for interactive cells */
-        .interactive-cell {
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .interactive-cell:hover {
-            transform: scale(1.15);
-            /* Pop */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            z-index: 15;
-            position: relative;
-            border: 1px solid #aaa;
-            background-color: #fff;
-            /* Highlight */
-        }
-
-        /* Ensure specific colors override hover bg if needed, or let hover be white */
-        .interactive-cell.bg-soft-red:hover {
-            background-color: #ffe0e0;
-        }
-
-        .interactive-cell.bg-soft-blue:hover {
-            background-color: #d0ebff;
-        }
-
-        .table-header-program {
-            background-color: #0A58CA !important;
-            color: white !important;
-        }
-
-        /* Custom icons for the header arrows */
-        .header-arrow-icon {
-            width: 24px;
-            height: 24px;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        /* Rotate arrow for right side */
-        .arrow-right {
-            transform: rotate(0deg);
-        }
-
-        /* As is */
-        .arrow-left {
-            transform: rotate(0deg);
-        }
-
-        /* Responsive Improvements */
-        @media (max-width: 991.98px) {
-            .matrix-table {
-                min-width: 1000px; /* Force minimum width to prevent squashing */
-                table-layout: auto !important; /* Allow cells to grow based on content */
-            }
-            
-            .matrix-container {
-                -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-            }
-
-            /* Adjust header text for mobile if needed */
-            .header-pink, .header-blue {
-                padding: 8px !important;
-            }
-        }
-
-        /* Hero and Main layout fixes for mobile */
-        @media (max-width: 767.98px) {
-            .page-title {
-                font-size: 20px;
-            }
-            
-            .custom-tabs {
-                gap: 15px;
-                overflow-x: auto;
-                white-space: nowrap;
-                padding-bottom: 5px;
-            }
-            
-            .custom-tab {
-                font-size: 14px;
-            }
-
-            .main-header-block {
-                overflow-x: auto;
-            }
-        }
-
-        /* Check SVG later */
-    </style>
+    
 </head>
 
 <body>
@@ -365,7 +38,7 @@
 
                     <!-- Language Button -->
                     <a href="#" class="lang-btn">
-                        <i class="bi bi-globe"></i>
+                        <i class="ti ti-world"></i>
                         ENGLISH
                     </a>
                 </div>
@@ -378,11 +51,11 @@
                     <div class="search-box">
                         <div class="input-group">
                             <span class="input-group-text search-icon">
-                                <i class="bi bi-search"></i>
+                                <i class="ti ti-search"></i>
                             </span>
                             <input type="text" class="form-control" placeholder="" aria-label="Ders ara">
                             <button class="btn btn-search" type="button" id="searchButton">
-                                <i class="bi bi-arrow-right"></i>
+                                <i class="ti ti-arrow-right"></i>
                             </button>
                         </div>
                     </div>
@@ -547,22 +220,22 @@
 
                             <!-- Missing Course Table -->
                             <div class="table-responsive mb-4">
-                                <table class="table table-bordered align-middle" style="font-size: 14px;">
+                                <table class="table table-bordered align-middle style-267f6d50">
                                     <thead class="table-light">
-                                        <tr style="background-color: #f8f9fa;">
-                                            <th style="background-color: #eee;">Ders Kodu</th>
-                                            <th style="background-color: #eee;">Ders Adı</th>
-                                            <th style="background-color: #eee;">Dili</th>
-                                            <th style="background-color: #eee;">Ön Koşul</th>
-                                            <th style="background-color: #eee;">Teorik</th>
-                                            <th style="background-color: #eee;">Pratik</th>
-                                            <th style="background-color: #eee;">Kredi</th>
-                                            <th style="background-color: #eee;">AKTS</th>
+                                        <tr class="style-2f9d52b0">
+                                            <th class="style-07a2241a">Ders Kodu</th>
+                                            <th class="style-07a2241a">Ders Adı</th>
+                                            <th class="style-07a2241a">Dili</th>
+                                            <th class="style-07a2241a">Ön Koşul</th>
+                                            <th class="style-07a2241a">Teorik</th>
+                                            <th class="style-07a2241a">Pratik</th>
+                                            <th class="style-07a2241a">Kredi</th>
+                                            <th class="style-07a2241a">AKTS</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><a href="#" style="text-decoration: none; color: #0d6efd;">HST302</a>
+                                            <td><a href="#" class="style-50906409">HST302</a>
                                             </td>
                                             <td>İletişim Becerileri ve Akademik Raporlama I</td>
                                             <td>English</td>
@@ -577,41 +250,40 @@
                             </div>
 
                             <!-- Missing Temel Bilgiler Section -->
-                            <div class="card mb-4" style="border: 1px solid #dee2e6; border-radius: 4px;">
-                                <div class="card-header"
-                                    style="background-color: #f8f9fa; border-bottom: 1px solid #dee2e6; font-weight: bold; color: #0A58CA; padding: 10px 16px;">
+                            <div class="card mb-4 style-7e0fe271">
+                                <div class="card-header style-21134e96">
                                     Temel Bilgiler
                                 </div>
                                 <div class="card-body p-0">
-                                    <table class="table table-striped mb-0" style="font-size: 14px;">
+                                    <table class="table table-striped mb-0 style-267f6d50">
                                         <tbody>
                                             <tr>
-                                                <td style="width: 25%; font-weight: 500;">
+                                                <td class="style-29faab9a">
                                                     Öğretim Dili</td>
                                                 <td>Türkçe</td>
                                             </tr>
                                             <tr>
-                                                <td style="font-weight: 500;">Dersin Türü
+                                                <td class="style-d2abfb71">Dersin Türü
                                                 </td>
                                                 <td>Must Course</td>
                                             </tr>
                                             <tr>
-                                                <td style="font-weight: 500;">Dersin Seviyesi
+                                                <td class="style-d2abfb71">Dersin Seviyesi
                                                 </td>
                                                 <td>Lisans</td>
                                             </tr>
                                             <tr>
-                                                <td style="font-weight: 500;">Dersin Veriliş
+                                                <td class="style-d2abfb71">Dersin Veriliş
                                                     Şekli</td>
                                                 <td>Yüz yüze</td>
                                             </tr>
                                             <tr>
-                                                <td style="font-weight: 500;">Dersin
+                                                <td class="style-d2abfb71">Dersin
                                                     Koordinatörü</td>
                                                 <td>Dr. Öğr. Üyesi MEHMET SİNAN ALTUNÇ</td>
                                             </tr>
                                             <tr>
-                                                <td style="font-weight: 500;">Dersi
+                                                <td class="style-d2abfb71">Dersi
                                                     Veren(ler)</td>
                                                 <td>
                                                     Dr. Öğr. Üyesi SALİH OKTAR<br>
@@ -620,14 +292,14 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="font-weight: 500;">Opsiyonel
+                                                <td class="style-d2abfb71">Opsiyonel
                                                     Program Bileşenleri</td>
                                                 <td>Yok</td>
                                             </tr>
                                             <tr>
-                                                <td style="font-weight: 500;">Dersin Amacı
+                                                <td class="style-d2abfb71">Dersin Amacı
                                                 </td>
-                                                <td style="line-height: 1.6;">
+                                                <td class="style-374aad47">
                                                     Ceza muhakemesinin yürüyüşü hakkında bilgi verilmesi
                                                     amaçlanmaktadır. Bu bakımdan ilk derece muhakemesi ve kanunyolu
                                                     muhakemesinin özellikleri ele alınmaktadır. Ayrıca araştırma ve
@@ -646,46 +318,45 @@
                                 <table class="matrix-table">
                                     <colgroup>
                                         <!-- Left Side -->
-                                        <col style="width: 19.5%;"> <!-- Text Header -->
-                                        <col style="width: 3%;"> <!-- Number Header -->
+                                        <col class="style-adf10f95"> <!-- Text Header -->
+                                        <col class="style-8253f033"> <!-- Number Header -->
 
                                         <!-- Data Columns (1-24) -->
-                                        <col style="width: 2.25%; background-color: #ffe5e5;">
-                                        <col style="width: 2.25%; background-color: #dcf2fd;">
-                                        <col style="width: 2.25%; background-color: #ffe5e5;">
-                                        <col style="width: 2.25%; background-color: #dcf2fd;">
-                                        <col style="width: 2.25%; background-color: #ffe5e5;">
-                                        <col style="width: 2.25%; background-color: #dcf2fd;">
-                                        <col style="width: 2.25%; background-color: #ffe5e5;">
-                                        <col style="width: 2.25%; background-color: #dcf2fd;">
-                                        <col style="width: 2.25%; background-color: #ffe5e5;">
-                                        <col style="width: 2.25%; background-color: #dcf2fd;">
-                                        <col style="width: 2.25%; background-color: #ffe5e5;">
-                                        <col style="width: 2.25%; background-color: #dcf2fd;">
-                                        <col style="width: 2.25%; background-color: #ffe5e5;">
-                                        <col style="width: 2.25%; background-color: #dcf2fd;">
-                                        <col style="width: 2.25%; background-color: #ffe5e5;">
-                                        <col style="width: 2.25%; background-color: #dcf2fd;">
-                                        <col style="width: 2.25%; background-color: #ffe5e5;">
-                                        <col style="width: 2.25%; background-color: #dcf2fd;">
-                                        <col style="width: 2.25%; background-color: #ffe5e5;">
-                                        <col style="width: 2.25%; background-color: #dcf2fd;">
-                                        <col style="width: 2.25%; background-color: #ffe5e5;">
-                                        <col style="width: 2.25%; background-color: #dcf2fd;">
-                                        <col style="width: 2.25%; background-color: #ffe5e5;">
-                                        <col style="width: 2.25%; background-color: #dcf2fd;">
+                                        <col class="style-fd621375">
+                                        <col class="style-bcb84781">
+                                        <col class="style-fd621375">
+                                        <col class="style-bcb84781">
+                                        <col class="style-fd621375">
+                                        <col class="style-bcb84781">
+                                        <col class="style-fd621375">
+                                        <col class="style-bcb84781">
+                                        <col class="style-fd621375">
+                                        <col class="style-bcb84781">
+                                        <col class="style-fd621375">
+                                        <col class="style-bcb84781">
+                                        <col class="style-fd621375">
+                                        <col class="style-bcb84781">
+                                        <col class="style-fd621375">
+                                        <col class="style-bcb84781">
+                                        <col class="style-fd621375">
+                                        <col class="style-bcb84781">
+                                        <col class="style-fd621375">
+                                        <col class="style-bcb84781">
+                                        <col class="style-fd621375">
+                                        <col class="style-bcb84781">
+                                        <col class="style-fd621375">
+                                        <col class="style-bcb84781">
 
                                         <!-- Right Side -->
-                                        <col style="width: 3%;"> <!-- Number Header -->
-                                        <col style="width: 19.5%;"> <!-- Text Header -->
+                                        <col class="style-8253f033"> <!-- Number Header -->
+                                        <col class="style-adf10f95"> <!-- Text Header -->
                                     </colgroup>
                                     <thead>
                                         <tr>
                                             <!-- Top Left Header (Pink) -->
-                                            <th colspan="2" rowspan="2" class="header-pink"
-                                                style="border-right: 1px solid #ccc;">
+                                            <th colspan="2" rowspan="2" class="header-pink style-88035fe3">
                                                 <!-- Arrow Icon Vertically Centered Left -->
-                                                <div style="position: absolute; top: 50%; transform: translateY(-50%); left: 12px;">
+                                                <div class="style-8ce11486">
                                                     <!-- Corner Down Right Arrow -->
                                                     <!-- Tabler Icon corner-left-down -->
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -695,34 +366,30 @@
                                                         <path d="M18 6h-6a3 3 0 0 0 -3 3v10l-4 -4m8 0l-4 4" />
                                                     </svg>
                                                 </div>
-                                                <div style="text-align: left; padding-left: 36px;">
+                                                <div class="style-ccc76128">
                                                     <!-- Indent for arrow -->
-                                                    <div
-                                                        style="font-size: 11px; font-weight: 600; color:#555; line-height: 1.2;">
+                                                    <div class="style-a63e0c37">
                                                         TYYÇ Temel Alan<br>Tanımlayıcıları</div>
-                                                    <div style="font-size: 13px; font-weight: bold; margin-top: 4px;">72
+                                                    <div class="style-8fe30db6">72
                                                         - Sağlık</div>
                                                 </div>
                                             </th>
 
                                             <!-- Middle Header (Program Kazanımları) -->
-                                            <th colspan="24"
-                                                style="background: white; border-bottom: 0px; font-weight: bold; padding: 10px; text-align: left; padding-left: 15px;">
+                                            <th colspan="24" class="style-e7abfbd6">
                                                 Program Kazanımları</th>
 
                                             <!-- Right Header (Blue) -->
-                                            <th colspan="2" rowspan="2" class="header-blue"
-                                                style="border-left: 1px solid #ccc;">
-                                                <div style="text-align: right; padding-right: 36px;">
+                                            <th colspan="2" rowspan="2" class="header-blue style-b0931d31">
+                                                <div class="style-895358b4">
                                                     <!-- Indent for arrow -->
-                                                    <div style="font-size: 13px; font-weight: bold;">TYYÇ
+                                                    <div class="style-5d08fc51">TYYÇ
                                                         5<br>(Önlisans) Düzey</div>
-                                                    <div
-                                                        style="font-size: 12px; font-weight: 600; color:#555; margin-top: 2px;">
+                                                    <div class="style-9fab45f2">
                                                         Tanımlayıcıları</div>
                                                 </div>
                                                 <!-- Arrow Icon Vertically Centered Right -->
-                                                <div style="position: absolute; top: 50%; transform: translateY(-50%); right: 12px;">
+                                                <div class="style-3e1356d7">
                                                     <!-- Corner Down Left Arrow -->
                                                     <!-- Tabler Icon corner-right-down -->
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -734,7 +401,7 @@
                                                 </div>
                                             </th>
                                         </tr>
-                                        <tr style="height: 30px;">
+                                        <tr class="style-871e537d">
                                             <!-- Numbers 1-12 -->
                                             <th colspan="2">1</th>
                                             <th colspan="2">2</th>
@@ -1332,7 +999,7 @@
                 <p>© <span id="current-year"></span> • Bahçeşehir Üniversitesi</p>
                 <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
                 <a href="#" class="footer-icon back-to-top" title="Yukarı Çık">
-                    <i class="bi bi-arrow-up-circle"></i>
+                    <i class="ti ti-arrow-up-circle"></i>
                 </a>
             </div>
         </div>
@@ -1341,9 +1008,9 @@
 
     <!-- Custom Tooltip Element -->
     <div id="customTooltip">
-        <strong>Program Kazanımı: <span id="tooltipPK" style="font-weight: normal;"></span></strong>
+        <strong>Program Kazanımı: <span id="tooltipPK" class="style-a20a81f4"></span></strong>
         <p></p>
-        <strong>Temel Alan: <span id="tooltipTA" style="font-weight: normal;"></span></strong>
+        <strong>Temel Alan: <span id="tooltipTA" class="style-a20a81f4"></span></strong>
     </div>
 
     <!-- Bootstrap 5 JS Bundle -->

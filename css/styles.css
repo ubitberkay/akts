@@ -1,9 +1,11 @@
-/* ===================================
-   BAU AKTS Bilgi Paketi - Style Guide
-   =================================== */
-
 /* Google Fonts - Figtree */
 @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap");
+
+/* global icons */
+.ti {
+  vertical-align: middle;
+  line-height: 1;
+}
 
 /* CSS Custom Properties (Variables) */
 :root {
@@ -458,8 +460,8 @@ table thead {
   overflow: hidden;
 }
 
-.akts-table a{
- font-size: 14px;
+.akts-table a {
+  font-size: 14px;
 }
 
 .akts-table thead th {
@@ -843,14 +845,14 @@ table thead {
 
 /* No Result Styles */
 .no-result-container {
-  background-color: #E9ECEF;
+  background-color: #e9ecef;
   border-radius: 12px;
   padding: 79px 24px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
 }
 
 /* ===================================
@@ -999,13 +1001,12 @@ table thead {
   vertical-align: middle;
 }
 
-
 .no-result-icon {
   margin-bottom: 8px;
 }
-.no-result-icon i{
+.no-result-icon i {
   font-size: 64px;
-    color: var(--text-light);
+  color: var(--text-light);
 }
 .main-content .no-result-text {
   font-size: 20px;
@@ -1035,4 +1036,966 @@ table thead {
   .container-xxl {
     max-width: 1440px;
   }
+}
+
+/* =================================== */
+/* AUTOMATICALLY EXTRACTED STYLES */
+/* =================================== */
+
+.style-41759f6b {
+  border-radius: 8px;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #dee2e6;
+}
+
+.style-ec0177b1 {
+  background-color: #0a58ca;
+}
+
+.style-8354e9b3 {
+  text-decoration: none;
+}
+
+.style-b82672c1 {
+  border-radius: 8px;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #dee2e6;
+}
+
+.style-2a26d9d2 {
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.style-fcb9f755 {
+  width: 30%;
+}
+
+.style-06054b0e {
+  background-color: #f2f4f6;
+}
+
+.style-02d858b5 {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+}
+
+.style-af63e2b1 {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.style-8766b90d {
+  width: 50px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  color: #212529;
+}
+
+.style-9cadb60f {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  color: #212529;
+}
+
+.style-eed77f6e {
+  width: 80px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  color: #212529;
+}
+
+/* From ders-kazanim-matrisi.html <style> tag */
+/* Specific Styles for Ders Tanıtım Matrisi */
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #111827;
+}
+
+/* Common Box Styles */
+.section-box {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  margin-bottom: 24px;
+}
+
+/* Dark Blue Header for "İŞLETME" (Matches .table-header-hukuk) */
+.section-header-dark {
+  background-color: #0a58ca;
+  color: white;
+  font-weight: 700;
+  padding: 12px 20px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+/* Light Blue Header for "Program Öğrenme Çıktıları" and Matrix Header */
+.section-header-light {
+  background-color: #f8fafc;
+  /* Light Gray/Blue */
+  color: #0a58ca;
+  /* Strong Blue Text */
+  font-weight: 700;
+  padding: 14px 20px;
+  font-size: 15px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* Info Table (Top Section) */
+.info-table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+}
+
+.info-table td {
+  padding: 14px 20px;
+  border: 1px solid #dee2e6;
+  font-size: 14px;
+  color: #1f2937;
+  vertical-align: top;
+}
+
+.info-table tr:first-child td {
+  background-color: #fff;
+  font-weight: 700;
+  color: #111827;
+}
+
+.info-text-row td {
+  color: #4b5563 !important;
+  font-weight: 400 !important;
+  line-height: 1.6;
+  font-size: 13.5px !important;
+}
+
+.matrix-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 32px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.matrix-description {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+/* Tabs */
+.nav-tabs-custom {
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 24px;
+  gap: 24px;
+}
+
+.nav-tabs-custom .nav-link {
+  border: none;
+  color: #4b5563;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 4px;
+  background: transparent;
+  border-bottom: 2px solid transparent;
+  margin: 0;
+}
+
+.nav-tabs-custom .nav-link:hover {
+  color: #0a58ca;
+}
+
+.nav-tabs-custom .nav-link.active {
+  color: #0a58ca;
+  border-bottom: 2px solid #0a58ca;
+  background: transparent;
+}
+
+/* Program Outcomes List */
+.program-outcome-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.program-outcome-list li {
+  padding: 12px 20px;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+  border-bottom: 1px solid #dee2e6;
+  background-color: #fff;
+}
+
+.program-outcome-list li:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.program-outcome-list li:last-child {
+  border-bottom: none;
+}
+
+/* Matrix Section Styles */
+.matrix-container {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  margin-top: 24px;
+}
+
+/* Scale Bar */
+.scale-bar {
+  display: flex;
+  width: 100%;
+  font-size: 13px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.scale-item {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  font-weight: 500;
+  border-right: 1px solid #dee2e6;
+  color: #1f2937;
+}
+
+.scale-item:last-child {
+  border-right: none;
+}
+
+/* Refined Pastel Colors */
+.scale-1 {
+  background-color: #e1f5fe;
+  color: #0277bd;
+}
+
+.scale-2 {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.scale-3 {
+  background-color: #fffde7;
+  color: #f9a825;
+}
+
+.scale-4 {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.scale-5 {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* Matrix Table */
+.matrix-table {
+  width: 100%;
+  margin-bottom: 0;
+  border-collapse: collapse;
+}
+
+.matrix-table th {
+  background-color: #f8f9fa;
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+  padding: 10px 4px;
+  font-size: 13px;
+  border-bottom: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+  vertical-align: middle;
+  height: 48px;
+}
+
+.matrix-table td {
+  text-align: center;
+  padding: 0;
+  height: 40px;
+  border-bottom: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  vertical-align: middle;
+  background-color: #fff;
+  padding: 8px 12px;
+}
+
+/* Set width for columns 1-15 */
+.matrix-table th:nth-child(n + 2):nth-child(-n + 16),
+.matrix-table td:nth-child(n + 2):nth-child(-n + 16) {
+  width: 30px;
+  min-width: 30px;
+  max-width: 30px;
+}
+
+.matrix-table td:first-child {
+  text-align: left;
+  padding: 8px 12px;
+  width: auto;
+  min-width: 250px;
+}
+
+.course-code-link {
+  text-decoration: none;
+  color: #0a58ca;
+  font-weight: 500;
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+.course-code-link:hover {
+  text-decoration: underline;
+}
+
+/* Cell Backgrounds */
+.cell-1 {
+  background-color: #e0f3ff !important;
+}
+
+.cell-2 {
+  background-color: #d9fbf1 !important;
+}
+
+.cell-3 {
+  background-color: #fff8d2 !important;
+}
+
+.cell-4 {
+  background-color: #f3e5f5 !important;
+}
+
+.cell-5 {
+  background-color: #ffe5e5 !important;
+}
+
+.total-col {
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Buttons Bottom */
+.section-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 0;
+  align-items: center;
+  /* Ensure vertical alignment */
+}
+
+.btn-section-select {
+  background-color: #2563eb !important;
+  /* var(--bg-blue-600) forced */
+  color: #ffffff !important;
+  /* Force white text */
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  /* Increased weight for better visibility */
+  border: none;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-flex;
+  /* Use inline-flex for better centering */
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+  white-space: nowrap;
+  /* Prevent wrapping */
+}
+
+.btn-section-select:hover {
+  background-color: #1d4ed8 !important;
+  color: #ffffff !important;
+}
+
+.style-83abc571 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #0a58ca;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.style-f741136f {
+  color: #0a58ca;
+}
+
+.style-dc2cb2da {
+  margin-bottom: 24px;
+}
+
+.style-211a0439 {
+  border-bottom: none;
+}
+
+.style-1f037b2d {
+  padding: 8px 16px;
+}
+
+/* From ogretim-programi.html <style> tag */
+.dashed-info-box {
+  border: 1px dashed #949ba8;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: transparent;
+}
+
+.dashed-info-box ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+
+.dashed-info-box li {
+  color: var(--text-default);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.dashed-info-box li:last-child {
+  margin-bottom: 0;
+}
+
+.semester-title {
+  color: var(--text-blue);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.course-table th {
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #f8f9fa;
+}
+
+.course-table td {
+  font-size: 14px;
+  vertical-align: middle;
+  color: #000 !important;
+}
+
+.section-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+.btn-section-select {
+  background-color: var(--bg-blue-600);
+  color: white;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-section-select:hover {
+  background-color: #1d4ed8;
+  color: white;
+}
+
+.course-code-link {
+  color: var(--text-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.course-code-link:hover {
+  text-decoration: underline;
+}
+
+.table-header-hukuk {
+  background-color: #0a58ca !important;
+  color: white !important;
+}
+
+.style-2f9d52b0 {
+  background-color: #f8f9fa;
+}
+
+/* From program-kazanimlari-iliskisi.html <style> tag */
+/* Matrix Table Styling */
+.matrix-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  background: #fff;
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  /* Slightly smaller for compact fit */
+  table-layout: fixed;
+  /* Crucial for strict width control */
+}
+
+.matrix-table th,
+.matrix-table td {
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #e0e0e0;
+  padding: 4px;
+  /* Reduced padding */
+  height: 40px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Top corners - adjust border radius visually via container */
+
+/* Specialized Column Widths - Percentage Based */
+
+/* Col 1 & 16: Side Text Headers */
+.matrix-table th:first-child,
+.matrix-table td:first-child,
+.matrix-table th:last-child,
+.matrix-table td:last-child {
+  /* Width controlled by colgroup */
+  text-align: left;
+  padding: 8px 12px;
+  font-weight: 600;
+  color: #333;
+  white-space: normal;
+  line-height: 1.3;
+}
+
+/* Side Number Headers */
+.side-num-pink,
+.side-num-blue {
+  /* Width controlled by colgroup */
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+}
+
+/* Matrix Cells (Cols 3-14) */
+.matrix-table th:not(:first-child):not(:last-child):not(.col-num-side),
+.matrix-table
+  td:not(:first-child):not(:last-child):not(.col-num-side):not(
+    .category-title-left
+  ):not(.category-title-right):not(.category-spacer) {
+  /* Width controlled by colgroup */
+  padding: 4px;
+  height: 38px;
+  /* Fixed height for squares */
+  /* Remove aspect-ratio to avoid flexbox issues if any */
+}
+
+/* Header Colors */
+.header-pink {
+  background-color: #ffe5e5 !important;
+  color: #333;
+  vertical-align: middle !important;
+  padding: 12px !important;
+  position: relative;
+}
+
+.header-blue {
+  background-color: #dcf2fd !important;
+  color: #333;
+  vertical-align: middle !important;
+  padding: 12px !important;
+  position: relative;
+}
+
+/* Side Header Colors */
+.side-header-pink {
+  background-color: #ffe5e5 !important;
+}
+
+.side-header-blue {
+  background-color: #dcf2fd !important;
+}
+
+.side-num-pink {
+  background-color: #fff0f0 !important;
+  /* Slightly lighter pink for numbers */
+}
+
+.side-num-blue {
+  background-color: #eaf8ff !important;
+  /* Slightly lighter blue for numbers */
+}
+
+/* Category Row Styles */
+.category-row td {
+  background-color: #f8f9fa;
+  /* Slightly off-white for distinction? No, white in image */
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+  color: #000;
+  padding: 4px 12px;
+  /* Thinner row */
+  font-size: 11px;
+}
+
+/* Interactive Cells */
+.bg-cell-soft-red {
+  background-color: #ffe5e5;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.bg-cell-soft-blue {
+  background-color: #dcf2fd;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.interactive-cell:hover {
+  opacity: 0.8;
+  outline: 2px solid #aaa;
+}
+
+/* Tooltip Styling */
+#customTooltip {
+  display: none;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  font-size: 13px;
+  max-width: 300px;
+  z-index: 1000;
+  color: #333;
+  line-height: 1.5;
+}
+
+#customTooltip strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #000;
+}
+
+#customTooltip p {
+  margin: 0 0 10px 0;
+  color: #555;
+}
+
+/* Arrow for tooltip */
+#customTooltip::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -6px;
+  /* Left side arrow */
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  transform: rotate(45deg);
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+/* Tabs Styling */
+.custom-tabs {
+  display: flex;
+  gap: 32px;
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 24px;
+}
+
+.custom-tab {
+  padding: 12px 4px;
+  font-weight: 600;
+  color: #666;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.custom-tab.active {
+  color: #0a58ca;
+  border-bottom-color: #0a58ca;
+}
+
+/* Tooltip Styling */
+#customTooltip {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  z-index: 1050;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+#customTooltip strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #111;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#customTooltip p {
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+  color: #555;
+  font-size: 13px;
+}
+
+#customTooltip p:last-child {
+  margin-bottom: 0;
+}
+
+/* Hover effect for interactive cells */
+.interactive-cell {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.interactive-cell:hover {
+  transform: scale(1.15);
+  /* Pop */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 15;
+  position: relative;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  /* Highlight */
+}
+
+/* Ensure specific colors override hover bg if needed, or let hover be white */
+.interactive-cell.bg-soft-red:hover {
+  background-color: #ffe0e0;
+}
+
+.interactive-cell.bg-soft-blue:hover {
+  background-color: #d0ebff;
+}
+
+.table-header-program {
+  background-color: #0a58ca !important;
+  color: white !important;
+}
+
+/* Custom icons for the header arrows */
+.header-arrow-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Rotate arrow for right side */
+.arrow-right {
+  transform: rotate(0deg);
+}
+
+/* As is */
+.arrow-left {
+  transform: rotate(0deg);
+}
+
+/* Responsive Improvements */
+@media (max-width: 991.98px) {
+  .matrix-table {
+    min-width: 1000px; /* Force minimum width to prevent squashing */
+    table-layout: auto !important; /* Allow cells to grow based on content */
+  }
+
+  .matrix-container {
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+
+  /* Adjust header text for mobile if needed */
+  .header-pink,
+  .header-blue {
+    padding: 8px !important;
+  }
+}
+
+/* Hero and Main layout fixes for mobile */
+@media (max-width: 767.98px) {
+  .page-title {
+    font-size: 20px;
+  }
+
+  .custom-tabs {
+    gap: 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+  }
+
+  .custom-tab {
+    font-size: 14px;
+  }
+
+  .main-header-block {
+    overflow-x: auto;
+  }
+}
+
+/* Check SVG later */
+
+.style-267f6d50 {
+  font-size: 14px;
+}
+
+.style-07a2241a {
+  background-color: #eee;
+}
+
+.style-50906409 {
+  text-decoration: none;
+  color: #0d6efd;
+}
+
+.style-7e0fe271 {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+.style-21134e96 {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: bold;
+  color: #0a58ca;
+  padding: 10px 16px;
+}
+
+.style-29faab9a {
+  width: 25%;
+  font-weight: 500;
+}
+
+.style-d2abfb71 {
+  font-weight: 500;
+}
+
+.style-374aad47 {
+  line-height: 1.6;
+}
+
+.style-adf10f95 {
+  width: 19.5%;
+}
+
+.style-8253f033 {
+  width: 3%;
+}
+
+.style-fd621375 {
+  width: 2.25%;
+  background-color: #ffe5e5;
+}
+
+.style-bcb84781 {
+  width: 2.25%;
+  background-color: #dcf2fd;
+}
+
+.style-88035fe3 {
+  border-right: 1px solid #ccc;
+}
+
+.style-8ce11486 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+}
+
+.style-ccc76128 {
+  text-align: left;
+  padding-left: 36px;
+}
+
+.style-a63e0c37 {
+  font-size: 11px;
+  font-weight: 600;
+  color: #555;
+  line-height: 1.2;
+}
+
+.style-8fe30db6 {
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.style-e7abfbd6 {
+  background: white;
+  border-bottom: 0px;
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.style-b0931d31 {
+  border-left: 1px solid #ccc;
+}
+
+.style-895358b4 {
+  text-align: right;
+  padding-right: 36px;
+}
+
+.style-5d08fc51 {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.style-9fab45f2 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  margin-top: 2px;
+}
+
+.style-3e1356d7 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 12px;
+}
+
+.style-871e537d {
+  height: 30px;
+}
+
+.style-a20a81f4 {
+  font-weight: normal;
+}
+
+.style-4ebf8b8b {
+  width: 50%;
 }
