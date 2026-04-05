@@ -111,7 +111,9 @@ h4 {
   font-weight: 600;
   line-height: 1.5;
 }
-
+.text-primary {
+  color: var(--text-blue) !important;
+}
 /* ===================================
    Buttons
    =================================== */
@@ -465,12 +467,13 @@ table thead {
 }
 
 .akts-table thead th {
-  padding: 12px 16px;
+  padding: 8px 12px;
   text-align: left;
   font-weight: 600;
   color: var(--text-default);
   border-right: 1px solid var(--bg-gray-300);
   border-bottom: 1px solid var(--bg-gray-300);
+  font-size: 16px;
 }
 
 .akts-table thead th:last-child {
@@ -1442,15 +1445,12 @@ table thead {
   border-bottom: none;
 }
 
-.style-1f037b2d {
-  padding: 8px 16px;
-}
 
 /* From ogretim-programi.html <style> tag */
 .dashed-info-box {
   border: 1px dashed #949ba8;
   border-radius: 8px;
-  padding: 16px;
+  padding: 12px 16px;
   margin-bottom: 16px;
   background-color: transparent;
 }
