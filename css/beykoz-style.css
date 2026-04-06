@@ -98,6 +98,7 @@ body.beykoz {
 .beykoz thead .program-header-title {
   background-color: var(--bg-brand) !important;
   color: white !important;
+  text-align: left;
 }
 
 .beykoz .summary-table-new .summary-cell {
@@ -207,4 +208,63 @@ body.beykoz {
 }
 .beykoz .bg-level-5 {
   background-color: #ffeeee !important;
+}
+
+/* Matrix Table Fallback Widths for Beykoz */
+.style-f6f6b116 {
+  width: 19.5% !important;
+}
+
+.style-414f0e1c {
+  width: 4.35% !important;
+}
+
+/* Header arrow positioning overrides */
+.style-bd1cfb3a {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+}
+
+.style-b7fcef70 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 12px;
+}
+
+.style-cac6e50f {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.2;
+}
+
+/* Ensure the right column doesn't get constrained to 30px */
+.matrix-table th:last-child,
+.matrix-table td:last-child {
+  max-width: none !important;
+  min-width: 150px !important;
+  width: auto !important;
+}
+
+/* Center cells width fix */
+.matrix-table th:not(:first-child):not(:last-child),
+.matrix-table td:not(:first-child):not(:last-child):not(.category-spacer) {
+  min-width: 30px !important;
+  width: 30px !important;
+}
+
+/* Fix for colspans that get targeted by max-width: 30px */
+.matrix-table th[colspan],
+.matrix-table td[colspan] {
+  max-width: none !important;
+  width: auto !important;
+}
+
+/* Fix for the sub-headers Pöç1..Pöç14 catching the rules properly */
+.matrix-table .bg-light th {
+  max-width: 50px !important; 
+  padding: 8px 4px !important;
 }
