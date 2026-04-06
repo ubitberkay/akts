@@ -1,593 +1,725 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Beykoz Üniversitesi AKTS Bilgi Paketi ve Ders Kataloğu - Akademik programlar, dersler ve AKTS kredileri hakkında bilgi edinin.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Beykoz Üniversitesi AKTS Bilgi Paketi ve Ders Kataloğu - Akademik programlar, dersler ve AKTS kredileri hakkında bilgi edinin."
+    />
     <title>Bilgi Paketi / Ders Kataloğu | Beykoz Üniversitesi</title>
 
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Tabler Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
 
     <!-- Custom Styles -->
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/beykoz-style.css" rel="stylesheet">
-</head>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/beykoz-style.css" rel="stylesheet" />
+  </head>
 
-<body class="beykoz">
-
+  <body class="beykoz">
     <!-- ===================================
        Hero Wrapper (Header + Hero)
        =================================== -->
     <div class="container">
-        <div class="hero-wrapper">
-            <!-- Header Section -->
-            <header class="main-header">
-                <div class="header-content">
-                    <!-- Logo -->
-                    <div class="logo-area">
-                        <img src="./assets/beykoz.png" alt="Beykoz Üniversitesi Logo" class="header-logo">
-                    </div>
+      <div class="hero-wrapper">
+        <!-- Header Section -->
+        <header class="main-header">
+          <div class="header-content">
+            <!-- Logo -->
+            <div class="logo-area">
+              <img
+                src="./assets/beykoz.png"
+                alt="Beykoz Üniversitesi Logo"
+                class="header-logo"
+              />
+            </div>
 
-                    <!-- Title -->
-                    <h1 class="header-title">Bilgi Paketi / Ders Kataloğu</h1>
+            <!-- Title -->
+            <h1 class="header-title">Bilgi Paketi / Ders Kataloğu</h1>
 
-                    <!-- Language Button -->
-                    <a href="#" class="lang-btn">
-                        <i class="ti ti-world"></i>
-                        ENGLISH
-                    </a>
-                </div>
-            </header>
+            <!-- Language Button -->
+            <a href="#" class="lang-btn">
+              <i class="ti ti-world"></i>
+              ENGLISH
+            </a>
+          </div>
+        </header>
 
-            <!-- Hero Section -->
-            <section class="hero-section">
-                <div class="hero-content">
-                    <h2 class="hero-title">Ders Adı veya Kodu ile Arama</h2>
-                    <div class="search-box">
-                        <div class="input-group">
-                            <span class="input-group-text search-icon">
-                                <i class="ti ti-search"></i>
-                            </span>
-                            <input type="text" class="form-control" placeholder="" aria-label="Ders ara">
-                            <button class="btn btn-search" type="button" id="searchButton">
-                                <i class="ti ti-arrow-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <!-- Hero Section -->
+        <section class="hero-section">
+          <div class="hero-content">
+            <h2 class="hero-title">Ders Adı veya Kodu ile Arama</h2>
+            <div class="search-box">
+              <div class="input-group">
+                <span class="input-group-text search-icon">
+                  <i class="ti ti-search"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder=""
+                  aria-label="Ders ara"
+                />
+                <button class="btn btn-search" type="button" id="searchButton">
+                  <i class="ti ti-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
 
     <!-- ===================================
        Main Content Area
        =================================== -->
     <main class="main-content">
-        <div class="container">
-            <div class="main-wrapper">
-                <div class="row g-0">
-                    <!-- Sidebar -->
-                    <div class="col-lg-3 sidebar-column">
-                        <div class="sidebar-accordion">
-                            <div class="accordion" id="sidebarAccordion">
-                                <!-- Accordion Item 1 -->
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse1">
-                                            Accordion Item #1
-                                        </button>
-                                    </h2>
-                                    <div id="collapse1" class="accordion-collapse collapse"
-                                        data-bs-parent="#sidebarAccordion">
-                                        <div class="accordion-body">
-                                            Alt menü içeriği burada yer alacak.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Accordion Item 2 -->
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse2">
-                                            Accordion Item #2
-                                        </button>
-                                    </h2>
-                                    <div id="collapse2" class="accordion-collapse collapse"
-                                        data-bs-parent="#sidebarAccordion">
-                                        <div class="accordion-body">
-                                            Alt menü içeriği burada yer alacak.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Accordion Item 3 -->
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse3">
-                                            Accordion Item #3
-                                        </button>
-                                    </h2>
-                                    <div id="collapse3" class="accordion-collapse collapse"
-                                        data-bs-parent="#sidebarAccordion">
-                                        <div class="accordion-body">
-                                            Alt menü içeriği burada yer alacak.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Değişim Öğrencileri -->
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse4">
-                                            Değişim Öğrencileri için Pratik Bilgiler ve Üniversiteye Dair Bilgiler
-                                        </button>
-                                    </h2>
-                                    <div id="collapse4" class="accordion-collapse collapse"
-                                        data-bs-parent="#sidebarAccordion">
-                                        <div class="accordion-body">
-                                            Değişim programları hakkında bilgiler.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Accordion Item 5 -->
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse5">
-                                            Accordion Item #1
-                                        </button>
-                                    </h2>
-                                    <div id="collapse5" class="accordion-collapse collapse"
-                                        data-bs-parent="#sidebarAccordion">
-                                        <div class="accordion-body">
-                                            Alt menü içeriği burada yer alacak.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Accordion Item 6 -->
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse6">
-                                            Accordion Item #2
-                                        </button>
-                                    </h2>
-                                    <div id="collapse6" class="accordion-collapse collapse"
-                                        data-bs-parent="#sidebarAccordion">
-                                        <div class="accordion-body">
-                                            Alt menü içeriği burada yer alacak.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Accordion Item 7 -->
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse7">
-                                            Accordion Item #3
-                                        </button>
-                                    </h2>
-                                    <div id="collapse7" class="accordion-collapse collapse"
-                                        data-bs-parent="#sidebarAccordion">
-                                        <div class="accordion-body">
-                                            Alt menü içeriği burada yer alacak.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Değişim Öğrencileri Pratik Bilgiler -->
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse8">
-                                            Değişim Öğrencileri için Pratik Bilgiler
-                                        </button>
-                                    </h2>
-                                    <div id="collapse8" class="accordion-collapse collapse"
-                                        data-bs-parent="#sidebarAccordion">
-                                        <div class="accordion-body">
-                                            Pratik bilgiler ve rehberlik.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+      <div class="container">
+        <div class="main-wrapper">
+          <div class="row g-0">
+            <!-- Sidebar -->
+            <div class="col-lg-3 sidebar-column">
+              <div class="sidebar-accordion">
+                <div class="accordion" id="sidebarAccordion">
+                  <!-- Accordion Item 1 -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse1"
+                      >
+                        Accordion Item #1
+                      </button>
+                    </h2>
+                    <div
+                      id="collapse1"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#sidebarAccordion"
+                    >
+                      <div class="accordion-body">
+                        Alt menü içeriği burada yer alacak.
+                      </div>
                     </div>
+                  </div>
 
-                    <!-- Main Content -->
-                    <div class="col-lg-9 content-column">
-                        <div class="content-card-wrapper">
-
-                            <!-- Page Title -->
-                            <h3 class="mb-2 pb-1">Tür Tanımlayıcıları İlişki Matrisi
-                            </h3>
-
-                            <!-- Program Info Table (Red Header) -->
-                            <div class="table-responsive mb-5 style-8e964bc1">
-                                <table class="table table-bordered text-center align-middle program-info-table mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="5" class="program-info-header text-white text-start ps-3">
-                                                BİLGİSAYAR PROGRAMCILIĞI ÖNLİSANS PROGRAMI
-                                            </th>
-                                        </tr>
-                                        <tr class="program-info-subheaders">
-                                            <th class="style-c7ee8088">Kazanılan Yeterlilik</th>
-                                            <th class="style-c7ee8088">Program Süresi (Yıl)</th>
-                                            <th class="style-c7ee8088">Toplam AKTS Kredisi</th>
-                                            <th class="style-c7ee8088">Öğretim Şekli</th>
-                                            <th class="style-5172a7c4">Yeterliliğin Düzeyi ve Öğrenme Alanı</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-start ps-3">Önlisans Derecesi</td>
-                                            <td>2</td>
-                                            <td>120</td>
-                                            <td class="text-start ps-3">Örgün</td>
-                                            <td class="text-start ps-3 style-cf05789d">
-                                                - TYÇ Yeterlilik Türü: Önlisans<br>
-                                                - TYÇ, TYYÇ, EQF-LLL, ISCED (2011): 5. Düzey<br>
-                                                - QF-EHEA: Kısa Düzey<br>
-                                                - Yönelim: Önlisans (Mesleki) - Sınıflandırma (ISCED 2013): Temel
-                                                Öğrenme Alanı:48<br>
-                                                - Kategori: Ana Yeterlilik
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <!-- Matrix Section -->
-                            <h4 class="mb-3 style-52871843">Pöç İle Tyç Düzey
-                                Ve Tyç Yeterlilik Tür Tanımlayıcıları İlişki Matrisi</h4>
-                            <p class="mb-4 text-secondary style-76674537">
-                                (Üniversitemizdeki eğitim-öğretim programlarının öğrenme çıktıları, Türkiye
-                                Yeterlilikler Çerçevesi (TYÇ) Düzey Tanımlayıcıları ile Türkiye Yeterlilik Tür
-                                Tanımlayıcıları göz önünde bulundurularak tasarlanmaktadır. Aşağıdaki matris, ilgili
-                                eğitim-öğretim programı için tanımlanmış olan program öğrenme çıktıları ile TYÇ Düzey ve
-                                TYÇ Yeterlilik Tür Tanımlayıcıları arasındaki bağı göstermektedir.)<br>
-                                (Program Öğrenme Çıktıları ile İlgili TYÇ Düzey ve TYÇ Yeterlilik Tür Tanımlayıcıları
-                                İlişkisi aşağıda iki farklı matris halinde gösterilmektedir.)
-                            </p>
-
-                            <!-- Matrix Table Container -->
-                            <!-- Matrix Table Container -->
-                            <div class="matrix-container mb-5">
-                                <table class="matrix-table">
-                                    <colgroup>
-                                        <!-- Left Header -->
-                                        <col class="style-f6f6b116">
-                                        <!-- 14 PÖÇ Columns -->
-                                        <col class="style-414f0e1c">
-                                        <col class="style-414f0e1c">
-                                        <col class="style-414f0e1c">
-                                        <col class="style-414f0e1c">
-                                        <col class="style-414f0e1c">
-                                        <col class="style-414f0e1c">
-                                        <col class="style-414f0e1c">
-                                        <col class="style-414f0e1c">
-                                        <col class="style-414f0e1c">
-                                        <col class="style-414f0e1c">
-                                        <col class="style-414f0e1c">
-                                        <col class="style-414f0e1c">
-                                        <col class="style-414f0e1c">
-                                        <col class="style-414f0e1c">
-                                        <!-- Right Header -->
-                                        <col class="style-f6f6b116">
-                                    </colgroup>
-                                    <thead>
-                                        <!-- Top Header Row -->
-                                        <tr>
-                                            <th rowspan="2" class="header-pink">
-                                                <div class="d-flex justify-content-between h-100 p-2 position-relative">
-                                                    <!-- Arrow Icon Bottom Left -->
-                                                    <div class="style-bd1cfb3a">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                            stroke="#222" stroke-width="1.5" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <polyline points="15 10 20 15 15 20"></polyline>
-                                                            <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="text-start ps-5 pt-2 style-cac6e50f">
-                                                        Tyç 5 (Önlisans)<br>Düzey<br>Tanımlayıcıları
-                                                    </div>
-                                                </div>
-                                            </th>
-                                            <th colspan="14" class="py-3 bg-light fw-bold text-center border-bottom">
-                                                Program Öğrenme Çıktıları (PÖÇ)
-                                            </th>
-                                            <th rowspan="2" class="header-blue">
-                                                <div class="d-flex justify-content-between h-100 p-2 position-relative">
-                                                    <div class="text-start pe-5 pt-2 style-cac6e50f">
-                                                        Tyç 5 Düzey<br>(Önlisans)<br>Yeterlilik Tür<br>Tanımlayıcıları
-                                                    </div>
-                                                    <!-- Arrow Icon Top Right -->
-                                                    <div class="style-b7fcef70">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                            stroke="#222" stroke-width="1.5" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <polyline points="9 10 4 15 9 20"></polyline>
-                                                            <path d="M20 4v7a4 4 0 0 1-4 4H4"></path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </th>
-                                        </tr>
-                                        <!-- Numbers Row -->
-                                        <tr class="bg-light fw-bold text-center">
-                                            <th>Pöç1</th>
-                                            <th>Pöç2</th>
-                                            <th>Pöç3</th>
-                                            <th>Pöç4</th>
-                                            <th>Pöç5</th>
-                                            <th>Pöç6</th>
-                                            <th>Pöç7</th>
-                                            <th>Pöç8</th>
-                                            <th>Pöç9</th>
-                                            <th>Pöç10</th>
-                                            <th>Pöç11</th>
-                                            <th>Pöç12</th>
-                                            <th>Pöç13</th>
-                                            <th>Pöç14</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- 1 - Bilgi Category -->
-                                        <tr class="category-row">
-                                            <td class="category-title-left px-3 text-start">
-                                                <strong>1 - Bilgi</strong><br>
-                                                <span class="text-muted style-6ec70819">(Bilgi (Kuramsal
-                                                    ve/veya olgusal bilgi olarak tanımlanmıştır.)</span>
-                                            </td>
-                                            <td colspan="14" class="category-spacer"></td>
-                                            <td class="category-title-right px-3 text-start">
-                                                <strong>1 - Bilgi</strong><br>
-                                                <span class="text-muted style-6ec70819">(Bilgi (Kuramsal
-                                                    ve/veya olgusal bilgi olarak tanımlanmıştır.)</span>
-                                            </td>
-                                        </tr>
-                                        <!-- BİLGI Row 1 -->
-                                        <tr>
-                                            <td class="side-header-pink text-start px-3">
-                                                Bir iş veya öğrenme alanının sınırlarının farkında olarak, bu alana
-                                                özgü, kapsamlı/kuramsal ve olgusal bilgilere sahip olma
-                                            </td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td class="side-header-blue text-start px-3">
-                                                Bir iş alanında mesleğini yapabilecek ileri düzeyde kuramsal ve olgusal
-                                                kapsamlı bilgilere sahip olup bu bilgileri kullanır.
-                                            </td>
-                                        </tr>
-                                        <!-- BİLGI Row 2 -->
-                                        <tr>
-                                            <td class="side-header-pink text-start px-3">Kavramsal farkındalık ve eleştirel
-                                                düşünme.</td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td ></td>
-                                            <td ></td>
-                                            <td class="side-header-blue text-start px-3">Eleştirel yaklaşımla değerlendirme
-                                                yetkisine sahip olma.</td>
-                                        </tr>
-                                        <!-- BİLGI Row 3 -->
-                                        <tr>
-                                            <td class="side-header-pink text-start px-3">Yöntem ve teknik bilgisi.</td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td class="side-header-blue text-start px-3">Farklı yöntemleri kullanarak analiz
-                                                etme ve çözümleme.</td>
-                                        </tr>
-
-                                        <!-- 2 - Beceriler Category -->
-                                        <tr class="category-row">
-                                            <td class="category-title-left px-3 text-start">
-                                                <strong>2 - Beceriler</strong><br>
-                                                <span class="text-muted style-6ec70819">(Bilişsel ve/veya
-                                                    uygulama becerileri olarak tanımlanmıştır.)</span>
-                                            </td>
-                                            <td colspan="14" class="category-spacer"></td>
-                                            <td class="category-title-right px-3 text-start">
-                                                <strong>2 - Beceriler</strong><br>
-                                                <span class="text-muted style-6ec70819">(Bilişsel ve/veya
-                                                    uygulama becerileri olarak tanımlanmıştır.)</span>
-                                            </td>
-                                        </tr>
-                                        <!-- BECERİLER Row 1 -->
-                                        <tr>
-                                            <td class="side-header-pink text-start px-3">
-                                                Sınırları belirlenmiş soyut ve somut sorunlara yaratıcı çözümler
-                                                geliştirmede gerekli, kapsamlı, bilişsel ve uygulamalı becerilere sahip
-                                                olma
-                                            </td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td class="side-header-blue text-start px-3">
-                                                Bir iş alanında mesleğine özgü ileri öncesi düzeyde kapsamlı bilişsel ve
-                                                uygulama becerilerine sahip olup bunları yakın iş alanlarında da
-                                                kullanır.
-                                            </td>
-                                        </tr>
-                                        <!-- BECERİLER Row 2 -->
-                                        <tr>
-                                            <td class="side-header-pink text-start px-3">Teknoloji ve Bilgi okuryazarlığı.</td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td class="side-header-blue text-start px-3">Bilgi ve iletişim teknolojilerini etkin
-                                                kullanabilme.</td>
-                                        </tr>
-
-                                        <!-- 3 - Yetkinlikler Category -->
-                                        <tr class="category-row">
-                                            <td class="category-title-left px-3 text-start">
-                                                <strong>3 - Yetkinlikler</strong><br>
-                                                <span class="text-muted style-6ec70819">("Bağımsız
-                                                    Çalışabilme", "Sorumluluk Alabilme", "Öğrenme" Yetkinlikleri)</span>
-                                            </td>
-                                            <td colspan="14" class="category-spacer"></td>
-                                            <td class="category-title-right px-3 text-start">
-                                                <strong>3 - Yetkinlikler</strong><br>
-                                                <span class="text-muted style-6ec70819">("Bağımsız
-                                                    Çalışabilme", "Sorumluluk Alabilme", "Öğrenme" Yetkinlikleri)</span>
-                                            </td>
-                                        </tr>
-                                        <!-- YETKİNLİKLER Row 1 -->
-                                        <tr>
-                                            <td class="side-header-pink text-start px-3">
-                                                Öngörülemeyen değişikliklerin olduğu ortamlarda sorumluluk alma, plan
-                                                yapma ve etik kurallara uygun davranma.
-                                            </td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-red interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="side-header-blue text-start px-3">
-                                                Bireysel ya da ekip üyesi olarak mesleğini icra eder ve mesleğine
-                                                ilişkin beklenmeyen durumları algılar, gözetir ve yönetir.
-                                            </td>
-                                        </tr>
-                                        <!-- YETKİNLİKLER Row 2 -->
-                                        <tr>
-                                            <td class="side-header-pink text-start px-3">Öğrenmeyi öğrenme yetkinliği.</td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td class="side-header-blue text-start px-3">Yaşam boyu öğrenme bilincine sahip
-                                                olma.</td>
-                                        </tr>
-                                        <!-- YETKİNLİKLER Row 3 -->
-                                        <tr>
-                                            <td class="side-header-pink text-start px-3">
-                                                Bir iş veya öğrenme alanındaki bilgi, beceri, tutum ve davranışlar ile
-                                                toplumsal ve etik meseleler ve sorumluluklar ilişkisinin farkında olma
-                                            </td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td ></td>
-                                            <td class="bg-cell-soft-blue interactive-cell"></td>
-                                            <td class="side-header-blue text-start px-3">
-                                                Alana özgü bilişim teknolojilerini en az Avrupa Bilgisayar Kullanma
-                                                Lisansı Temel Düzeyinde kullanır.
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                  <!-- Accordion Item 2 -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse2"
+                      >
+                        Accordion Item #2
+                      </button>
+                    </h2>
+                    <div
+                      id="collapse2"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#sidebarAccordion"
+                    >
+                      <div class="accordion-body">
+                        Alt menü içeriği burada yer alacak.
+                      </div>
                     </div>
+                  </div>
+
+                  <!-- Accordion Item 3 -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse3"
+                      >
+                        Accordion Item #3
+                      </button>
+                    </h2>
+                    <div
+                      id="collapse3"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#sidebarAccordion"
+                    >
+                      <div class="accordion-body">
+                        Alt menü içeriği burada yer alacak.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Değişim Öğrencileri -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse4"
+                      >
+                        Değişim Öğrencileri için Pratik Bilgiler ve Üniversiteye
+                        Dair Bilgiler
+                      </button>
+                    </h2>
+                    <div
+                      id="collapse4"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#sidebarAccordion"
+                    >
+                      <div class="accordion-body">
+                        Değişim programları hakkında bilgiler.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Accordion Item 5 -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse5"
+                      >
+                        Accordion Item #1
+                      </button>
+                    </h2>
+                    <div
+                      id="collapse5"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#sidebarAccordion"
+                    >
+                      <div class="accordion-body">
+                        Alt menü içeriği burada yer alacak.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Accordion Item 6 -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse6"
+                      >
+                        Accordion Item #2
+                      </button>
+                    </h2>
+                    <div
+                      id="collapse6"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#sidebarAccordion"
+                    >
+                      <div class="accordion-body">
+                        Alt menü içeriği burada yer alacak.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Accordion Item 7 -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse7"
+                      >
+                        Accordion Item #3
+                      </button>
+                    </h2>
+                    <div
+                      id="collapse7"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#sidebarAccordion"
+                    >
+                      <div class="accordion-body">
+                        Alt menü içeriği burada yer alacak.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Değişim Öğrencileri Pratik Bilgiler -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse8"
+                      >
+                        Değişim Öğrencileri için Pratik Bilgiler
+                      </button>
+                    </h2>
+                    <div
+                      id="collapse8"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#sidebarAccordion"
+                    >
+                      <div class="accordion-body">
+                        Pratik bilgiler ve rehberlik.
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-9 content-column">
+              <div class="content-card-wrapper">
+                <!-- Page Title -->
+                <h3 class="mb-2 pb-1">Tür Tanımlayıcıları İlişki Matrisi</h3>
+
+                <!-- Program Info Table (Red Header) -->
+                <div class="table-responsive mb-5 style-8e964bc1">
+                  <table
+                    class="table table-bordered text-center align-middle program-info-table mb-0"
+                  >
+                    <thead>
+                      <tr>
+                        <th
+                          colspan="5"
+                          class="program-info-header text-white text-start ps-3"
+                        >
+                          BİLGİSAYAR PROGRAMCILIĞI ÖNLİSANS PROGRAMI
+                        </th>
+                      </tr>
+                      <tr class="program-info-subheaders">
+                        <th class="style-c7ee8088">Kazanılan Yeterlilik</th>
+                        <th class="style-c7ee8088">Program Süresi (Yıl)</th>
+                        <th class="style-c7ee8088">Toplam AKTS Kredisi</th>
+                        <th class="style-c7ee8088">Öğretim Şekli</th>
+                        <th class="style-5172a7c4">
+                          Yeterliliğin Düzeyi ve Öğrenme Alanı
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-start ps-3">Önlisans Derecesi</td>
+                        <td>2</td>
+                        <td>120</td>
+                        <td class="text-start ps-3">Örgün</td>
+                        <td class="text-start ps-3 style-cf05789d">
+                          - TYÇ Yeterlilik Türü: Önlisans<br />
+                          - TYÇ, TYYÇ, EQF-LLL, ISCED (2011): 5. Düzey<br />
+                          - QF-EHEA: Kısa Düzey<br />
+                          - Yönelim: Önlisans (Mesleki) - Sınıflandırma (ISCED
+                          2013): Temel Öğrenme Alanı:48<br />
+                          - Kategori: Ana Yeterlilik
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Matrix Section -->
+                <h4 class="mb-3 style-52871843">
+                  Pöç İle Tyç Düzey Ve Tyç Yeterlilik Tür Tanımlayıcıları İlişki
+                  Matrisi
+                </h4>
+                <p class="mb-4 text-secondary style-76674537">
+                  (Üniversitemizdeki eğitim-öğretim programlarının öğrenme
+                  çıktıları, Türkiye Yeterlilikler Çerçevesi (TYÇ) Düzey
+                  Tanımlayıcıları ile Türkiye Yeterlilik Tür Tanımlayıcıları göz
+                  önünde bulundurularak tasarlanmaktadır. Aşağıdaki matris,
+                  ilgili eğitim-öğretim programı için tanımlanmış olan program
+                  öğrenme çıktıları ile TYÇ Düzey ve TYÇ Yeterlilik Tür
+                  Tanımlayıcıları arasındaki bağı göstermektedir.)<br />
+                  (Program Öğrenme Çıktıları ile İlgili TYÇ Düzey ve TYÇ
+                  Yeterlilik Tür Tanımlayıcıları İlişkisi aşağıda iki farklı
+                  matris halinde gösterilmektedir.)
+                </p>
+
+                <!-- Matrix Table Container -->
+                <!-- Matrix Table Container -->
+                <div class="matrix-container mb-5">
+                  <table class="matrix-table">
+                    <colgroup>
+                      <!-- Left Header -->
+                      <col class="style-f6f6b116" />
+                      <!-- 14 PÖÇ Columns -->
+                      <col class="style-414f0e1c" />
+                      <col class="style-414f0e1c" />
+                      <col class="style-414f0e1c" />
+                      <col class="style-414f0e1c" />
+                      <col class="style-414f0e1c" />
+                      <col class="style-414f0e1c" />
+                      <col class="style-414f0e1c" />
+                      <col class="style-414f0e1c" />
+                      <col class="style-414f0e1c" />
+                      <col class="style-414f0e1c" />
+                      <col class="style-414f0e1c" />
+                      <col class="style-414f0e1c" />
+                      <col class="style-414f0e1c" />
+                      <col class="style-414f0e1c" />
+                      <!-- Right Header -->
+                      <col class="style-f6f6b116" />
+                    </colgroup>
+                    <thead>
+                      <!-- Top Header Row -->
+                      <tr>
+                        <th rowspan="2" class="header-pink">
+                          <div
+                            class="d-flex justify-content-between h-100 p-2 position-relative"
+                          >
+                            <!-- Arrow Icon Bottom Left -->
+                            <div class="style-bd1cfb3a">
+                              <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#222"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              >
+                                <polyline points="15 10 20 15 15 20"></polyline>
+                                <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                              </svg>
+                            </div>
+                            <div class="text-start ps-4 pt-2 style-cac6e50f">
+                              Tyç 5 (Önlisans)<br />Düzey<br />Tanımlayıcıları
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          colspan="14"
+                          class="py-3 bg-white fw-bold text-center border-bottom"
+                        >
+                          Program Öğrenme Çıktıları (PÖÇ)
+                        </th>
+                        <th rowspan="2" class="header-blue">
+                          <div
+                            class="d-flex justify-content-between h-100 p-2 position-relative"
+                          >
+                            <div class="text-start pe-4 pt-2 style-cac6e50f">
+                              Tyç 5 Düzey<br />(Önlisans)<br />Yeterlilik Tür<br />Tanımlayıcıları
+                            </div>
+                            <!-- Arrow Icon Top Right -->
+                            <div class="style-b7fcef70">
+                              <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#222"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              >
+                                <polyline points="9 10 4 15 9 20"></polyline>
+                                <path d="M20 4v7a4 4 0 0 1-4 4H4"></path>
+                              </svg>
+                            </div>
+                          </div>
+                        </th>
+                      </tr>
+                      <!-- Numbers Row -->
+                      <tr class="bg-white fw-bold text-center">
+                        <th>Pöç1</th>
+                        <th>Pöç2</th>
+                        <th>Pöç3</th>
+                        <th>Pöç4</th>
+                        <th>Pöç5</th>
+                        <th>Pöç6</th>
+                        <th>Pöç7</th>
+                        <th>Pöç8</th>
+                        <th>Pöç9</th>
+                        <th>Pöç10</th>
+                        <th>Pöç11</th>
+                        <th>Pöç12</th>
+                        <th>Pöç13</th>
+                        <th>Pöç14</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- 1 - Bilgi Category -->
+                      <tr class="category-row">
+                        <td class="category-title-left px-3 text-start">
+                          <strong>1 - Bilgi</strong><br />
+                          <span class="text-muted style-6ec70819"
+                            >(Bilgi (Kuramsal ve/veya olgusal bilgi olarak
+                            tanımlanmıştır.)</span
+                          >
+                        </td>
+                        <td colspan="14" class="category-spacer"></td>
+                        <td class="category-title-right px-3 text-start">
+                          <strong>1 - Bilgi</strong><br />
+                          <span class="text-muted style-6ec70819"
+                            >(Bilgi (Kuramsal ve/veya olgusal bilgi olarak
+                            tanımlanmıştır.)</span
+                          >
+                        </td>
+                      </tr>
+                      <!-- BİLGI Row 1 -->
+                      <tr>
+                        <td class="side-header-pink text-start px-3">
+                          Bir iş veya öğrenme alanının sınırlarının farkında
+                          olarak, bu alana özgü, kapsamlı/kuramsal ve olgusal
+                          bilgilere sahip olma
+                        </td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td class="side-header-blue text-start px-3">
+                          Bir iş alanında mesleğini yapabilecek ileri düzeyde
+                          kuramsal ve olgusal kapsamlı bilgilere sahip olup bu
+                          bilgileri kullanır.
+                        </td>
+                      </tr>
+                      <!-- BİLGI Row 2 -->
+                      <tr>
+                        <td class="side-header-pink text-start px-3">
+                          Kavramsal farkındalık ve eleştirel düşünme.
+                        </td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="side-header-blue text-start px-3">
+                          Eleştirel yaklaşımla değerlendirme yetkisine sahip
+                          olma.
+                        </td>
+                      </tr>
+                      <!-- BİLGI Row 3 -->
+                      <tr>
+                        <td class="side-header-pink text-start px-3">
+                          Yöntem ve teknik bilgisi.
+                        </td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td class="side-header-blue text-start px-3">
+                          Farklı yöntemleri kullanarak analiz etme ve çözümleme.
+                        </td>
+                      </tr>
+
+                      <!-- 2 - Beceriler Category -->
+                      <tr class="category-row">
+                        <td class="category-title-left px-3 text-start">
+                          <strong>2 - Beceriler</strong><br />
+                          <span class="text-muted style-6ec70819"
+                            >(Bilişsel ve/veya uygulama becerileri olarak
+                            tanımlanmıştır.)</span
+                          >
+                        </td>
+                        <td colspan="14" class="category-spacer"></td>
+                        <td class="category-title-right px-3 text-start">
+                          <strong>2 - Beceriler</strong><br />
+                          <span class="text-muted style-6ec70819"
+                            >(Bilişsel ve/veya uygulama becerileri olarak
+                            tanımlanmıştır.)</span
+                          >
+                        </td>
+                      </tr>
+                      <!-- BECERİLER Row 1 -->
+                      <tr>
+                        <td class="side-header-pink text-start px-3">
+                          Sınırları belirlenmiş soyut ve somut sorunlara
+                          yaratıcı çözümler geliştirmede gerekli, kapsamlı,
+                          bilişsel ve uygulamalı becerilere sahip olma
+                        </td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td class="side-header-blue text-start px-3">
+                          Bir iş alanında mesleğine özgü ileri öncesi düzeyde
+                          kapsamlı bilişsel ve uygulama becerilerine sahip olup
+                          bunları yakın iş alanlarında da kullanır.
+                        </td>
+                      </tr>
+                      <!-- BECERİLER Row 2 -->
+                      <tr>
+                        <td class="side-header-pink text-start px-3">
+                          Teknoloji ve Bilgi okuryazarlığı.
+                        </td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td class="side-header-blue text-start px-3">
+                          Bilgi ve iletişim teknolojilerini etkin kullanabilme.
+                        </td>
+                      </tr>
+
+                      <!-- 3 - Yetkinlikler Category -->
+                      <tr class="category-row">
+                        <td class="category-title-left px-3 text-start">
+                          <strong>3 - Yetkinlikler</strong><br />
+                          <span class="text-muted style-6ec70819"
+                            >("Bağımsız Çalışabilme", "Sorumluluk Alabilme",
+                            "Öğrenme" Yetkinlikleri)</span
+                          >
+                        </td>
+                        <td colspan="14" class="category-spacer"></td>
+                        <td class="category-title-right px-3 text-start">
+                          <strong>3 - Yetkinlikler</strong><br />
+                          <span class="text-muted style-6ec70819"
+                            >("Bağımsız Çalışabilme", "Sorumluluk Alabilme",
+                            "Öğrenme" Yetkinlikleri)</span
+                          >
+                        </td>
+                      </tr>
+                      <!-- YETKİNLİKLER Row 1 -->
+                      <tr>
+                        <td class="side-header-pink text-start px-3">
+                          Öngörülemeyen değişikliklerin olduğu ortamlarda
+                          sorumluluk alma, plan yapma ve etik kurallara uygun
+                          davranma.
+                        </td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-red interactive-cell"></td>
+                        <td></td>
+                        <td class="side-header-blue text-start px-3">
+                          Bireysel ya da ekip üyesi olarak mesleğini icra eder
+                          ve mesleğine ilişkin beklenmeyen durumları algılar,
+                          gözetir ve yönetir.
+                        </td>
+                      </tr>
+                      <!-- YETKİNLİKLER Row 2 -->
+                      <tr>
+                        <td class="side-header-pink text-start px-3">
+                          Öğrenmeyi öğrenme yetkinliği.
+                        </td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td class="side-header-blue text-start px-3">
+                          Yaşam boyu öğrenme bilincine sahip olma.
+                        </td>
+                      </tr>
+                      <!-- YETKİNLİKLER Row 3 -->
+                      <tr>
+                        <td class="side-header-pink text-start px-3">
+                          Bir iş veya öğrenme alanındaki bilgi, beceri, tutum ve
+                          davranışlar ile toplumsal ve etik meseleler ve
+                          sorumluluklar ilişkisinin farkında olma
+                        </td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td></td>
+                        <td class="bg-cell-soft-blue interactive-cell"></td>
+                        <td class="side-header-blue text-start px-3">
+                          Alana özgü bilişim teknolojilerini en az Avrupa
+                          Bilgisayar Kullanma Lisansı Temel Düzeyinde kullanır.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <!-- ===================================
        Footer Section
        =================================== -->
-        <footer class="main-footer">
+    <footer class="main-footer">
       <div class="container">
         <div class="footer-content">
           <p>© <span id="current-year"></span> • Beykoz Üniversitesi</p>
@@ -605,12 +737,13 @@
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Initialize Tooltips
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
+      // Initialize Tooltips
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]'),
+      );
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
     </script>
-</body>
-
+  </body>
 </html>

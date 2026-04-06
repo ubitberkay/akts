@@ -264,7 +264,7 @@ body.beykoz {
 }
 
 /* Fix for the sub-headers Pöç1..Pöç14 catching the rules properly */
-.matrix-table .bg-light th {
-  max-width: 50px !important; 
+.matrix-table .bg-white th {
+  max-width: 50px !important;
   padding: 8px 4px !important;
 }
