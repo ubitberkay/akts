@@ -1130,7 +1130,7 @@ table thead {
   margin-bottom: 24px;
 }
 
-/* Dark Blue Header for "İŞLETME" (Matches .table-header-hukuk) */
+/* Dark Blue Header for "İŞLETME" (Matches .table-header-primary) */
 .section-header-dark {
   background-color: #0a58ca;
   color: white;
@@ -1496,7 +1496,7 @@ table thead {
   text-decoration: underline;
 }
 
-.table-header-hukuk {
+.table-header-primary {
   background-color: #0a58ca !important;
   color: white !important;
 }
