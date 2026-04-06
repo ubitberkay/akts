@@ -154,3 +154,57 @@ body.beykoz {
 .beykoz .text-brand {
   color: var(--text-brand) !important;
 }
+
+/* Contribution Legend Styling */
+.beykoz .contribution-legend {
+  border: 1px solid var(--bg-gray-300);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.beykoz .legend-header {
+  background-color: #f8f9fa;
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #8a343c;
+  border-bottom: 1px solid var(--bg-gray-300);
+}
+
+.beykoz .legend-body {
+  display: flex;
+  text-align: center;
+  font-size: 13px;
+}
+
+.beykoz .legend-item {
+  flex: 1;
+  padding: 12px 8px;
+  border-right: 1px solid var(--bg-gray-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.beykoz .legend-item:last-child {
+  border-right: none;
+}
+
+.beykoz .bg-level-0 {
+  background-color: #ffffff !important;
+}
+.beykoz .bg-level-1 {
+  background-color: #def2ff !important;
+}
+.beykoz .bg-level-2 {
+  background-color: #e1fdf1 !important;
+}
+.beykoz .bg-level-3 {
+  background-color: #fff9d1 !important;
+}
+.beykoz .bg-level-4 {
+  background-color: #f6e9ff !important;
+}
+.beykoz .bg-level-5 {
+  background-color: #ffeeee !important;
+}
